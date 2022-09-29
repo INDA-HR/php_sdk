@@ -361,9 +361,7 @@ class ObjectSerializer
             }
 
             $file = fopen($filename, 'w');
-            while ($chunk = $data->read(200)) {
-                fwrite($file, $chunk);
-            }
+            fwrite($file, $data);
             fclose($file);
 
             return new \SplFileObject($filename, 'r');
