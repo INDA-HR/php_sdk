@@ -334,7 +334,7 @@ class ObjectSerializer
             // this graceful.
             if (!empty($data)) {
                 try {
-                    return new \DateTime($data);
+                    return is_string($data) ? new \DateTime($data) : new \DateTime($data->Value);
                 } catch (\Exception $exception) {
                     // Some API's return a date-time with too high nanosecond
                     // precision for php's DateTime to handle.
