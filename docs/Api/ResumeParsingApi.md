@@ -220,7 +220,7 @@ $apiInstance = new OpenAPI\Client\Api\ResumeParsingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$base_file = {"File":"<binary of document>","FileExt":"<extension of document>"}; // \OpenAPI\Client\Model\BaseFile
+$base_file = {"File":"<base64 of document>","FileExt":"<extension of document>"}; // \OpenAPI\Client\Model\BaseFile
 $lang = 'lang_example'; // string | Language to use in order to extract data from the text. Defaults to italian.
 $graphics = false; // bool | Whether to read skill graphs such as bars, pie charts, and symbols.
 
