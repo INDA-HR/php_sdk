@@ -1,4 +1,4 @@
-![alt text](https://inda.ai/wp-content/uploads/2022/09/inda-hr-php.png)
+![alt text](https://inda.ai/wp-content/uploads/2022/11/inda-hr-php.png)
 
 
 # Introduction
