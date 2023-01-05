@@ -19,12 +19,12 @@ Method | HTTP request | Description
 ## `escoOccupationsHierarchyGET()`
 
 ```php
-escoOccupationsHierarchyGET($query, $lang): \OpenAPI\Client\Model\MostSimilarJobtitleResponseCategorized
+escoOccupationsHierarchyGET($query, $dst_lang): \OpenAPI\Client\Model\MostSimilarJobtitleResponseCategorized
 ```
 
 ESCO Occupations Hierarchy
 
-This method provides the most similar ESCO job title given a *jobtitle* (that could be a word or a sentence in several languages), its hierarchy classification according with ISCO classification, and  the top three industries and job functions where the occupation is distributed.   More details about ESCO occupations hierarchy are showed [here](https://ec.europa.eu/esco/portal/occupation).
+This method provides the most similar ESCO job title given a *jobtitle* (that could be a word or a sentence in several languages), its hierarchy classification according with ISCO classification, and the top three industries and job functions where the occupation is distributed.  More details about ESCO occupations hierarchy are showed [here](https://ec.europa.eu/esco/portal/occupation).
 
 ### Example
 
@@ -44,10 +44,10 @@ $apiInstance = new OpenAPI\Client\Api\ESCOApi(
     $config
 );
 $query = 'query_example'; // string | It could be any word or sentence in several languages.
-$lang = 'it'; // string | The language of the similar ESCO occupations.
+$dst_lang = 'it'; // string | Language of the similar ESCO occupations.
 
 try {
-    $result = $apiInstance->escoOccupationsHierarchyGET($query, $lang);
+    $result = $apiInstance->escoOccupationsHierarchyGET($query, $dst_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ESCOApi->escoOccupationsHierarchyGET: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +59,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string**| It could be any word or sentence in several languages. |
- **lang** | **string**| The language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
 
 ### Return type
 
@@ -81,12 +81,12 @@ Name | Type | Description  | Notes
 ## `escoSkillsHierarchyGET()`
 
 ```php
-escoSkillsHierarchyGET($query, $lang): \OpenAPI\Client\Model\MostSimilarSkillResponseCategorized
+escoSkillsHierarchyGET($query, $dst_lang): \OpenAPI\Client\Model\MostSimilarSkillResponseCategorized
 ```
 
 ESCO Skills Hierarchy
 
-This method provides the most similar ESCO skills given a *query* (representing a skill) that could be a word or a sentence in several languages; also its hierarchy classification according with ESCO is returned.   More details about ESCO skills hierarchy are showed [here](https://ec.europa.eu/esco/portal/skill).
+This method provides the most similar ESCO skills given a *query* (representing a skill) that could be a word or a sentence in several languages; also its hierarchy classification according with ESCO is returned.  More details about ESCO skills hierarchy are showed [here](https://ec.europa.eu/esco/portal/skill).
 
 ### Example
 
@@ -106,10 +106,10 @@ $apiInstance = new OpenAPI\Client\Api\ESCOApi(
     $config
 );
 $query = 'query_example'; // string | A word or a brief sentence in several languages.
-$lang = 'it'; // string | The language of the similar ESCO skills.
+$dst_lang = 'it'; // string | Language of the similar ESCO skills.
 
 try {
-    $result = $apiInstance->escoSkillsHierarchyGET($query, $lang);
+    $result = $apiInstance->escoSkillsHierarchyGET($query, $dst_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ESCOApi->escoSkillsHierarchyGET: ', $e->getMessage(), PHP_EOL;
@@ -121,7 +121,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string**| A word or a brief sentence in several languages. |
- **lang** | **string**| The language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
 
 ### Return type
 
@@ -143,12 +143,12 @@ Name | Type | Description  | Notes
 ## `fromDescriptionToEscoOccupationsPOST()`
 
 ```php
-fromDescriptionToEscoOccupationsPOST($description_input, $lang, $size, $min_score): \OpenAPI\Client\Model\EscoJobtitleResponse
+fromDescriptionToEscoOccupationsPOST($description_input, $dst_lang, $size, $min_score): \OpenAPI\Client\Model\EscoJobtitleResponse
 ```
 
 From description to ESCO Occupations
 
-This method provides the list of n most affine ESCO occupations given a sentence or a long description.  For each returned occupation, the service provides also a list of the main related skills according to ESCO classification.  More details about ESCO occupations are showed [here](https://ec.europa.eu/esco/portal/occupation).
+This method provides the list of n most affine ESCO occupations given a sentence or a long description. For each returned occupation, the service provides also a list of the main related skills according to ESCO classification.  More details about ESCO occupations are showed [here](https://ec.europa.eu/esco/portal/occupation).
 
 ### Example
 
@@ -168,12 +168,12 @@ $apiInstance = new OpenAPI\Client\Api\ESCOApi(
     $config
 );
 $description_input = {"Description":"<text>"}; // \OpenAPI\Client\Model\DescriptionInput
-$lang = 'it'; // string | The language of the similar ESCO occupations.
+$dst_lang = 'it'; // string | Language of the similar ESCO occupations.
 $size = 1; // int | The maximum number of similar ESCO occupations retrieved by the algorithm.
 $min_score = 0.2; // float | Minimum score of the similar ESCO occupations with respect to the job title queried by the user.
 
 try {
-    $result = $apiInstance->fromDescriptionToEscoOccupationsPOST($description_input, $lang, $size, $min_score);
+    $result = $apiInstance->fromDescriptionToEscoOccupationsPOST($description_input, $dst_lang, $size, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ESCOApi->fromDescriptionToEscoOccupationsPOST: ', $e->getMessage(), PHP_EOL;
@@ -185,7 +185,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **description_input** | [**\OpenAPI\Client\Model\DescriptionInput**](../Model/DescriptionInput.md)|  |
- **lang** | **string**| The language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
  **size** | **int**| The maximum number of similar ESCO occupations retrieved by the algorithm. | [optional] [default to 1]
  **min_score** | **float**| Minimum score of the similar ESCO occupations with respect to the job title queried by the user. | [optional] [default to 0.2]
 
@@ -209,12 +209,12 @@ Name | Type | Description  | Notes
 ## `fromDescriptionToEscoSkillsPOST()`
 
 ```php
-fromDescriptionToEscoSkillsPOST($description_input, $lang, $size, $min_score): \OpenAPI\Client\Model\EscoSkillResponse
+fromDescriptionToEscoSkillsPOST($description_input, $dst_lang, $size, $min_score): \OpenAPI\Client\Model\EscoSkillResponse
 ```
 
 From description to ESCO Skills
 
-This method provides the list of n most affine ESCO skills given a sentence or a long description. For each returned skill, the service provides also a list of the main occupations where the skill is mandatory  according to ESCO classification.  More details about ESCO skills are showed [here](https://ec.europa.eu/esco/portal/skill).
+This method provides the list of n most affine ESCO skills given a sentence or a long description. For each returned skill, the service provides also a list of the main occupations where the skill is mandatory according to ESCO classification.  More details about ESCO skills are showed [here](https://ec.europa.eu/esco/portal/skill).
 
 ### Example
 
@@ -234,12 +234,12 @@ $apiInstance = new OpenAPI\Client\Api\ESCOApi(
     $config
 );
 $description_input = {"Description":"<text>"}; // \OpenAPI\Client\Model\DescriptionInput
-$lang = 'it'; // string | The language of the similar ESCO skills.
+$dst_lang = 'it'; // string | Language of the similar ESCO skills.
 $size = 1; // int | The maximum number of similar ESCO skills retrieved by the algorithm.
 $min_score = 0.2; // float | Minimum score of the similar ESCO skills with respect to the skill queried by the user.
 
 try {
-    $result = $apiInstance->fromDescriptionToEscoSkillsPOST($description_input, $lang, $size, $min_score);
+    $result = $apiInstance->fromDescriptionToEscoSkillsPOST($description_input, $dst_lang, $size, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ESCOApi->fromDescriptionToEscoSkillsPOST: ', $e->getMessage(), PHP_EOL;
@@ -251,7 +251,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **description_input** | [**\OpenAPI\Client\Model\DescriptionInput**](../Model/DescriptionInput.md)|  |
- **lang** | **string**| The language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
  **size** | **int**| The maximum number of similar ESCO skills retrieved by the algorithm. | [optional] [default to 1]
  **min_score** | **float**| Minimum score of the similar ESCO skills with respect to the skill queried by the user. | [optional] [default to 0.2]
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 ## `similarEscoOccupationsGET()`
 
 ```php
-similarEscoOccupationsGET($query, $lang, $size, $min_score): \OpenAPI\Client\Model\EscoJobtitleResponse
+similarEscoOccupationsGET($query, $dst_lang, $size, $min_score): \OpenAPI\Client\Model\EscoJobtitleResponse
 ```
 
 Similar ESCO Occupations
@@ -540,12 +540,12 @@ $apiInstance = new OpenAPI\Client\Api\ESCOApi(
     $config
 );
 $query = 'query_example'; // string | A word or a brief sentence in several languages.
-$lang = 'it'; // string | The language of the similar ESCO occupations.
+$dst_lang = 'it'; // string | Language of the similar ESCO occupations.
 $size = 1; // int | The maximum number of similar ESCO occupations retrieved by the algorithm.
 $min_score = 0.2; // float | Minimum score of the similar ESCO occupations with respect to the job title queried by the user.
 
 try {
-    $result = $apiInstance->similarEscoOccupationsGET($query, $lang, $size, $min_score);
+    $result = $apiInstance->similarEscoOccupationsGET($query, $dst_lang, $size, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ESCOApi->similarEscoOccupationsGET: ', $e->getMessage(), PHP_EOL;
@@ -557,7 +557,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string**| A word or a brief sentence in several languages. |
- **lang** | **string**| The language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
  **size** | **int**| The maximum number of similar ESCO occupations retrieved by the algorithm. | [optional] [default to 1]
  **min_score** | **float**| Minimum score of the similar ESCO occupations with respect to the job title queried by the user. | [optional] [default to 0.2]
 
@@ -581,12 +581,12 @@ Name | Type | Description  | Notes
 ## `similarEscoSkillsGET()`
 
 ```php
-similarEscoSkillsGET($query, $lang, $size, $min_score): \OpenAPI\Client\Model\EscoSkillResponse
+similarEscoSkillsGET($query, $dst_lang, $size, $min_score): \OpenAPI\Client\Model\EscoSkillResponse
 ```
 
 Similar ESCO Skills
 
-This method provides the list of n most similar ESCO skills given a *skill*. For each returned skill, the service provides also a list of the main occupations where the skill is mandatory  according to ESCO classification.  More details about ESCO skills are showed [here](https://ec.europa.eu/esco/portal/skill).
+This method provides the list of n most similar ESCO skills given a *skill*. For each returned skill, the service provides also a list of the main occupations where the skill is mandatory according to ESCO classification.  More details about ESCO skills are showed [here](https://ec.europa.eu/esco/portal/skill).
 
 ### Example
 
@@ -606,12 +606,12 @@ $apiInstance = new OpenAPI\Client\Api\ESCOApi(
     $config
 );
 $query = 'query_example'; // string | A word or a brief sentence in several languages.
-$lang = 'it'; // string | The language of the similar ESCO skills.
+$dst_lang = 'it'; // string | Language of the similar ESCO skills.
 $size = 1; // int | The maximum number of similar ESCO skills retrieved by the algorithm.
 $min_score = 0.2; // float | Minimum score of the similar ESCO skills with respect to the skill queried by the user.
 
 try {
-    $result = $apiInstance->similarEscoSkillsGET($query, $lang, $size, $min_score);
+    $result = $apiInstance->similarEscoSkillsGET($query, $dst_lang, $size, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ESCOApi->similarEscoSkillsGET: ', $e->getMessage(), PHP_EOL;
@@ -623,7 +623,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string**| A word or a brief sentence in several languages. |
- **lang** | **string**| The language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
  **size** | **int**| The maximum number of similar ESCO skills retrieved by the algorithm. | [optional] [default to 1]
  **min_score** | **float**| Minimum score of the similar ESCO skills with respect to the skill queried by the user. | [optional] [default to 0.2]
 

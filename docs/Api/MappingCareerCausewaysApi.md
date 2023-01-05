@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `careerRecommendationPOST()`
 
 ```php
-careerRecommendationPOST($career_transition_request, $lang, $min_score): \OpenAPI\Client\Model\TransitionRecommendations
+careerRecommendationPOST($career_transition_request, $dst_lang, $min_score): \OpenAPI\Client\Model\TransitionRecommendations
 ```
 
 Career Recommendation
@@ -38,11 +38,11 @@ $apiInstance = new OpenAPI\Client\Api\MappingCareerCausewaysApi(
     $config
 );
 $career_transition_request = {"OriginOccupation":"data analyst","TransitionType":"viable"}; // \OpenAPI\Client\Model\CareerTransitionRequest
-$lang = 'it'; // string | Output language.
+$dst_lang = 'it'; // string | Output language.
 $min_score = 0.2; // float | Minimum similarity score for ESCO mapping.
 
 try {
-    $result = $apiInstance->careerRecommendationPOST($career_transition_request, $lang, $min_score);
+    $result = $apiInstance->careerRecommendationPOST($career_transition_request, $dst_lang, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MappingCareerCausewaysApi->careerRecommendationPOST: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +54,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **career_transition_request** | [**\OpenAPI\Client\Model\CareerTransitionRequest**](../Model/CareerTransitionRequest.md)|  |
- **lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
  **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
 
 ### Return type
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 ## `occupationActivitiesComparisonPOST()`
 
 ```php
-occupationActivitiesComparisonPOST($work_activity_comparison_request, $lang, $min_score): \OpenAPI\Client\Model\WorkActivityComparison
+occupationActivitiesComparisonPOST($work_activity_comparison_request, $dst_lang, $min_score): \OpenAPI\Client\Model\WorkActivityComparison
 ```
 
 Occupation Activities Comparison
@@ -102,11 +102,11 @@ $apiInstance = new OpenAPI\Client\Api\MappingCareerCausewaysApi(
     $config
 );
 $work_activity_comparison_request = {"OriginOccupation":"data analyst","DestinationOccupation":"data scientist","ESCOLevel":1}; // \OpenAPI\Client\Model\WorkActivityComparisonRequest
-$lang = 'it'; // string | Output language.
+$dst_lang = 'it'; // string | Output language.
 $min_score = 0.2; // float | Minimum similarity score for ESCO mapping.
 
 try {
-    $result = $apiInstance->occupationActivitiesComparisonPOST($work_activity_comparison_request, $lang, $min_score);
+    $result = $apiInstance->occupationActivitiesComparisonPOST($work_activity_comparison_request, $dst_lang, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MappingCareerCausewaysApi->occupationActivitiesComparisonPOST: ', $e->getMessage(), PHP_EOL;
@@ -118,7 +118,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **work_activity_comparison_request** | [**\OpenAPI\Client\Model\WorkActivityComparisonRequest**](../Model/WorkActivityComparisonRequest.md)|  |
- **lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
  **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
 
 ### Return type
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 ## `occupationSkillComparisonPOST()`
 
 ```php
-occupationSkillComparisonPOST($occupation_skills_comparison_request, $lang, $min_score): \OpenAPI\Client\Model\OccupationsSkillsComparison
+occupationSkillComparisonPOST($occupation_skills_comparison_request, $dst_lang, $min_score): \OpenAPI\Client\Model\OccupationsSkillsComparison
 ```
 
 Occupation Skill Comparison
@@ -166,11 +166,11 @@ $apiInstance = new OpenAPI\Client\Api\MappingCareerCausewaysApi(
     $config
 );
 $occupation_skills_comparison_request = {"OriginOccupation":"data analyst","DestinationOccupation":"data scientist","SkillMatch":"essential"}; // \OpenAPI\Client\Model\OccupationSkillsComparisonRequest
-$lang = 'it'; // string | Output language.
+$dst_lang = 'it'; // string | Output language.
 $min_score = 0.2; // float | Minimum similarity score for ESCO mapping.
 
 try {
-    $result = $apiInstance->occupationSkillComparisonPOST($occupation_skills_comparison_request, $lang, $min_score);
+    $result = $apiInstance->occupationSkillComparisonPOST($occupation_skills_comparison_request, $dst_lang, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MappingCareerCausewaysApi->occupationSkillComparisonPOST: ', $e->getMessage(), PHP_EOL;
@@ -182,7 +182,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **occupation_skills_comparison_request** | [**\OpenAPI\Client\Model\OccupationSkillsComparisonRequest**](../Model/OccupationSkillsComparisonRequest.md)|  |
- **lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
  **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
 
 ### Return type
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 ## `upskillingSimulatorPOST()`
 
 ```php
-upskillingSimulatorPOST($upskilling_request, $lang, $min_score): \OpenAPI\Client\Model\Upskilling
+upskillingSimulatorPOST($upskilling_request, $dst_lang, $min_score): \OpenAPI\Client\Model\Upskilling
 ```
 
 Upskilling simulator
@@ -230,11 +230,11 @@ $apiInstance = new OpenAPI\Client\Api\MappingCareerCausewaysApi(
     $config
 );
 $upskilling_request = {"OriginOccupation":"data analyst","TransitionType":"viable","Skills":["big data","python"]}; // \OpenAPI\Client\Model\UpskillingRequest
-$lang = 'it'; // string | Output language.
+$dst_lang = 'it'; // string | Output language.
 $min_score = 0.2; // float | Minimum similarity score for ESCO mapping.
 
 try {
-    $result = $apiInstance->upskillingSimulatorPOST($upskilling_request, $lang, $min_score);
+    $result = $apiInstance->upskillingSimulatorPOST($upskilling_request, $dst_lang, $min_score);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MappingCareerCausewaysApi->upskillingSimulatorPOST: ', $e->getMessage(), PHP_EOL;
@@ -246,7 +246,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **upskilling_request** | [**\OpenAPI\Client\Model\UpskillingRequest**](../Model/UpskillingRequest.md)|  |
- **lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
  **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
 
 ### Return type

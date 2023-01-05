@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **output_language** | **string** |  | [optional] [default to 'it']
 **entity_type** | **string** |  |
 **allowed_outputs** | [**\OpenAPI\Client\Model\AllowedOutput[]**](AllowedOutput.md) |  |
-**id** | [**AnyOfStringInteger**](AnyOfStringInteger.md) |  | [optional]
+**id** | [**\OpenAPI\Client\Model\Id**](Id.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **remote_working** | [**\OpenAPI\Client\Model\JobAdRemoteWorking**](JobAdRemoteWorking.md) |  | [optional]
 **experience** | [**\OpenAPI\Client\Model\Experience**](Experience.md) |  | [optional]
 **education** | [**\OpenAPI\Client\Model\OptionalRequiredAndPreferredEducation**](OptionalRequiredAndPreferredEducation.md) |  | [optional]
-**skills** | [**AnyOfRequiredAndPreferredConstrainedListValueRequiredConstrainedListValuePreferredConstrainedListValue**](AnyOfRequiredAndPreferredConstrainedListValueRequiredConstrainedListValuePreferredConstrainedListValue.md) | Required or preferred skills. |
-**languages** | [**\OpenAPI\Client\Model\OptionalRequiredAndPreferredListJobAdLanguage**](OptionalRequiredAndPreferredListJobAdLanguage.md) |  | [optional]
+**skills** | [**\OpenAPI\Client\Model\Skills**](Skills.md) |  |
+**languages** | [**\OpenAPI\Client\Model\OptionalRequiredAndPreferredConListLanguages**](OptionalRequiredAndPreferredConListLanguages.md) |  | [optional]
 **related_job_titles** | [**\OpenAPI\Client\Model\OptionalJobAdJobTitle[]**](OptionalJobAdJobTitle.md) | Additional Job Titles related to the opened position. | [optional]
 **employment** | [**\OpenAPI\Client\Model\JobTitleEmployment**](JobTitleEmployment.md) |  | [optional]
 **contract** | [**\OpenAPI\Client\Model\JobAdContract**](JobAdContract.md) |  | [optional]
@@ -26,5 +26,6 @@ Name | Type | Description | Notes
 **salary** | [**\OpenAPI\Client\Model\JobAdSalary**](JobAdSalary.md) |  | [optional]
 **benefits** | [**\OpenAPI\Client\Model\JobAdBenefit[]**](JobAdBenefit.md) | Offered benefits. | [optional]
 **expiration_date** | [**\OpenAPI\Client\Model\ValueModelDatetime**](ValueModelDatetime.md) |  | [optional]
+**status** | [**\OpenAPI\Client\Model\JobadCommonValueModelStr**](JobadCommonValueModelStr.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

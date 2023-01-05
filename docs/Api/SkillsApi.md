@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `similarSkillsGET()`
 
 ```php
-similarSkillsGET($query, $size, $min_score, $lang): \OpenAPI\Client\Model\SimilarEntitiesResponse
+similarSkillsGET($query, $size, $min_score, $src_lang, $dst_lang): \OpenAPI\Client\Model\SimilarEntitiesResponse
 ```
 
 Similar Skills
@@ -36,12 +36,13 @@ $apiInstance = new OpenAPI\Client\Api\SkillsApi(
     $config
 );
 $query = 'query_example'; // string | Input skill to be analyzed
-$size = 15; // int | Number of similar skills to return.
+$size = 5; // int | Number of similar skills to return.
 $min_score = 0.5; // float | Minimum pertinence score.
-$lang = 'it'; // string | Language of the skill.
+$src_lang = 'src_lang_example'; // string | Optional. Language of the input skills.If missing, the detected language is assumed as `src_lang`.
+$dst_lang = 'dst_lang_example'; // string | Optional. Language of the input skills.If missing, the detected language is assumed as `src_lang`.
 
 try {
-    $result = $apiInstance->similarSkillsGET($query, $size, $min_score, $lang);
+    $result = $apiInstance->similarSkillsGET($query, $size, $min_score, $src_lang, $dst_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SkillsApi->similarSkillsGET: ', $e->getMessage(), PHP_EOL;
@@ -53,9 +54,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **string**| Input skill to be analyzed |
- **size** | **int**| Number of similar skills to return. | [optional] [default to 15]
+ **size** | **int**| Number of similar skills to return. | [optional] [default to 5]
  **min_score** | **float**| Minimum pertinence score. | [optional] [default to 0.5]
- **lang** | **string**| Language of the skill. | [optional] [default to &#39;it&#39;]
+ **src_lang** | **string**| Optional. Language of the input skills.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional]
+ **dst_lang** | **string**| Optional. Language of the input skills.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional]
 
 ### Return type
 
@@ -77,7 +79,7 @@ Name | Type | Description  | Notes
 ## `skillsClassificationPOST()`
 
 ```php
-skillsClassificationPOST($skills_classification_request, $lang): \OpenAPI\Client\Model\SkillsClassificationResponse
+skillsClassificationPOST($skills_classification_request, $src_lang): \OpenAPI\Client\Model\SkillsClassificationResponse
 ```
 
 Skills Classification
@@ -102,10 +104,10 @@ $apiInstance = new OpenAPI\Client\Api\SkillsApi(
     $config
 );
 $skills_classification_request = {"Skills":["microsoft office","flexibility","chinese cuisine","bulgarian"]}; // \OpenAPI\Client\Model\SkillsClassificationRequest
-$lang = 'it'; // string | Language of the skill.
+$src_lang = 'src_lang_example'; // string | Language of the input skills.
 
 try {
-    $result = $apiInstance->skillsClassificationPOST($skills_classification_request, $lang);
+    $result = $apiInstance->skillsClassificationPOST($skills_classification_request, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SkillsApi->skillsClassificationPOST: ', $e->getMessage(), PHP_EOL;
@@ -117,7 +119,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **skills_classification_request** | [**\OpenAPI\Client\Model\SkillsClassificationRequest**](../Model/SkillsClassificationRequest.md)|  |
- **lang** | **string**| Language of the skill. | [optional] [default to &#39;it&#39;]
+ **src_lang** | **string**| Language of the input skills. | [optional]
 
 ### Return type
 

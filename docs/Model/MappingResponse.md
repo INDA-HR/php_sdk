@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**doc_type** | **string** |  | [optional]
+**indexname** | **string** |  |
 **custom** | **bool** | Whether custom fields exist or not. |
 **custom_fields** | **object** | Each item of its key-value pairs is the dot-notation path of a custom field and the relative type. | [optional]
 **multiplier** | **float** | How much the added custom fields will impact on pricing. | [optional]

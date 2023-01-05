@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**job_title** | [**\OpenAPI\Client\Model\MatchEvidenceTerms**](MatchEvidenceTerms.md) |  |
-**skills** | [**\OpenAPI\Client\Model\OptionalRequiredAndPreferredMatchEvidenceTerms**](OptionalRequiredAndPreferredMatchEvidenceTerms.md) |  | [optional]
-**experience** | [**\OpenAPI\Client\Model\MatchEvidenceExperience**](MatchEvidenceExperience.md) |  | [optional]
-**education** | [**\OpenAPI\Client\Model\MatchEvidenceEducation**](MatchEvidenceEducation.md) |  | [optional]
 **id** | **string** |  |
+**education** | [**\OpenAPI\Client\Model\MatchResumeEvidenceEducation**](MatchResumeEvidenceEducation.md) |  |
+**experience** | [**\OpenAPI\Client\Model\MatchResumeEvidenceExperience**](MatchResumeEvidenceExperience.md) |  |
+**skills** | [**\OpenAPI\Client\Model\MatchResumeEvidenceSkill[]**](MatchResumeEvidenceSkill.md) |  |
+**job_titles** | [**\OpenAPI\Client\Model\MatchResumeEvidenceJobTitle[]**](MatchResumeEvidenceJobTitle.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

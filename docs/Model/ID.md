@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**details** | [**\OpenAPI\Client\Model\EntityBaseDetails**](EntityBaseDetails.md) |  | [optional]
+**details** | [**\OpenAPI\Client\Model\OptionalEntityBaseDetails**](OptionalEntityBaseDetails.md) |  | [optional]
 **value** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

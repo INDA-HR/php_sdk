@@ -34,7 +34,7 @@ Method | HTTP request | Description
 ## `getCompanySizeGET()`
 
 ```php
-getCompanySizeGET($lang, $codes): \OpenAPI\Client\Model\GetExtendedStandardDataResponse
+getCompanySizeGET($dst_lang, $codes): \OpenAPI\Client\Model\GetExtendedStandardDataResponse
 ```
 
 Get Company Size
@@ -58,11 +58,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getCompanySizeGET($lang, $codes);
+    $result = $apiInstance->getCompanySizeGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getCompanySizeGET: ', $e->getMessage(), PHP_EOL;
@@ -73,7 +73,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 ## `getCompanyTypeGET()`
 
 ```php
-getCompanyTypeGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getCompanyTypeGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Company Type
@@ -120,11 +120,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getCompanyTypeGET($lang, $codes);
+    $result = $apiInstance->getCompanyTypeGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getCompanyTypeGET: ', $e->getMessage(), PHP_EOL;
@@ -135,7 +135,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ## `getContractTypeGET()`
 
 ```php
-getContractTypeGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getContractTypeGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Contract Type
@@ -182,11 +182,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getContractTypeGET($lang, $codes);
+    $result = $apiInstance->getContractTypeGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getContractTypeGET: ', $e->getMessage(), PHP_EOL;
@@ -197,7 +197,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 ## `getDisabilityGET()`
 
 ```php
-getDisabilityGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getDisabilityGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Disability
@@ -244,11 +244,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getDisabilityGET($lang, $codes);
+    $result = $apiInstance->getDisabilityGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getDisabilityGET: ', $e->getMessage(), PHP_EOL;
@@ -259,7 +259,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 ## `getEducationTitleGET()`
 
 ```php
-getEducationTitleGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getEducationTitleGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Education Title
@@ -306,11 +306,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getEducationTitleGET($lang, $codes);
+    $result = $apiInstance->getEducationTitleGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getEducationTitleGET: ', $e->getMessage(), PHP_EOL;
@@ -321,7 +321,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 ## `getEmailLabelGET()`
 
 ```php
-getEmailLabelGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getEmailLabelGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Email Label
@@ -368,11 +368,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getEmailLabelGET($lang, $codes);
+    $result = $apiInstance->getEmailLabelGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getEmailLabelGET: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +383,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 ## `getEmploymentTypeGET()`
 
 ```php
-getEmploymentTypeGET($lang, $codes): \OpenAPI\Client\Model\GetExtendedStandardDataResponse
+getEmploymentTypeGET($dst_lang, $codes): \OpenAPI\Client\Model\GetExtendedStandardDataResponse
 ```
 
 Get Employment Type
@@ -430,11 +430,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getEmploymentTypeGET($lang, $codes);
+    $result = $apiInstance->getEmploymentTypeGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getEmploymentTypeGET: ', $e->getMessage(), PHP_EOL;
@@ -445,7 +445,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 ## `getFieldOfStudyGET()`
 
 ```php
-getFieldOfStudyGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getFieldOfStudyGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Field Of Study
@@ -492,11 +492,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getFieldOfStudyGET($lang, $codes);
+    $result = $apiInstance->getFieldOfStudyGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getFieldOfStudyGET: ', $e->getMessage(), PHP_EOL;
@@ -507,7 +507,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -530,7 +530,7 @@ Name | Type | Description  | Notes
 ## `getGenderGET()`
 
 ```php
-getGenderGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getGenderGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Gender
@@ -554,11 +554,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getGenderGET($lang, $codes);
+    $result = $apiInstance->getGenderGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getGenderGET: ', $e->getMessage(), PHP_EOL;
@@ -569,7 +569,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 ## `getIndustriesGET()`
 
 ```php
-getIndustriesGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getIndustriesGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Industries
@@ -616,11 +616,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getIndustriesGET($lang, $codes);
+    $result = $apiInstance->getIndustriesGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getIndustriesGET: ', $e->getMessage(), PHP_EOL;
@@ -631,7 +631,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -654,7 +654,7 @@ Name | Type | Description  | Notes
 ## `getJobFunctionGET()`
 
 ```php
-getJobFunctionGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getJobFunctionGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Job Function
@@ -678,11 +678,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getJobFunctionGET($lang, $codes);
+    $result = $apiInstance->getJobFunctionGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getJobFunctionGET: ', $e->getMessage(), PHP_EOL;
@@ -693,7 +693,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -716,7 +716,7 @@ Name | Type | Description  | Notes
 ## `getJobshiftTypeGET()`
 
 ```php
-getJobshiftTypeGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getJobshiftTypeGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Jobshift Type
@@ -740,11 +740,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>it</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>it</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getJobshiftTypeGET($lang, $codes);
+    $result = $apiInstance->getJobshiftTypeGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getJobshiftTypeGET: ', $e->getMessage(), PHP_EOL;
@@ -755,7 +755,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -778,7 +778,7 @@ Name | Type | Description  | Notes
 ## `getLicenseCodeGET()`
 
 ```php
-getLicenseCodeGET($license_type, $lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getLicenseCodeGET($license_type, $dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get License Code
@@ -803,11 +803,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     $config
 );
 $license_type = 'license_type_example'; // string
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getLicenseCodeGET($license_type, $lang, $codes);
+    $result = $apiInstance->getLicenseCodeGET($license_type, $dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getLicenseCodeGET: ', $e->getMessage(), PHP_EOL;
@@ -819,7 +819,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **license_type** | **string**|  |
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -842,7 +842,7 @@ Name | Type | Description  | Notes
 ## `getLicenseTypeGET()`
 
 ```php
-getLicenseTypeGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getLicenseTypeGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get License Type
@@ -866,11 +866,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getLicenseTypeGET($lang, $codes);
+    $result = $apiInstance->getLicenseTypeGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getLicenseTypeGET: ', $e->getMessage(), PHP_EOL;
@@ -881,7 +881,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -904,7 +904,7 @@ Name | Type | Description  | Notes
 ## `getLinkLabelGET()`
 
 ```php
-getLinkLabelGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getLinkLabelGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Link Label
@@ -928,11 +928,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getLinkLabelGET($lang, $codes);
+    $result = $apiInstance->getLinkLabelGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getLinkLabelGET: ', $e->getMessage(), PHP_EOL;
@@ -943,7 +943,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -966,7 +966,7 @@ Name | Type | Description  | Notes
 ## `getMaritalStatusGET()`
 
 ```php
-getMaritalStatusGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getMaritalStatusGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Marital Status
@@ -990,11 +990,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getMaritalStatusGET($lang, $codes);
+    $result = $apiInstance->getMaritalStatusGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getMaritalStatusGET: ', $e->getMessage(), PHP_EOL;
@@ -1005,7 +1005,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1028,7 +1028,7 @@ Name | Type | Description  | Notes
 ## `getNamePrefixGET()`
 
 ```php
-getNamePrefixGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getNamePrefixGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Name Prefix
@@ -1052,11 +1052,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getNamePrefixGET($lang, $codes);
+    $result = $apiInstance->getNamePrefixGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getNamePrefixGET: ', $e->getMessage(), PHP_EOL;
@@ -1067,7 +1067,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1090,7 +1090,7 @@ Name | Type | Description  | Notes
 ## `getNameSuffixGET()`
 
 ```php
-getNameSuffixGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getNameSuffixGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Name Suffix
@@ -1114,11 +1114,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getNameSuffixGET($lang, $codes);
+    $result = $apiInstance->getNameSuffixGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getNameSuffixGET: ', $e->getMessage(), PHP_EOL;
@@ -1129,7 +1129,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1152,7 +1152,7 @@ Name | Type | Description  | Notes
 ## `getPatentStatusGET()`
 
 ```php
-getPatentStatusGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getPatentStatusGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Patent Status
@@ -1176,11 +1176,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getPatentStatusGET($lang, $codes);
+    $result = $apiInstance->getPatentStatusGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getPatentStatusGET: ', $e->getMessage(), PHP_EOL;
@@ -1191,7 +1191,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1214,7 +1214,7 @@ Name | Type | Description  | Notes
 ## `getPhoneLabelGET()`
 
 ```php
-getPhoneLabelGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getPhoneLabelGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Phone Label
@@ -1238,11 +1238,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getPhoneLabelGET($lang, $codes);
+    $result = $apiInstance->getPhoneLabelGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getPhoneLabelGET: ', $e->getMessage(), PHP_EOL;
@@ -1253,7 +1253,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1276,7 +1276,7 @@ Name | Type | Description  | Notes
 ## `getProtectedGroupGET()`
 
 ```php
-getProtectedGroupGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getProtectedGroupGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Protected Group
@@ -1300,11 +1300,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getProtectedGroupGET($lang, $codes);
+    $result = $apiInstance->getProtectedGroupGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getProtectedGroupGET: ', $e->getMessage(), PHP_EOL;
@@ -1315,7 +1315,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1338,7 +1338,7 @@ Name | Type | Description  | Notes
 ## `getRemoteWorkingGET()`
 
 ```php
-getRemoteWorkingGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getRemoteWorkingGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Remote Working
@@ -1362,11 +1362,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getRemoteWorkingGET($lang, $codes);
+    $result = $apiInstance->getRemoteWorkingGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getRemoteWorkingGET: ', $e->getMessage(), PHP_EOL;
@@ -1377,7 +1377,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1400,7 +1400,7 @@ Name | Type | Description  | Notes
 ## `getSalaryFrequencyGET()`
 
 ```php
-getSalaryFrequencyGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getSalaryFrequencyGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Salary Frequency
@@ -1424,11 +1424,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getSalaryFrequencyGET($lang, $codes);
+    $result = $apiInstance->getSalaryFrequencyGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getSalaryFrequencyGET: ', $e->getMessage(), PHP_EOL;
@@ -1439,7 +1439,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1462,7 +1462,7 @@ Name | Type | Description  | Notes
 ## `getSalaryTypeGET()`
 
 ```php
-getSalaryTypeGET($lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
+getSalaryTypeGET($dst_lang, $codes): \OpenAPI\Client\Model\GetStandardDataResponse
 ```
 
 Get Salary Type
@@ -1486,11 +1486,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getSalaryTypeGET($lang, $codes);
+    $result = $apiInstance->getSalaryTypeGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getSalaryTypeGET: ', $e->getMessage(), PHP_EOL;
@@ -1501,7 +1501,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type
@@ -1524,7 +1524,7 @@ Name | Type | Description  | Notes
 ## `getSeniorityLevelGET()`
 
 ```php
-getSeniorityLevelGET($lang, $codes): \OpenAPI\Client\Model\GetExtendedStandardDataResponse
+getSeniorityLevelGET($dst_lang, $codes): \OpenAPI\Client\Model\GetExtendedStandardDataResponse
 ```
 
 Get Seniority Level
@@ -1548,11 +1548,11 @@ $apiInstance = new OpenAPI\Client\Api\StandardizedDataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
+$dst_lang = 'it'; // string | The language in which the 'Value' is returned. Supported languages: <code style='color: #333333; opacity: 0.9'>it</code>, <code style='color: #333333; opacity: 0.9'>en</code>, <code style='color: #333333; opacity: 0.9'>es</code>, <code style='color: #333333; opacity: 0.9'>pt</code>, <code style='color: #333333; opacity: 0.9'>de</code>, <code style='color: #333333; opacity: 0.9'>fr</code>, <code style='color: #333333; opacity: 0.9'>pl</code>
 $codes = NULL; // mixed[] | If <code style='color: #333333; opacity: 0.9'>null</code> the API returns all the corresponding <code style='color: #333333; opacity: 0.9'>lang</code> data.
 
 try {
-    $result = $apiInstance->getSeniorityLevelGET($lang, $codes);
+    $result = $apiInstance->getSeniorityLevelGET($dst_lang, $codes);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StandardizedDataApi->getSeniorityLevelGET: ', $e->getMessage(), PHP_EOL;
@@ -1563,7 +1563,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
+ **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
  **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
 
 ### Return type

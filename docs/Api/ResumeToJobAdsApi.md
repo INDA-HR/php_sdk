@@ -77,12 +77,12 @@ Name | Type | Description  | Notes
 ## `matchJobadsEvidencePOST()`
 
 ```php
-matchJobadsEvidencePOST($indexname, $jobad_matching_evidence_query): \OpenAPI\Client\Model\MatchJobAdEvidenceResponse
+matchJobadsEvidencePOST($indexname, $jobad_matching_evidence_query, $src_lang): \OpenAPI\Client\Model\MatchJobAdEvidenceResponse
 ```
 
 Match JobAds Evidence
 
-This method provides details about the score of a list of job adverts according to the matching with a given resume.  The method should be used after the call of [Match JobAds](https://api.inda.ai/hr/docs/v2/#operation/match_jobads__POST) or [Match JobAds from indexed Resume](https://api.inda.ai/hr/docs/v2/#operation/match_jobads_from_indexed_resume__POST), on a *JobadID* or a set of *JobadID*s returned by one of these methods, in order to obtain the evidence of the matching score.  The relevant information for the matching evidence is the same described in the [Match JobAds](https://api.inda.ai/hr/docs/v2/#operation/match_jobads__POST) method.  For each *JobAdID*, the method returns + A global matching score between all the job titles specified in the job advert and the resume job titles + A detail for each job title in the job advert, containing a matching score for this specified job title and a list of entities found in the resume which are semantically related to the specified job title + A global matching scores between the required skills specified in the job advert and the resume skills + A detail for each required skill in the job advert, containing a matching score for this specified skill and a list of entities found in the resume which are semantically related to the specified skill + An analogous information for the preferred skills specified in the job advert, if present. + A matching score between the [EQF level](https://en.wikipedia.org/wiki/European_Qualifications_Framework) of the candidate and the required and preferred EQF (if any) + A matching score between the total work experiences duration of the candidate and the required and preferred JobAd experience (if any)  Any *JobAdID* not corresponding to an available job advert in the index *indexname* will be ignored.  Note that the [Match JobAds Evidence from indexed Resume](https://api.inda.ai/hr/docs/v2/#operation/match_jobads_evidence_from_indexed_resume__POST), method can be used for a resume which has been already indexed.
+This method provides details about the score of a list of job adverts according to the matching with a given resume.  The method should be used after the call of [Match JobAds](https://api.inda.ai/hr/docs/v2/#operation/match_jobads__POST) or [Match JobAds from indexed Resume](https://api.inda.ai/hr/docs/v2/#operation/match_jobads_from_indexed_resume__POST), on a *JobadID* or a set of *JobadID*s returned by one of these methods, in order to obtain the evidence of the matching score.  The relevant information for the matching evidence is the same described in the [Match JobAds](https://api.inda.ai/hr/docs/v2/#operation/match_jobads__POST) method.  For each job advert *ID*, the method returns: + a matching score between the job advert's required and preferred [EQF level](https://en.wikipedia.org/wiki/European_Qualifications_Framework) and the candidate's one (if any); + a matching score between the job advert's required and preferred experience durations and the total duration of the candidate's work experiences (if any); + a matching score between the job advert's required and preferred seniorities and the candidate's seniority (if any); + a detail for each skill in the job advert, containing the relative matching score with respect to the resume; + a detail for each job title in the job advert, containing the relative matching score with respect to the resume.  Each aforementioned matching score has to be considered as an affinity score between job advert's and candidate's data, which contributes to the final [Match JobAds](https://api.inda.ai/hr/docs/v2/#operation/match_jobads__POST) response's <code style='color: #333333; opacity: 0.9'>Score</code>.  Any *JobAdID* not corresponding to an available job advert in the index *indexname* will be ignored.  Note that the [Match JobAds Evidence from indexed Resume](https://api.inda.ai/hr/docs/v2/#operation/match_jobads_evidence_from_indexed_resume__POST), method can be used for a resume which has been already indexed.
 
 ### Example
 
@@ -103,9 +103,10 @@ $apiInstance = new OpenAPI\Client\Api\ResumeToJobAdsApi(
 );
 $indexname = 'indexname_example'; // string
 $jobad_matching_evidence_query = new \OpenAPI\Client\Model\JobadMatchingEvidenceQuery(); // \OpenAPI\Client\Model\JobadMatchingEvidenceQuery
+$src_lang = 'src_lang_example'; // string | Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.PlainText* language is assumed as `src_lang`.
 
 try {
-    $result = $apiInstance->matchJobadsEvidencePOST($indexname, $jobad_matching_evidence_query);
+    $result = $apiInstance->matchJobadsEvidencePOST($indexname, $jobad_matching_evidence_query, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeToJobAdsApi->matchJobadsEvidencePOST: ', $e->getMessage(), PHP_EOL;
@@ -118,6 +119,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
  **jobad_matching_evidence_query** | [**\OpenAPI\Client\Model\JobadMatchingEvidenceQuery**](../Model/JobadMatchingEvidenceQuery.md)|  |
+ **src_lang** | **string**| Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.PlainText* language is assumed as &#x60;src_lang&#x60;. | [optional]
 
 ### Return type
 
@@ -139,7 +141,7 @@ Name | Type | Description  | Notes
 ## `matchJobadsFromIndexedResumePOST()`
 
 ```php
-matchJobadsFromIndexedResumePOST($indexname, $resume_id, $base_jobad_matching_query, $size, $min_score, $jobad_langs): \OpenAPI\Client\Model\SearchJobAdMatchResponse
+matchJobadsFromIndexedResumePOST($indexname, $resume_id, $base_jobad_matching_query, $size, $offset, $min_score, $dst_lang, $jobad_langs): \OpenAPI\Client\Model\SearchJobAdMatchResponse
 ```
 
 Match JobAds from indexed Resume
@@ -167,11 +169,13 @@ $indexname = 'indexname_example'; // string
 $resume_id = 'resume_id_example'; // string
 $base_jobad_matching_query = new \OpenAPI\Client\Model\BaseJobadMatchingQuery(); // \OpenAPI\Client\Model\BaseJobadMatchingQuery
 $size = 5; // int | Optional. Number of documents to return.
+$offset = 0; // int | Optional. Number of documents to skip. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>true</code>.
 $min_score = 0; // float | Optional. Minimum pertinence score.
-$jobad_langs = array('jobad_langs_example'); // string[] | Languages of the JobAds. Defaults to the Resume language.
+$dst_lang = array('dst_lang_example'); // string[] | Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results.
+$jobad_langs = array('jobad_langs_example'); // string[] | DEPRECATED: use <code style='color: #333333; opacity: 0.9'>dst_langs</code> instead. Results languages. If left empty then the results will not be filtered by language.
 
 try {
-    $result = $apiInstance->matchJobadsFromIndexedResumePOST($indexname, $resume_id, $base_jobad_matching_query, $size, $min_score, $jobad_langs);
+    $result = $apiInstance->matchJobadsFromIndexedResumePOST($indexname, $resume_id, $base_jobad_matching_query, $size, $offset, $min_score, $dst_lang, $jobad_langs);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeToJobAdsApi->matchJobadsFromIndexedResumePOST: ', $e->getMessage(), PHP_EOL;
@@ -186,8 +190,10 @@ Name | Type | Description  | Notes
  **resume_id** | **string**|  |
  **base_jobad_matching_query** | [**\OpenAPI\Client\Model\BaseJobadMatchingQuery**](../Model/BaseJobadMatchingQuery.md)|  |
  **size** | **int**| Optional. Number of documents to return. | [optional] [default to 5]
+ **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
  **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **jobad_langs** | [**string[]**](../Model/string.md)| Languages of the JobAds. Defaults to the Resume language. | [optional]
+ **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
+ **jobad_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional]
 
 ### Return type
 
@@ -209,7 +215,7 @@ Name | Type | Description  | Notes
 ## `matchJobadsPOST()`
 
 ```php
-matchJobadsPOST($indexname, $jobad_matching_query, $size, $min_score, $jobad_langs): \OpenAPI\Client\Model\SearchJobAdMatchResponse
+matchJobadsPOST($indexname, $jobad_matching_query, $size, $offset, $min_score, $src_lang, $dst_lang, $jobad_langs): \OpenAPI\Client\Model\SearchJobAdMatchResponse
 ```
 
 Match JobAds
@@ -236,11 +242,14 @@ $apiInstance = new OpenAPI\Client\Api\ResumeToJobAdsApi(
 $indexname = 'indexname_example'; // string
 $jobad_matching_query = new \OpenAPI\Client\Model\JobadMatchingQuery(); // \OpenAPI\Client\Model\JobadMatchingQuery
 $size = 5; // int | Optional. Number of documents to return.
+$offset = 0; // int | Optional. Number of documents to skip. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>true</code>.
 $min_score = 0; // float | Optional. Minimum pertinence score.
-$jobad_langs = array('jobad_langs_example'); // string[] | Languages of the JobAds. Defaults to the Resume language.
+$src_lang = 'src_lang_example'; // string | Job Description language. If left empty each section's language will detected automatically.
+$dst_lang = array('dst_lang_example'); // string[] | Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results.
+$jobad_langs = array('jobad_langs_example'); // string[] | DEPRECATED: use <code style='color: #333333; opacity: 0.9'>dst_langs</code> instead. Results languages. If left empty then the results will not be filtered by language.
 
 try {
-    $result = $apiInstance->matchJobadsPOST($indexname, $jobad_matching_query, $size, $min_score, $jobad_langs);
+    $result = $apiInstance->matchJobadsPOST($indexname, $jobad_matching_query, $size, $offset, $min_score, $src_lang, $dst_lang, $jobad_langs);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeToJobAdsApi->matchJobadsPOST: ', $e->getMessage(), PHP_EOL;
@@ -254,8 +263,11 @@ Name | Type | Description  | Notes
  **indexname** | **string**|  |
  **jobad_matching_query** | [**\OpenAPI\Client\Model\JobadMatchingQuery**](../Model/JobadMatchingQuery.md)|  |
  **size** | **int**| Optional. Number of documents to return. | [optional] [default to 5]
+ **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
  **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **jobad_langs** | [**string[]**](../Model/string.md)| Languages of the JobAds. Defaults to the Resume language. | [optional]
+ **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
+ **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
+ **jobad_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional]
 
 ### Return type
 

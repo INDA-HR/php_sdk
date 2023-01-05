@@ -20,12 +20,12 @@ Method | HTTP request | Description
 ## `addResumePOST()`
 
 ```php
-addResumePOST($indexname, $file_item_request, $sync, $resume_id): \OpenAPI\Client\Model\ItemIdResponse
+addResumePOST($indexname, $file_item_request, $sync, $resume_id, $src_lang, $dst_lang): \OpenAPI\Client\Model\ItemIdResponse
 ```
 
 Add Resume
 
-This method adds a resume to *indexname* and assigns it a *resume_id* (namely, a Unique Universal ID or UUID4).  On the right, we provide an example of input structure that corresponds to the result of the method [Parse Resume](https://api.inda.ai/hr/docs/v2/#operation/parse_resume__POST). However, the input structure is customizable. Further details can be found in the [Resume Model](https://api.inda.ai/hr/docs/v2/#tag/Resume) section.  This method adds the resume to be processed to the server's task queue and return immediately the *resume_id*. Note that the document may not successfully conclude the processing pipeline (e.g., it may be discarded because duplicate of one of the documents already present in the *indexname*), and thus it may not be actually added to the index.  In order to verify the resume status, the user can use the *resume_id* through the following methods: + [Resume Status](https://api.inda.ai/hr/docs/v2/#operation/resume_status__GET) + [Get Failures](https://api.inda.ai/hr/docs/v2/#operation/get_failures__GET)  For a synchronous approach, use the *sync* query parameter: if set to *true*, the resume is processed immediately. However, for standard usage in production environments, we recommend relying on the asynchronous strategy by ignoring  this parameter, in order to reduce the response times (due to the heterogeneity of resumes, the response time of each  resume processing can vary substantially among different documents).  Please note that, for user's convenience, the [API credits requests](https://api.inda.ai/hr/docs/v2/#tag/Credits-Management) assume that the  synchronous approach is named as *Add Resume Sync*, so that it can be easily distinguished from the asynchronous  *Add Resume*.
+This method adds a resume to *indexname* and assigns it a *resume_id* (namely, a Unique Universal ID or UUID4).  On the right, we provide an example of input structure that corresponds to the result of the method [Parse Resume](https://api.inda.ai/hr/docs/v2/#operation/parse_resume__POST). However, the input structure is customizable. Further details can be found in the [Resume Model](https://api.inda.ai/hr/docs/v2/#tag/Resume) section.  Entities among skills, job (or position) titles and languages are automatically mapped by INDAto the adopted knowledge base, so that users can leverage on standardized values.Original values and entity IDs are available in *Details.RawValues* and *Details.Code*, respectively.Unrecognized items are ignored and not indexed, except for the *WorkExperiences.PositionTitle* entities.  This method adds the resume to be processed to the server's task queue and return immediately the *resume_id*. Note that the document may not successfully conclude the processing pipeline (e.g., it may be discarded because duplicate of one of the documents already present in the *indexname*), and thus it may not be actually added to the index.  In order to verify the resume status, the user can use the *resume_id* through the following methods: + [Resume Status](https://api.inda.ai/hr/docs/v2/#operation/resume_status__GET) + [Get Failures](https://api.inda.ai/hr/docs/v2/#operation/get_failures__GET)  For a synchronous approach, use the *sync* query parameter: if set to *true*, the resume is processed immediately. However, for standard usage in production environments, we recommend relying on the asynchronous strategy by ignoring  this parameter, in order to reduce the response times (due to the heterogeneity of resumes, the response time of each  resume processing can vary substantially among different documents).  Please note that, for user's convenience, the [API credits requests](https://api.inda.ai/hr/docs/v2/#tag/Credits-Management) assume that the  synchronous approach is named as *Add Resume Sync*, so that it can be easily distinguished from the asynchronous  *Add Resume*.
 
 ### Example
 
@@ -48,9 +48,11 @@ $indexname = 'indexname_example'; // string
 $file_item_request = new \OpenAPI\Client\Model\FileItemRequest(); // \OpenAPI\Client\Model\FileItemRequest
 $sync = false; // bool | Optional. Whether to wait for the resume processing or not.
 $resume_id = 'resume_id_example'; // string | Optional. ID to use for the resume. Already existing IDs will cause a 409 error.
+$src_lang = 'src_lang_example'; // string | Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as `src_lang`.
+$dst_lang = 'dst_lang_example'; // string | Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected `src_lang` is assumed as `dst_lang`.
 
 try {
-    $result = $apiInstance->addResumePOST($indexname, $file_item_request, $sync, $resume_id);
+    $result = $apiInstance->addResumePOST($indexname, $file_item_request, $sync, $resume_id, $src_lang, $dst_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeManagementApi->addResumePOST: ', $e->getMessage(), PHP_EOL;
@@ -65,6 +67,8 @@ Name | Type | Description  | Notes
  **file_item_request** | [**\OpenAPI\Client\Model\FileItemRequest**](../Model/FileItemRequest.md)|  |
  **sync** | **bool**| Optional. Whether to wait for the resume processing or not. | [optional] [default to false]
  **resume_id** | **string**| Optional. ID to use for the resume. Already existing IDs will cause a 409 error. | [optional]
+ **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
+ **dst_lang** | **string**| Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional]
 
 ### Return type
 
@@ -458,12 +462,12 @@ Name | Type | Description  | Notes
 ## `patchResumePATCH()`
 
 ```php
-patchResumePATCH($indexname, $resume_id, $patch_item_request): \OpenAPI\Client\Model\PatchItemResponse
+patchResumePATCH($indexname, $resume_id, $patch_item_request, $src_lang): \OpenAPI\Client\Model\PatchItemResponse
 ```
 
 Patch Resume
 
-This method updates the information related to the resume stored with id *resume_id*.  This method accepts an application/json body with the same structure as [Add Resume](https://api.inda.ai/hr/docs/v2/#operation/add_resume__POST), however in this case all fields are optional. Fields that contain differences between the corresponding original ones are substituted, while new fields are added. Bear in mind that lists are considered as singular value, therefore to modify an entry in a list it is necessary to insert the full list.  Note that this method only modifies the information; in order to change the attached file, please refer to the method [Update Resume](https://api.inda.ai/hr/docs/v2/#operation/update_resume__PUT).
+This method updates the information related to the resume stored with id *resume_id*.  This method accepts an application/json body with the same structure as [Add Resume](https://api.inda.ai/hr/docs/v2/#operation/add_resume__POST), however in this case all fields are optional. Fields that contain differences between the corresponding original ones are substituted, while new fields are added. Bear in mind that lists are considered as singular value, therefore to modify an entry in a list it is necessary to insert the full list.  Note that this method only modifies the information; in order to change the attached file, please refer to the method [Update Resume](https://api.inda.ai/hr/docs/v2/#operation/update_resume__PUT).  Entities among skills, job (or position) titles and languages are automatically mapped by INDAto the adopted knowledge base, so that users can leverage on standardized values.Original values and entity IDs are available in *Details.RawValues* and *Details.Code*, respectively.Unrecognized items are ignored and not indexed, except for the *WorkExperiences.PositionTitle* entities.  Please note that, unlike the [Add Resume](https://api.inda.ai/hr/docs/v2/#operation/add_resume__POST), this function does not allowusers to set a `dst_lang`, as the one used at index time cannot be changed.It can be retrieved by accessing the *Metadata.Language* field.
 
 ### Example
 
@@ -485,9 +489,10 @@ $apiInstance = new OpenAPI\Client\Api\ResumeManagementApi(
 $indexname = 'indexname_example'; // string
 $resume_id = 'resume_id_example'; // string
 $patch_item_request = new \OpenAPI\Client\Model\PatchItemRequest(); // \OpenAPI\Client\Model\PatchItemRequest
+$src_lang = 'src_lang_example'; // string | Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the indexed *Attachment.CV.File* language is assumed as `src_lang`.
 
 try {
-    $result = $apiInstance->patchResumePATCH($indexname, $resume_id, $patch_item_request);
+    $result = $apiInstance->patchResumePATCH($indexname, $resume_id, $patch_item_request, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeManagementApi->patchResumePATCH: ', $e->getMessage(), PHP_EOL;
@@ -501,6 +506,7 @@ Name | Type | Description  | Notes
  **indexname** | **string**|  |
  **resume_id** | **string**|  |
  **patch_item_request** | [**\OpenAPI\Client\Model\PatchItemRequest**](../Model/PatchItemRequest.md)|  |
+ **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the indexed *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
 
 ### Return type
 
@@ -648,12 +654,12 @@ Name | Type | Description  | Notes
 ## `updateResumePUT()`
 
 ```php
-updateResumePUT($indexname, $resume_id, $update_item_request): \OpenAPI\Client\Model\BaseItemIdResponse
+updateResumePUT($indexname, $resume_id, $update_item_request, $src_lang): \OpenAPI\Client\Model\BaseItemIdResponse
 ```
 
 Update Resume
 
-This method updates both the information and the CV file (*Data.Attachments.CV.File*) related to the resume stored with  id *resume_id*.  This method manages to update the structured data in the same way [Patch Resume](https://api.inda.ai/hr/docs/v2/#operation/patch_resume__PATCH) does as well as  updating the corresponding CV file. It verifies if the file is duplicate with respect to the data already present into the *indexname*. If it finds a  possible duplicate with the same *resume_id* (if one is reuploading the same CV file) it proceeds updating the  structured data, skipping the file update, while it manages to completely delete the item *resume_id* if the file is  found on *indexname* but associated with a resume with different *resume_id*.  The method will enqueue the task and immediately return a response in an asynchronous fashion. In order to verify the  *resume_id* status one could rely on: + [Resume Status](https://api.inda.ai/hr/docs/v2/#operation/resume_status__GET) + [Get Failures](https://api.inda.ai/hr/docs/v2/#operation/get_failures__GET)
+This method updates both the information and the CV file (*Data.Attachments.CV.File*) related to the resume stored with  id *resume_id*.  This method manages to update the structured data in the same way [Patch Resume](https://api.inda.ai/hr/docs/v2/#operation/patch_resume__PATCH) does as well as  updating the corresponding CV file. It verifies if the file is duplicate with respect to the data already present into the *indexname*. If it finds a  possible duplicate with the same *resume_id* (if one is reuploading the same CV file) it proceeds updating the  structured data, skipping the file update, while it manages to completely delete the item *resume_id* if the file is  found on *indexname* but associated with a resume with different *resume_id*.  The method will enqueue the task and immediately return a response in an asynchronous fashion. In order to verify the  *resume_id* status one could rely on: + [Resume Status](https://api.inda.ai/hr/docs/v2/#operation/resume_status__GET) + [Get Failures](https://api.inda.ai/hr/docs/v2/#operation/get_failures__GET)  Entities among skills, job (or position) titles and languages are automatically mapped by INDAto the adopted knowledge base, so that users can leverage on standardized values.Original values and entity IDs are available in *Details.RawValues* and *Details.Code*, respectively.Unrecognized items are ignored and not indexed, except for the *WorkExperiences.PositionTitle* entities.  Please note that, unlike the [Add Resume](https://api.inda.ai/hr/docs/v2/#operation/add_resume__POST), this function does not allowusers to set a `dst_lang`, as the one used at index time cannot be changed.It can be retrieved by accessing the *Metadata.Language* field.
 
 ### Example
 
@@ -675,9 +681,10 @@ $apiInstance = new OpenAPI\Client\Api\ResumeManagementApi(
 $indexname = 'indexname_example'; // string
 $resume_id = 'resume_id_example'; // string
 $update_item_request = new \OpenAPI\Client\Model\UpdateItemRequest(); // \OpenAPI\Client\Model\UpdateItemRequest
+$src_lang = 'src_lang_example'; // string | Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as `src_lang`.
 
 try {
-    $result = $apiInstance->updateResumePUT($indexname, $resume_id, $update_item_request);
+    $result = $apiInstance->updateResumePUT($indexname, $resume_id, $update_item_request, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeManagementApi->updateResumePUT: ', $e->getMessage(), PHP_EOL;
@@ -691,6 +698,7 @@ Name | Type | Description  | Notes
  **indexname** | **string**|  |
  **resume_id** | **string**|  |
  **update_item_request** | [**\OpenAPI\Client\Model\UpdateItemRequest**](../Model/UpdateItemRequest.md)|  |
+ **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
 
 ### Return type
 

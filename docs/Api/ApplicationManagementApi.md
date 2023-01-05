@@ -46,7 +46,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $resume_id = 'resume_id_example'; // string
 $base_application_request = {"Data":{"Objective":{"Value":"PHP developer looking for a position at a small independent company."},"ProfessionalSummary":{"Value":"Software engineer with 3+ years experience and a particular interest for solving complex problems."},"DesiredSalary":{"Amount":{"Value":34000},"Currency":{"Value":"USD"},"Frequency":{"Value":"YEARLY"},"Type":{"Value":"GROSS"}},"DesiredBenefits":[{"Value":"vouchers"},{"Value":"pc"},{"Value":"phone"}],"OriginLinks":[{"Label":{"Value":"LinkedIn"},"URL":{"Value":"https://www.linkedin.com/jobs/view/php-developer-at-new-york-23415417368"}}]},"HiringDetails":{"ApplicationDate":"2021-04-12","HiringPipeline":[{"Date":"2021-04-12T09:20:23","Status":"APPLIED"}]}}; // \OpenAPI\Client\Model\BaseApplicationRequest
 
@@ -63,7 +63,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **resume_id** | **string**|  |
  **base_application_request** | [**\OpenAPI\Client\Model\BaseApplicationRequest**](../Model/BaseApplicationRequest.md)|  | [optional]
 
@@ -113,7 +113,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
 );
 $indexname = 'indexname_example'; // string
 $resume_id = 'resume_id_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $application_status_request = {"Date":"2021-04-23T16:10:03","Status":"INTERVIEW"}; // \OpenAPI\Client\Model\ApplicationStatusRequest
 
 try {
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
  **resume_id** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **application_status_request** | [**\OpenAPI\Client\Model\ApplicationStatusRequest**](../Model/ApplicationStatusRequest.md)|  |
 
 ### Return type
@@ -178,7 +178,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $resume_id = 'resume_id_example'; // string
 
 try {
@@ -194,7 +194,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **resume_id** | **string**|  |
 
 ### Return type
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 ## `applyPOST()`
 
 ```php
-applyPOST($indexname, $jobad_id, $apply_item_request, $resume_id): \OpenAPI\Client\Model\ApplicationIDResponse
+applyPOST($indexname, $jobad_id, $apply_item_request, $resume_id, $src_lang, $dst_lang): \OpenAPI\Client\Model\ApplicationIDResponse
 ```
 
 Apply
@@ -242,12 +242,14 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $apply_item_request = new \OpenAPI\Client\Model\ApplyItemRequest(); // \OpenAPI\Client\Model\ApplyItemRequest
 $resume_id = 'resume_id_example'; // string
+$src_lang = 'src_lang_example'; // string | Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as `src_lang`.
+$dst_lang = 'dst_lang_example'; // string | Optional. Destination language in which the following *Resume.Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected `src_lang` is assumed as `dst_lang`.
 
 try {
-    $result = $apiInstance->applyPOST($indexname, $jobad_id, $apply_item_request, $resume_id);
+    $result = $apiInstance->applyPOST($indexname, $jobad_id, $apply_item_request, $resume_id, $src_lang, $dst_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ApplicationManagementApi->applyPOST: ', $e->getMessage(), PHP_EOL;
@@ -259,9 +261,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **apply_item_request** | [**\OpenAPI\Client\Model\ApplyItemRequest**](../Model/ApplyItemRequest.md)|  |
  **resume_id** | **string**|  | [optional]
+ **src_lang** | **string**| Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
+ **dst_lang** | **string**| Optional. Destination language in which the following *Resume.Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional]
 
 ### Return type
 
@@ -308,7 +312,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 
 try {
     $result = $apiInstance->deleteApplicantsDELETE($indexname, $jobad_id);
@@ -323,7 +327,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
 
 ### Return type
 
@@ -370,7 +374,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $resume_id = 'resume_id_example'; // string
 
 try {
@@ -386,7 +390,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **resume_id** | **string**|  |
 
 ### Return type
@@ -434,7 +438,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $resume_id = 'resume_id_example'; // string
 $status = 'status_example'; // string | The status describes the hiring pipeline level. The statuses are: <code style='color: #333333; opacity: 0.9'>APPLIED</code>, <code style='color: #333333; opacity: 0.9'>SOURCED</code>, <code style='color: #333333; opacity: 0.9'>SCREEN</code>, <code style='color: #333333; opacity: 0.9'>INTERVIEW</code>, <code style='color: #333333; opacity: 0.9'>EVALUATION</code>, <code style='color: #333333; opacity: 0.9'>OFFER</code>, <code style='color: #333333; opacity: 0.9'>HIRED</code>, <code style='color: #333333; opacity: 0.9'>DISQUALIFIED</code>.
 $date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The date in which the status changed.
@@ -452,7 +456,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **resume_id** | **string**|  |
  **status** | **string**| The status describes the hiring pipeline level. The statuses are: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;APPLIED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;SOURCED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;SCREEN&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;INTERVIEW&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;EVALUATION&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;OFFER&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;HIRED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;DISQUALIFIED&lt;/code&gt;. |
  **date** | **\DateTime**| The date in which the status changed. | [optional]
@@ -564,7 +568,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $cache = true; // bool | Optional. Whether the search results should be cached or not.
 $cache_time = 300; // int | Optional. Seconds.Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>false</code>.
 $offset = 0; // int | Optional. Number of documents to skip. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>true</code>.
@@ -584,7 +588,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true]
  **cache_time** | **int**| Optional. Seconds.Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300]
  **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
@@ -637,7 +641,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
 );
 $indexname = 'indexname_example'; // string
 $resume_id = 'resume_id_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 
 try {
     $result = $apiInstance->getApplicationGET($indexname, $resume_id, $jobad_id);
@@ -653,7 +657,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
  **resume_id** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
 
 ### Return type
 
@@ -772,7 +776,7 @@ $apiInstance = new OpenAPI\Client\Api\ApplicationManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $resume_id = 'resume_id_example'; // string
 $patch_application_request = {"Data":{"ProfessionalSummary":{"Value":"PHP developer with 3+ years experience."},"DesiredBenefits":[{"Value":"vouchers"},{"Value":"pc"}]}}; // \OpenAPI\Client\Model\PatchApplicationRequest
 
@@ -789,7 +793,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **resume_id** | **string**|  |
  **patch_application_request** | [**\OpenAPI\Client\Model\PatchApplicationRequest**](../Model/PatchApplicationRequest.md)|  |
 

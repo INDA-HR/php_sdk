@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**\OpenAPI\Client\Model\CompanyCommonType**](CompanyCommonType.md) |  | [optional]
 **size** | [**\OpenAPI\Client\Model\Size**](Size.md) |  | [optional]
-**description** | [**\OpenAPI\Client\Model\JobadSectionsValueModelStrictStr**](JobadSectionsValueModelStrictStr.md) |  | [optional]
+**description** | [**\OpenAPI\Client\Model\BaseLocationsValueModelStrictStr**](BaseLocationsValueModelStrictStr.md) |  | [optional]
 **headquarters** | [**\OpenAPI\Client\Model\Headquarter[]**](Headquarter.md) | Company headquarters. | [optional]
 **branches** | [**\OpenAPI\Client\Model\Branch[]**](Branch.md) | Company branches. | [optional]
 **industries** | [**\OpenAPI\Client\Model\CompanyCommonIndustry[]**](CompanyCommonIndustry.md) | Company industries. Check the [Standardized Data](https://api.inda.ai/hr/docs/v2/#tag/Standardized-Data) section for more details. | [optional]
-**specialties** | [**\OpenAPI\Client\Model\JobadSectionsValueModelStrictStr[]**](JobadSectionsValueModelStrictStr.md) | Keywords useful to provide additional detail about company industries. | [optional]
+**specialties** | [**\OpenAPI\Client\Model\BaseLocationsValueModelStrictStr[]**](BaseLocationsValueModelStrictStr.md) | Keywords useful to provide additional detail about company industries. | [optional]
 **founded** | [**\OpenAPI\Client\Model\FoundationYear**](FoundationYear.md) |  | [optional]
 **logo** | [**\OpenAPI\Client\Model\JobadLinkLink**](JobadLinkLink.md) |  | [optional]
 **link** | [**\OpenAPI\Client\Model\JobadLinkLink**](JobadLinkLink.md) |  | [optional]

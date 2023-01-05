@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ## `similarWordsInResumePOST()`
 
 ```php
-similarWordsInResumePOST($indexname, $resume_id, $similar_words_query, $size): \OpenAPI\Client\Model\KeywordsResponse
+similarWordsInResumePOST($indexname, $resume_id, $similar_words_query, $size, $src_lang): \OpenAPI\Client\Model\KeywordsResponse
 ```
 
 Similar Words in Resume
@@ -100,9 +100,10 @@ $indexname = 'indexname_example'; // string
 $resume_id = 'resume_id_example'; // string
 $similar_words_query = {"QueryTerms":[{"Term":"marketing","Language":"en"},{"Term":"metalmeccanico","Language":"it"}]}; // \OpenAPI\Client\Model\SimilarWordsQuery
 $size = 3; // int | Number of elements to be returned, must be greater than <code style='color: #333333; opacity: 0.9'>0</code> and smaller or equal to <code style='color: #333333; opacity: 0.9'>5</code>.
+$src_lang = 'src_lang_example'; // string | Queries language. If left empty each query's language will detected automatically, if not it is not explicitly set into the request body.
 
 try {
-    $result = $apiInstance->similarWordsInResumePOST($indexname, $resume_id, $similar_words_query, $size);
+    $result = $apiInstance->similarWordsInResumePOST($indexname, $resume_id, $similar_words_query, $size, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling KeywordsSearchApi->similarWordsInResumePOST: ', $e->getMessage(), PHP_EOL;
@@ -117,6 +118,7 @@ Name | Type | Description  | Notes
  **resume_id** | **string**|  |
  **similar_words_query** | [**\OpenAPI\Client\Model\SimilarWordsQuery**](../Model/SimilarWordsQuery.md)|  |
  **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3]
+ **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
 
 ### Return type
 
@@ -138,7 +140,7 @@ Name | Type | Description  | Notes
 ## `similarWordsPOST()`
 
 ```php
-similarWordsPOST($similar_words_query, $size): \OpenAPI\Client\Model\KeywordsResponse
+similarWordsPOST($similar_words_query, $size, $src_lang): \OpenAPI\Client\Model\KeywordsResponse
 ```
 
 Similar Words
@@ -164,9 +166,10 @@ $apiInstance = new OpenAPI\Client\Api\KeywordsSearchApi(
 );
 $similar_words_query = {"QueryTerms":[{"Term":"marketing","Language":"en"},{"Term":"metalmeccanico","Language":"it"}]}; // \OpenAPI\Client\Model\SimilarWordsQuery
 $size = 3; // int | Number of elements to be returned, must be greater than <code style='color: #333333; opacity: 0.9'>0</code> and smaller or equal to <code style='color: #333333; opacity: 0.9'>5</code>.
+$src_lang = 'src_lang_example'; // string | Queries language. If left empty each query's language will detected automatically, if not it is not explicitly set into the request body.
 
 try {
-    $result = $apiInstance->similarWordsPOST($similar_words_query, $size);
+    $result = $apiInstance->similarWordsPOST($similar_words_query, $size, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling KeywordsSearchApi->similarWordsPOST: ', $e->getMessage(), PHP_EOL;
@@ -179,6 +182,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **similar_words_query** | [**\OpenAPI\Client\Model\SimilarWordsQuery**](../Model/SimilarWordsQuery.md)|  |
  **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3]
+ **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
 
 ### Return type
 

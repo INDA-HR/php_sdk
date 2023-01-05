@@ -114,7 +114,7 @@ $apiInstance = new OpenAPI\Client\Api\ResumeSearchApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$jobad_id = new \OpenAPI\Client\Model\AnyOfStringString(); // AnyOfStringString
+$jobad_id = new \OpenAPI\Client\Model\JobadId(); // JobadId
 $cache_time = 300; // int | Optional. Seconds.
 $size = 50; // int | Optional. Number of documents to return.
 $search_id = 'search_id_example'; // string | Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used.
@@ -133,7 +133,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
- **jobad_id** | [**AnyOfStringString**](../Model/.md)|  |
+ **jobad_id** | [**JobadId**](../Model/.md)|  |
  **cache_time** | **int**| Optional. Seconds. | [optional] [default to 300]
  **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
  **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 ## `searchResumesEvidencePOST()`
 
 ```php
-searchResumesEvidencePOST($indexname, $evidence_request, $size): \OpenAPI\Client\Model\SearchEvidence[]
+searchResumesEvidencePOST($indexname, $evidence_request, $size, $src_lang): \OpenAPI\Client\Model\SearchEvidence[]
 ```
 
 Search Resumes Evidence
@@ -186,9 +186,10 @@ $apiInstance = new OpenAPI\Client\Api\ResumeSearchApi(
 $indexname = 'indexname_example'; // string
 $evidence_request = {"QueryTerms":[{"Term":"marketing","Weight":0.3},{"Term":"machine learning","Weight":0.8}],"ResumeIDs":["a9f9ebe8-a01c-4be5-9ae8-e67bc5c643be","23db1bf4-c103-4193-826b-924dff3e1bec"]}; // \OpenAPI\Client\Model\EvidenceRequest
 $size = 3; // int | Number of elements to be returned, must be greater than <code style='color: #333333; opacity: 0.9'>0</code> and smaller or equal to <code style='color: #333333; opacity: 0.9'>5</code>.
+$src_lang = 'src_lang_example'; // string | Queries language. If left empty each query's language will detected automatically, if not it is not explicitly set into the request body.
 
 try {
-    $result = $apiInstance->searchResumesEvidencePOST($indexname, $evidence_request, $size);
+    $result = $apiInstance->searchResumesEvidencePOST($indexname, $evidence_request, $size, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeSearchApi->searchResumesEvidencePOST: ', $e->getMessage(), PHP_EOL;
@@ -202,6 +203,7 @@ Name | Type | Description  | Notes
  **indexname** | **string**|  |
  **evidence_request** | [**\OpenAPI\Client\Model\EvidenceRequest**](../Model/EvidenceRequest.md)|  |
  **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3]
+ **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
 
 ### Return type
 
@@ -223,7 +225,7 @@ Name | Type | Description  | Notes
 ## `searchResumesPOST()`
 
 ```php
-searchResumesPOST($indexname, $cache, $cache_time, $size, $offset, $min_score, $search_id, $docs_search_query): \OpenAPI\Client\Model\FoundDocsResponse
+searchResumesPOST($indexname, $cache, $cache_time, $size, $offset, $min_score, $search_id, $src_lang, $dst_lang, $docs_search_query): \OpenAPI\Client\Model\FoundDocsResponse
 ```
 
 Search Resumes
@@ -254,10 +256,12 @@ $size = 50; // int | Optional. Number of documents to return.
 $offset = 0; // int | Optional. Number of documents to skip. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>true</code>.
 $min_score = 0; // float | Optional. Minimum pertinence score.
 $search_id = 'search_id_example'; // string | Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used.
+$src_lang = 'src_lang_example'; // string | Queries language. If left empty each query's language will detected automatically, if not it is not explicitly set into the request body.
+$dst_lang = array('dst_lang_example'); // string[] | Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results.
 $docs_search_query = new \OpenAPI\Client\Model\DocsSearchQuery(); // \OpenAPI\Client\Model\DocsSearchQuery
 
 try {
-    $result = $apiInstance->searchResumesPOST($indexname, $cache, $cache_time, $size, $offset, $min_score, $search_id, $docs_search_query);
+    $result = $apiInstance->searchResumesPOST($indexname, $cache, $cache_time, $size, $offset, $min_score, $search_id, $src_lang, $dst_lang, $docs_search_query);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeSearchApi->searchResumesPOST: ', $e->getMessage(), PHP_EOL;
@@ -275,6 +279,8 @@ Name | Type | Description  | Notes
  **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
  **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
  **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
+ **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
+ **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
  **docs_search_query** | [**\OpenAPI\Client\Model\DocsSearchQuery**](../Model/DocsSearchQuery.md)|  | [optional]
 
 ### Return type

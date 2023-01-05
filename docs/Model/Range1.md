@@ -1,0 +1,10 @@
+# # Range1
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**gte** | **\DateTime** |  |
+**lte** | **\DateTime** |  |
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

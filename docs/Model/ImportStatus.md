@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**doc_type** | **string** |  | [optional]
 **indexname** | **string** |  |
 **last_update** | **\DateTime** |  |
 **done** | **int** |  |

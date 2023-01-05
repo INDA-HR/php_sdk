@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**objective** | [**\OpenAPI\Client\Model\JobadSectionsValueModelStrictStr**](JobadSectionsValueModelStrictStr.md) |  | [optional]
-**professional_summary** | [**\OpenAPI\Client\Model\JobadSectionsValueModelStrictStr**](JobadSectionsValueModelStrictStr.md) |  | [optional]
+**objective** | [**\OpenAPI\Client\Model\BaseBenefitsValueModelStrictStr**](BaseBenefitsValueModelStrictStr.md) |  | [optional]
+**professional_summary** | [**\OpenAPI\Client\Model\BaseBenefitsValueModelStrictStr**](BaseBenefitsValueModelStrictStr.md) |  | [optional]
 **desired_employment** | [**\OpenAPI\Client\Model\ResumeEmployment**](ResumeEmployment.md) |  | [optional]
 **desired_contracts** | [**\OpenAPI\Client\Model\OptionalResumeContract[]**](OptionalResumeContract.md) | A candidate preference towards certain contracts. | [optional]
 **desired_salary** | [**\OpenAPI\Client\Model\OptionalResumeSalary**](OptionalResumeSalary.md) |  | [optional]

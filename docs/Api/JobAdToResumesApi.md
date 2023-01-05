@@ -77,12 +77,12 @@ Name | Type | Description  | Notes
 ## `matchResumesEvidencePOST()`
 
 ```php
-matchResumesEvidencePOST($indexname, $resume_matching_evidence_query): \OpenAPI\Client\Model\MatchResumeEvidenceResponse
+matchResumesEvidencePOST($indexname, $resume_matching_evidence_query, $src_lang): \OpenAPI\Client\Model\MatchResumeEvidenceResponse
 ```
 
 Match Resumes Evidence
 
-This method provides details about the score of a list of resumes according to the matching with a given job advert.  The method should be used after the call of [Match Resumes](https://api.inda.ai/hr/docs/v2/#operation/match_resumes__POST) or [Match Resumes from indexed JobAd](https://api.inda.ai/hr/docs/v2/#operation/match_resumes_from_indexed_jobad__POST), on a *ResumeID* or a set of *ResumeID*s returned by one of these methods, in order to obtain the evidence of the matching score.  The relevant information for the matching evidence is the same described in the [Match Resumes](https://api.inda.ai/hr/docs/v2/#operation/match_resumes__POST) method.  For each *ResumeID*, the method returns + A global matching score between all the job titles specified in the job advert and the resume job titles + A detail for each job title in the job advert, containing a matching score for this specified job title and a list of entities found in the resumes which are semantically related to the specified job title + A global matching scores between the required skills specified in the job advert and the resume skills + A detail for each required skill in the job advert, containing a matching score for this specified skill and a list of entities found in the resumes which are semantically related to the specified skill + An analogous information for the preferred skills specified in the job advert, if present. + A matching score between the [EQF level](https://en.wikipedia.org/wiki/European_Qualifications_Framework) of the candidate and the required and preferred EQF (if any) + A matching score between the experience of the candidate and the required and preferred experience (if any)  Any *ResumeID* not corresponding to an available resume in the index *indexname* will be ignored.  Note that the [Match Resumes Evidence from indexed JobAd](https://api.inda.ai/hr/docs/v2/#operation/match_resumes_evidence_from_indexed_jobad__POST), method can be used for a job advert which has been already indexed.
+This method provides details about the score of a list of resumes according to the matching with a given job advert.  The method should be used after the call of [Match Resumes](https://api.inda.ai/hr/docs/v2/#operation/match_resumes__POST) or [Match Resumes from indexed JobAd](https://api.inda.ai/hr/docs/v2/#operation/match_resumes_from_indexed_jobad__POST), on a *ResumeID* or a set of *ResumeID*s returned by one of these methods, in order to obtain the evidence of the matching score.  The relevant information for the matching evidence is the same described in the [Match Resumes](https://api.inda.ai/hr/docs/v2/#operation/match_resumes__POST) method.  For each resume *ID*, the method returns: + a matching score between the [EQF level](https://en.wikipedia.org/wiki/European_Qualifications_Framework) of the candidate and the job advert's required and preferred EQF (if any); + a matching score between the total duration of the candidate's work experiences and the job advert's required and preferred experience durations (if any); + a matching score between the candidate's seniority and the job advert's required and preferred seniorities (if any); + a detail for each skill in the resume, containing the relative matching score with respect to the job advert; + a detail for each job title in the resume, containing the relative matching score with respect to the job advert.  Each aforementioned matching score has to be considered as an affinity score between job advert's and candidate's data, which contributes to the final [Match Resumes](https://api.inda.ai/hr/docs/v2/#operation/match_resumes__POST) response's <code style='color: #333333; opacity: 0.9'>Score</code>.  Any *ResumeID* not corresponding to an available resume in the index *indexname* will be ignored.  Note that the [Match Resumes Evidence from indexed JobAd](https://api.inda.ai/hr/docs/v2/#operation/match_resumes_evidence_from_indexed_jobad__POST), method can be used for a job advert which has been already indexed.
 
 ### Example
 
@@ -103,9 +103,10 @@ $apiInstance = new OpenAPI\Client\Api\JobAdToResumesApi(
 );
 $indexname = 'indexname_example'; // string
 $resume_matching_evidence_query = {"JobAd":{"Data":{"JobTitle":{"Value":"Software Engineer","Details":{"Category":"IT","Weight":1,"Language":"en"}},"JobDescription":{"CompanyDescription":{"Title":{"Value":"Company Description"},"Content":{"Value":"TestCompany is a software house..."},"Details":{"Weight":0.1,"Language":"en"}},"PositionDescription":{"Title":{"Value":"Job Position"},"Content":{"Value":"We are looking for a skilled Software Engineer who..."}},"PositionRequirements":{"Title":{"Value":"Job Requirements"},"Content":{"Value":"- Passion for solving complex problems.\n- Knowledge of algorithms and data structures.\n..."}}},"JobLocations":[{"City":{"Value":"Turin"},"Country":{"Value":"Italy"},"CountryCode":{"Value":"IT"},"Region":{"Value":"Piedmont"}}],"RemoteWorking":{"Type":{"Value":"HYBRID","Details":{"IsPossible":true,"IsMandatory":false}}},"Experience":{"Duration":{"Required":{"Value":720},"Preferred":{"Value":180}},"Seniority":{"Required":{"Value":"2"}}},"Education":{"Required":{"Title":{"Value":"Bachelor's degree in Computer Science"},"EducationLevelCode":{"Value":{"EQF":6}}},"Preferred":{"Title":{"Value":"Master's degree in Computer Science"},"EducationLevelCode":{"Value":{"EQF":7}}}},"Skills":{"Required":[{"Value":"Analyzing information","Details":{"Weight":0.76,"Category":"hard"}},{"Value":"Teamwork","Details":{"Weight":0.745,"Category":"soft"}},{"Value":"Software design","Details":{"Weight":0.742,"Category":"IT"}}]},"RelatedJobTitles":[{"Value":"Software Developer","Details":{"Weight":0.937}}],"EmployerID":"6733b4be-9d3f-4aac-b1b1-a484ca43eda0","NumberOfOpenings":{"Value":2},"Link":{"URL":{"Value":"https://inrecruiting.intervieweb.it/app.php?CSRFToken=2947e9b2615e30d5&module=CompanyAnnounces&IdAnnuncio=102512"}},"AdvertisementSites":[{"Label":{"Value":"LinkedIn"},"URL":{"Value":"https://www.linkedin.com/jobs/view/php-developer-at-new-york-23415417368"}}],"Salary":{"Amount":{"Value":34000},"Currency":{"Value":"USD"},"Frequency":{"Value":"YEARLY"},"Type":{"Value":"GROSS"}},"Benefits":[{"Value":"vouchers"},{"Value":"pc"},{"Value":"phone"}],"ExpirationDate":{"Value":"2021-05-25T14:30:00"}},"Metadata":{"Language":"en"}},"ResumeIDs":["fc61f6df-8925-41e2-b1e9-612fe65ee374","fc61f6db-9527-71e7-c1e6-478fe65ee745"]}; // \OpenAPI\Client\Model\ResumeMatchingEvidenceQuery
+$src_lang = 'src_lang_example'; // string | Job Description language. If left empty each section's language will be detected automatically.
 
 try {
-    $result = $apiInstance->matchResumesEvidencePOST($indexname, $resume_matching_evidence_query);
+    $result = $apiInstance->matchResumesEvidencePOST($indexname, $resume_matching_evidence_query, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobAdToResumesApi->matchResumesEvidencePOST: ', $e->getMessage(), PHP_EOL;
@@ -118,6 +119,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
  **resume_matching_evidence_query** | [**\OpenAPI\Client\Model\ResumeMatchingEvidenceQuery**](../Model/ResumeMatchingEvidenceQuery.md)|  |
+ **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will be detected automatically. | [optional]
 
 ### Return type
 
@@ -139,7 +141,7 @@ Name | Type | Description  | Notes
 ## `matchResumesFromIndexedJobadPOST()`
 
 ```php
-matchResumesFromIndexedJobadPOST($indexname, $jobad_id, $base_resume_matching_query, $size, $min_score, $resume_langs, $only_applicants): \OpenAPI\Client\Model\SearchResumeMatchResponse
+matchResumesFromIndexedJobadPOST($indexname, $jobad_id, $base_resume_matching_query, $size, $offset, $min_score, $dst_lang, $resume_langs, $only_applicants, $exclude_applicants): \OpenAPI\Client\Model\SearchResumeMatchResponse
 ```
 
 Match Resumes from indexed JobAd
@@ -167,12 +169,15 @@ $indexname = 'indexname_example'; // string
 $jobad_id = 'jobad_id_example'; // string
 $base_resume_matching_query = new \OpenAPI\Client\Model\BaseResumeMatchingQuery(); // \OpenAPI\Client\Model\BaseResumeMatchingQuery
 $size = 20; // int | Optional. Number of documents to return.
+$offset = 0; // int | Optional. Number of documents to skip. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>true</code>.
 $min_score = 0; // float | Optional. Minimum pertinence score.
-$resume_langs = array('resume_langs_example'); // string[] | Languages of the Resumes. Defaults to the JobAd language.
-$only_applicants = true; // bool | If true, it narrows the search to the resumes registered to the job advert.
+$dst_lang = array('dst_lang_example'); // string[] | Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results.
+$resume_langs = array('resume_langs_example'); // string[] | DEPRECATED: use <code style='color: #333333; opacity: 0.9'>dst_langs</code> instead. Results languages. If left empty then the results will not be filtered by language.
+$only_applicants = false; // bool | If true, it narrows the search to the resumes registered to the job advert.
+$exclude_applicants = false; // bool | If true, it excludes the resumes registered to the job advert from the search results.
 
 try {
-    $result = $apiInstance->matchResumesFromIndexedJobadPOST($indexname, $jobad_id, $base_resume_matching_query, $size, $min_score, $resume_langs, $only_applicants);
+    $result = $apiInstance->matchResumesFromIndexedJobadPOST($indexname, $jobad_id, $base_resume_matching_query, $size, $offset, $min_score, $dst_lang, $resume_langs, $only_applicants, $exclude_applicants);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobAdToResumesApi->matchResumesFromIndexedJobadPOST: ', $e->getMessage(), PHP_EOL;
@@ -187,9 +192,12 @@ Name | Type | Description  | Notes
  **jobad_id** | **string**|  |
  **base_resume_matching_query** | [**\OpenAPI\Client\Model\BaseResumeMatchingQuery**](../Model/BaseResumeMatchingQuery.md)|  |
  **size** | **int**| Optional. Number of documents to return. | [optional] [default to 20]
+ **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
  **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **resume_langs** | [**string[]**](../Model/string.md)| Languages of the Resumes. Defaults to the JobAd language. | [optional]
- **only_applicants** | **bool**| If true, it narrows the search to the resumes registered to the job advert. | [optional] [default to true]
+ **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
+ **resume_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional]
+ **only_applicants** | **bool**| If true, it narrows the search to the resumes registered to the job advert. | [optional] [default to false]
+ **exclude_applicants** | **bool**| If true, it excludes the resumes registered to the job advert from the search results. | [optional] [default to false]
 
 ### Return type
 
@@ -211,7 +219,7 @@ Name | Type | Description  | Notes
 ## `matchResumesPOST()`
 
 ```php
-matchResumesPOST($indexname, $resume_matching_query, $size, $min_score, $resume_langs): \OpenAPI\Client\Model\SearchResumeMatchResponse
+matchResumesPOST($indexname, $resume_matching_query, $size, $offset, $min_score, $src_lang, $dst_lang, $resume_langs): \OpenAPI\Client\Model\SearchResumeMatchResponse
 ```
 
 Match Resumes
@@ -238,11 +246,14 @@ $apiInstance = new OpenAPI\Client\Api\JobAdToResumesApi(
 $indexname = 'indexname_example'; // string
 $resume_matching_query = new \OpenAPI\Client\Model\ResumeMatchingQuery(); // \OpenAPI\Client\Model\ResumeMatchingQuery
 $size = 20; // int | Optional. Number of documents to return.
+$offset = 0; // int | Optional. Number of documents to skip. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>true</code>.
 $min_score = 0; // float | Optional. Minimum pertinence score.
-$resume_langs = array('resume_langs_example'); // string[] | Languages of the Resumes. Defaults to the JobAd language.
+$src_lang = 'src_lang_example'; // string | Job Description language. If left empty each section's language will be detected automatically.
+$dst_lang = array('dst_lang_example'); // string[] | Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results.
+$resume_langs = array('resume_langs_example'); // string[] | DEPRECATED: use <code style='color: #333333; opacity: 0.9'>dst_langs</code> instead. Results languages. If left empty then the results will not be filtered by language.
 
 try {
-    $result = $apiInstance->matchResumesPOST($indexname, $resume_matching_query, $size, $min_score, $resume_langs);
+    $result = $apiInstance->matchResumesPOST($indexname, $resume_matching_query, $size, $offset, $min_score, $src_lang, $dst_lang, $resume_langs);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobAdToResumesApi->matchResumesPOST: ', $e->getMessage(), PHP_EOL;
@@ -256,8 +267,11 @@ Name | Type | Description  | Notes
  **indexname** | **string**|  |
  **resume_matching_query** | [**\OpenAPI\Client\Model\ResumeMatchingQuery**](../Model/ResumeMatchingQuery.md)|  |
  **size** | **int**| Optional. Number of documents to return. | [optional] [default to 20]
+ **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
  **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **resume_langs** | [**string[]**](../Model/string.md)| Languages of the Resumes. Defaults to the JobAd language. | [optional]
+ **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will be detected automatically. | [optional]
+ **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
+ **resume_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional]
 
 ### Return type
 

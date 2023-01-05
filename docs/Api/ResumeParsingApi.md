@@ -14,7 +14,7 @@ Method | HTTP request | Description
 ## `anonymizeCvPOST()`
 
 ```php
-anonymizeCvPOST($base_file_doc, $lang): \OpenAPI\Client\Model\DocumentAnonymizationResponse
+anonymizeCvPOST($base_file_doc, $src_lang): \OpenAPI\Client\Model\DocumentAnonymizationResponse
 ```
 
 Anonymize CV
@@ -39,10 +39,10 @@ $apiInstance = new OpenAPI\Client\Api\ResumeParsingApi(
     $config
 );
 $base_file_doc = {"File":"<binary of document>","FileExt":"<extension of document>"}; // \OpenAPI\Client\Model\BaseFileDoc
-$lang = 'lang_example'; // string | Language model to use to interpret the text, default is italian.
+$src_lang = 'src_lang_example'; // string | Language to use to interpret the text. If missing, language detection is performed.
 
 try {
-    $result = $apiInstance->anonymizeCvPOST($base_file_doc, $lang);
+    $result = $apiInstance->anonymizeCvPOST($base_file_doc, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeParsingApi->anonymizeCvPOST: ', $e->getMessage(), PHP_EOL;
@@ -54,7 +54,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **base_file_doc** | [**\OpenAPI\Client\Model\BaseFileDoc**](../Model/BaseFileDoc.md)|  |
- **lang** | **string**| Language model to use to interpret the text, default is italian. | [optional]
+ **src_lang** | **string**| Language to use to interpret the text. If missing, language detection is performed. | [optional]
 
 ### Return type
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 ## `parseResumePOST()`
 
 ```php
-parseResumePOST($base_file, $lang, $graphics): \OpenAPI\Client\Model\ExtractionItem
+parseResumePOST($base_file, $src_lang, $dst_lang, $graphics): \OpenAPI\Client\Model\ExtractionItem
 ```
 
 Parse Resume
@@ -221,11 +221,12 @@ $apiInstance = new OpenAPI\Client\Api\ResumeParsingApi(
     $config
 );
 $base_file = {"File":"<base64 of document>","FileExt":"<extension of document>"}; // \OpenAPI\Client\Model\BaseFile
-$lang = 'lang_example'; // string | Language to use in order to extract data from the text. Defaults to italian.
+$src_lang = 'src_lang_example'; // string | Optional. Language to use to extract data from the *Attachment.CV.File*.If missing, the detected language from the input file text is assumed as `src_lang`.
+$dst_lang = 'dst_lang_example'; // string | Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected `src_lang` is assumed as `dst_lang`.
 $graphics = false; // bool | Whether to read skill graphs such as bars, pie charts, and symbols.
 
 try {
-    $result = $apiInstance->parseResumePOST($base_file, $lang, $graphics);
+    $result = $apiInstance->parseResumePOST($base_file, $src_lang, $dst_lang, $graphics);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeParsingApi->parseResumePOST: ', $e->getMessage(), PHP_EOL;
@@ -237,7 +238,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **base_file** | [**\OpenAPI\Client\Model\BaseFile**](../Model/BaseFile.md)|  |
- **lang** | **string**| Language to use in order to extract data from the text. Defaults to italian. | [optional]
+ **src_lang** | **string**| Optional. Language to use to extract data from the *Attachment.CV.File*.If missing, the detected language from the input file text is assumed as &#x60;src_lang&#x60;. | [optional]
+ **dst_lang** | **string**| Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional]
  **graphics** | **bool**| Whether to read skill graphs such as bars, pie charts, and symbols. | [optional] [default to false]
 
 ### Return type

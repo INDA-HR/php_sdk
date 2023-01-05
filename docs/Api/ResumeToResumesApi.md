@@ -10,7 +10,7 @@ Method | HTTP request | Description
 ## `similarResumesPOST()`
 
 ```php
-similarResumesPOST($indexname, $resume_id, $similar_docs_search_query, $size, $offset, $min_score): \OpenAPI\Client\Model\FoundDocsResponse
+similarResumesPOST($indexname, $resume_id, $similar_docs_search_query, $size, $offset, $min_score, $dst_lang): \OpenAPI\Client\Model\FoundDocsResponse
 ```
 
 Similar Resumes
@@ -40,9 +40,10 @@ $similar_docs_search_query = new \OpenAPI\Client\Model\SimilarDocsSearchQuery();
 $size = 5; // int | Number of documents to return.
 $offset = 0; // int | Number of documents to skip.
 $min_score = 0; // float | Optional. Minimum pertinence score.
+$dst_lang = array('dst_lang_example'); // string[] | Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results.
 
 try {
-    $result = $apiInstance->similarResumesPOST($indexname, $resume_id, $similar_docs_search_query, $size, $offset, $min_score);
+    $result = $apiInstance->similarResumesPOST($indexname, $resume_id, $similar_docs_search_query, $size, $offset, $min_score, $dst_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeToResumesApi->similarResumesPOST: ', $e->getMessage(), PHP_EOL;
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
  **size** | **int**| Number of documents to return. | [optional] [default to 5]
  **offset** | **int**| Number of documents to skip. | [optional] [default to 0]
  **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
+ **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
 
 ### Return type
 

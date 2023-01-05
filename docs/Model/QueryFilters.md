@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**must** | [**\OpenAPI\Client\Model\FilterField[]**](FilterField.md) |  | [optional]
 **should** | [**\OpenAPI\Client\Model\FilterField[]**](FilterField.md) |  | [optional]
 **must_not** | [**\OpenAPI\Client\Model\FilterField[]**](FilterField.md) |  | [optional]
 **filter** | [**\OpenAPI\Client\Model\FilterField[]**](FilterField.md) |  | [optional]

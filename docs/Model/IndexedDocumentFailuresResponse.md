@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**doc_type** | **string** |  | [optional]
+**indexname** | **string** |  |
 **count** | **int** |  |
 **import_id** | **string** |  | [optional]
 **failures** | [**\OpenAPI\Client\Model\IndexedDocumentFailure[]**](IndexedDocumentFailure.md) |  |

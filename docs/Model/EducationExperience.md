@@ -16,5 +16,6 @@ Name | Type | Description | Notes
 **location** | [**\OpenAPI\Client\Model\ResumeLocationsLocation**](ResumeLocationsLocation.md) |  | [optional]
 **organization** | [**\OpenAPI\Client\Model\Organization**](Organization.md) |  | [optional]
 **courses** | [**\OpenAPI\Client\Model\Text[]**](Text.md) | List of attended courses. | [optional]
+**id** | **string** | Unique identifier for the current experience. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

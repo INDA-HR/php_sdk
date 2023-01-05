@@ -14,12 +14,12 @@ Method | HTTP request | Description
 ## `addJobadPOST()`
 
 ```php
-addJobadPOST($indexname, $job_ad_request, $jobad_id): \OpenAPI\Client\Model\JobAdIDResponse
+addJobadPOST($indexname, $job_ad_request, $src_lang, $dst_lang, $jobad_id): \OpenAPI\Client\Model\JobAdIDResponse
 ```
 
 Add JobAd
 
-This method adds a job advertisement to *indexname* and assigns it a *JobAdID* (namely, a Unique Universal ID or UUID4). This method requires an application/json as content type body.  On the right, we provide an example of input structure; further details are available in dedicated sections.  Note that it is mandatory for users to have previously added information about the employer through the  [Add Company](https://api.inda.ai/hr/docs/v2/#operation/add_company__POST) method; the returned *ID* is the required *EmployerID* of job advertisement data. Obviously, one may skip this step if employer company data already exists.  Furthermore, also *Skills* is a required field, since it is necessary to perform the  [Match Resume](https://api.inda.ai/hr/docs/v2/#operation/match_resumes__POST).  Users may leverage the [Extract Skills from JobAd](https://api.inda.ai/hr/docs/v2/#operation/extract_skills_from_jobad__POST) method and allow INDA to automatically extract skills by analyzing the job advertisement data. It is **highly recommended** to validate the retrieved skills before injecting them to *Add JobAd* requests.
+This method adds a job advertisement to *indexname* and assigns it a *JobAdID* (namely, a Unique Universal ID or UUID4). This method requires an application/json as content type body.  On the right, we provide an example of input structure; further details are available in dedicated sections.  Note that it is mandatory for users to have previously added information about the employer through the  [Add Company](https://api.inda.ai/hr/docs/v2/#operation/add_company__POST) method; the returned *ID* is the required *EmployerID* of job advertisement data. Obviously, one may skip this step if employer company data already exists.  Furthermore, also *Skills* is a required field, since it is necessary to perform the  [Match Resume](https://api.inda.ai/hr/docs/v2/#operation/match_resumes__POST).  Users may leverage the [Extract Skills from JobAd](https://api.inda.ai/hr/docs/v2/#operation/extract_skills_from_jobad__POST) method and allow INDA to automatically extract skills by analyzing the job advertisement data. It is **highly recommended** to validate the retrieved skills before injecting them to *Add JobAd* requests.  Entities among skills, job titles and languages are automatically mapped by INDAto the adopted knowledge base, so that users can leverage on standardized values.Original values and entity IDs are available in *Details.RawValues* and *Details.Code*, respectively.
 
 ### Example
 
@@ -39,11 +39,13 @@ $apiInstance = new OpenAPI\Client\Api\JobAdManagementApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$job_ad_request = {"Data":{"JobTitle":{"Value":"Software Engineer","Details":{"Category":"IT","Weight":1,"Language":"en"}},"JobDescription":{"CompanyDescription":{"Title":{"Value":"Company Description"},"Content":{"Value":"TestCompany is a software house..."},"Details":{"Weight":0.1,"Language":"en"}},"PositionDescription":{"Title":{"Value":"Job Position"},"Content":{"Value":"We are looking for a skilled Software Engineer who..."}},"PositionRequirements":{"Title":{"Value":"Job Requirements"},"Content":{"Value":"- Passion for solving complex problems.\n- Knowledge of algorithms and data structures.\n..."}}},"JobLocations":[{"City":{"Value":"Turin"},"Country":{"Value":"Italy"},"CountryCode":{"Value":"IT"},"Region":{"Value":"Piedmont"}}],"RemoteWorking":{"Type":{"Value":"HYBRID","Details":{"IsPossible":true,"IsMandatory":false}}},"Experience":{"Seniority":{"Required":{"Value":"2"}}},"Education":{"Required":{"Title":{"Value":"Bachelor's degree in Computer Science"},"EducationLevelCode":{"Value":{"EQF":6}}},"Preferred":{"Title":{"Value":"Master's degree in Computer Science"},"EducationLevelCode":{"Value":{"EQF":7}}}},"Skills":{"Required":[{"Value":"Analyzing information","Details":{"Weight":0.76,"Category":"hard"}},{"Value":"Teamwork","Details":{"Weight":0.745,"Category":"soft"}},{"Value":"Software design","Details":{"Weight":0.742,"Category":"IT"}}]},"RelatedJobTitles":[{"Value":"Software Developer","Details":{"Weight":0.937}}],"EmployerID":"6733b4be-9d3f-4aac-b1b1-a484ca43eda0","NumberOfOpenings":{"Value":2},"Link":{"URL":{"Value":"https://inrecruiting.intervieweb.it/app.php?CSRFToken=2947e9b2615e30d5&module=CompanyAnnounces&IdAnnuncio=102512"}},"AdvertisementSites":[{"Label":{"Value":"LinkedIn"},"URL":{"Value":"https://www.linkedin.com/jobs/view/php-developer-at-new-york-23415417368"}}],"Salary":{"Amount":{"Value":34000},"Currency":{"Value":"USD"},"Frequency":{"Value":"YEARLY"},"Type":{"Value":"GROSS"}},"Benefits":[{"Value":"vouchers"},{"Value":"pc"},{"Value":"phone"}],"ExpirationDate":{"Value":"2021-05-25T14:30:00"}},"Metadata":{"Language":"en"}}; // \OpenAPI\Client\Model\JobAdRequest
+$job_ad_request = new \OpenAPI\Client\Model\JobAdRequest(); // \OpenAPI\Client\Model\JobAdRequest
+$src_lang = 'src_lang_example'; // string | Job Description language. If left empty each section's language will detected automatically.
+$dst_lang = 'dst_lang_example'; // string | Extracted entities destination language. If left empty is assumed to be equal to the Job Description language.
 $jobad_id = 'jobad_id_example'; // string
 
 try {
-    $result = $apiInstance->addJobadPOST($indexname, $job_ad_request, $jobad_id);
+    $result = $apiInstance->addJobadPOST($indexname, $job_ad_request, $src_lang, $dst_lang, $jobad_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobAdManagementApi->addJobadPOST: ', $e->getMessage(), PHP_EOL;
@@ -56,6 +58,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **indexname** | **string**|  |
  **job_ad_request** | [**\OpenAPI\Client\Model\JobAdRequest**](../Model/JobAdRequest.md)|  |
+ **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
+ **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional]
  **jobad_id** | **string**|  | [optional]
 
 ### Return type
@@ -272,12 +276,12 @@ Name | Type | Description  | Notes
 ## `patchJobadPATCH()`
 
 ```php
-patchJobadPATCH($indexname, $jobad_id, $patch_job_ad_request): \OpenAPI\Client\Model\PatchJobAdResponse
+patchJobadPATCH($indexname, $jobad_id, $patch_job_ad_request, $src_lang): \OpenAPI\Client\Model\PatchJobAdResponse
 ```
 
 Patch JobAd
 
-This method updates the information related to the job advertisement stored with id *job_ad_id*.  This method accepts an application/json body with the same structure as [Add JobAd](https://api.inda.ai/hr/docs/v2/#operation/add_jobad__POST), however in this case all fields are optional.  Fields that contain differences between the corresponding original ones are substituted, while new fields are added. Bear in mind that lists are considered as singular value, therefore to modify an entry in a list it is necessary to insert the full list.
+This method updates the information related to the job advertisement stored with id *job_ad_id*.  This method accepts an application/json body with the same structure as [Add JobAd](https://api.inda.ai/hr/docs/v2/#operation/add_jobad__POST), however in this case all fields are optional.  Fields that contain differences between the corresponding original ones are substituted, while new fields are added. Bear in mind that lists are considered as singular value, therefore to modify an entry in a list it is necessary to insert the full list.  Entities among skills, job titles and languages are automatically mapped by INDAto the adopted knowledge base, so that users can leverage on standardized values.Original values and entity IDs are available in *Details.RawValues* and *Details.Code*, respectively.
 
 ### Example
 
@@ -298,10 +302,11 @@ $apiInstance = new OpenAPI\Client\Api\JobAdManagementApi(
 );
 $indexname = 'indexname_example'; // string
 $jobad_id = 'jobad_id_example'; // string
-$patch_job_ad_request = {"Data":{"JobDescription":{"PositionDescription":{"Content":{"Value":"We are looking for a Software Developer who..."}}},"Experience":{"Duration":{"Required":{"Value":300}},"Seniority":{"Required":{"Value":"3"}}},"NumberOfOpenings":{"Value":1},"Benefits":[{"Value":"vouchers"},{"Value":"pc"}],"ExpirationDate":{"Value":"2021-06-25T00:00:00"}}}; // \OpenAPI\Client\Model\PatchJobAdRequest
+$patch_job_ad_request = new \OpenAPI\Client\Model\PatchJobAdRequest(); // \OpenAPI\Client\Model\PatchJobAdRequest
+$src_lang = 'src_lang_example'; // string | Job Description language. If left empty each section's language will detected automatically.
 
 try {
-    $result = $apiInstance->patchJobadPATCH($indexname, $jobad_id, $patch_job_ad_request);
+    $result = $apiInstance->patchJobadPATCH($indexname, $jobad_id, $patch_job_ad_request, $src_lang);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobAdManagementApi->patchJobadPATCH: ', $e->getMessage(), PHP_EOL;
@@ -315,6 +320,7 @@ Name | Type | Description  | Notes
  **indexname** | **string**|  |
  **jobad_id** | **string**|  |
  **patch_job_ad_request** | [**\OpenAPI\Client\Model\PatchJobAdRequest**](../Model/PatchJobAdRequest.md)|  |
+ **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
 
 ### Return type
 

@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**doc_type** | **string** |  | [optional]
+**indexname** | **string** |  |
 **successful** | **bool** |  |
 **errors** | **object** |  |
 

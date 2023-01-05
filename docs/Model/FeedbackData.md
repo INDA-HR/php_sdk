@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**job_title** | [**\OpenAPI\Client\Model\ResumeJobTitle**](ResumeJobTitle.md) |  | [optional]
+**job_title** | [**\OpenAPI\Client\Model\OptionalResumeJobTitle**](OptionalResumeJobTitle.md) |  | [optional]
 **personal_info** | [**\OpenAPI\Client\Model\PersonalInfo**](PersonalInfo.md) |  | [optional]
 **contact_info** | [**\OpenAPI\Client\Model\ResumeContactInfoContactInfo**](ResumeContactInfoContactInfo.md) |  | [optional]
 **person_location** | [**\OpenAPI\Client\Model\PersonLocation**](PersonLocation.md) |  | [optional]
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **cover_letter** | [**\OpenAPI\Client\Model\Text**](Text.md) |  | [optional]
 **references** | [**\OpenAPI\Client\Model\Reference[]**](Reference.md) | Candidate&#39;s references. | [optional]
 **profile_summary** | [**\OpenAPI\Client\Model\ProfileSummary**](ProfileSummary.md) |  | [optional]
-**skills** | [**\OpenAPI\Client\Model\ResumeSkill[]**](ResumeSkill.md) | Candidate&#39;s skills. | [optional]
-**job_titles** | [**\OpenAPI\Client\Model\ResumeJobTitle[]**](ResumeJobTitle.md) | Candidate&#39;s job titles. | [optional]
+**skills** | [**\OpenAPI\Client\Model\OptionalResumeSkill[]**](OptionalResumeSkill.md) | Candidate&#39;s skills. | [optional]
+**job_titles** | [**\OpenAPI\Client\Model\OptionalResumeJobTitle[]**](OptionalResumeJobTitle.md) | Candidate&#39;s job titles. | [optional]
 **languages** | [**\OpenAPI\Client\Model\FeedbackLanguage[]**](FeedbackLanguage.md) |  | [optional]
 **certifications** | [**\OpenAPI\Client\Model\Certification[]**](Certification.md) | Certifications earned by the candidate. | [optional]
 **publications** | [**\OpenAPI\Client\Model\Publication[]**](Publication.md) | Candidate&#39;s publications, both academic papers and books. | [optional]

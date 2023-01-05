@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**doc_type** | **string** |  | [optional]
+**indexname** | **string** |  |
 **hits** | **int** |  |
 **total** | **int** |  |
 **out** | [**\OpenAPI\Client\Model\MostRecentItem[]**](MostRecentItem.md) |  |

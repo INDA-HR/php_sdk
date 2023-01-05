@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ## `companyAutocompleteGET()`
 
 ```php
-companyAutocompleteGET($term): \OpenAPI\Client\Model\CompanyAutocompleteResponse
+companyAutocompleteGET($term, $size, $token_order, $fuzzy): \OpenAPI\Client\Model\CompanyAutocompleteResponse
 ```
 
 Company Autocomplete
@@ -98,9 +98,12 @@ $apiInstance = new OpenAPI\Client\Api\CompanyManagementApi(
     $config
 );
 $term = 'term_example'; // string | Token to be completed
+$size = 10; // int | Response size.
+$token_order = 'any'; // string | Whether to autocomplete the term in a sequential way or not. The default *any* value guarantees good performances as well as flexible results.
+$fuzzy = false; // bool | Fuzzy search. If *True* performs a fuzzy search with max edits set to 2.
 
 try {
-    $result = $apiInstance->companyAutocompleteGET($term);
+    $result = $apiInstance->companyAutocompleteGET($term, $size, $token_order, $fuzzy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CompanyManagementApi->companyAutocompleteGET: ', $e->getMessage(), PHP_EOL;
@@ -112,6 +115,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **term** | **string**| Token to be completed |
+ **size** | **int**| Response size. | [optional] [default to 10]
+ **token_order** | **string**| Whether to autocomplete the term in a sequential way or not. The default *any* value guarantees good performances as well as flexible results. | [optional] [default to &#39;any&#39;]
+ **fuzzy** | **bool**| Fuzzy search. If *True* performs a fuzzy search with max edits set to 2. | [optional] [default to false]
 
 ### Return type
 

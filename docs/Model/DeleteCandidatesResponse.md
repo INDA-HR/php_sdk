@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**job_ad_id** | [**AnyOfStringString**](AnyOfStringString.md) |  |
+**job_ad_id** | [**\OpenAPI\Client\Model\Jobadid**](Jobadid.md) |  |
 **analysis_status** | **string** |  |
 **deleted** | **bool** |  |
 

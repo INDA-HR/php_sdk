@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**loc** | [**AnyOfStringInteger[]**](AnyOfStringInteger.md) |  |
+**loc** | [**\OpenAPI\Client\Model\LocationInner[]**](LocationInner.md) |  |
 **msg** | **string** |  |
 **type** | **string** |  |
 
