@@ -1,10 +1,10 @@
 # OpenAPI\Client\CreditsManagementApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**searchCreditsPOST()**](CreditsManagementApi.md#searchCreditsPOST) | **POST** /hr/v2/index/{indexname}/credits/ | Search Credits
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**searchCreditsPOST()**](CreditsManagementApi.md#searchCreditsPOST) | **POST** /hr/v2/index/{indexname}/credits/ | Search Credits |
 
 
 ## `searchCreditsPOST()`
@@ -47,10 +47,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **search_credits_request** | [**\OpenAPI\Client\Model\SearchCreditsRequest**](../Model/SearchCreditsRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **search_credits_request** | [**\OpenAPI\Client\Model\SearchCreditsRequest**](../Model/SearchCreditsRequest.md)|  | |
 
 ### Return type
 

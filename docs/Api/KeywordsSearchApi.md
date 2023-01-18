@@ -1,12 +1,12 @@
 # OpenAPI\Client\KeywordsSearchApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**keywordsAutocompleteGET()**](KeywordsSearchApi.md#keywordsAutocompleteGET) | **GET** /hr/v2/keywords/search/autocomplete/ | Keywords Autocomplete
-[**similarWordsInResumePOST()**](KeywordsSearchApi.md#similarWordsInResumePOST) | **POST** /hr/v2/index/{indexname}/resume/{resume_id}/keywords/search/semantic/ | Similar Words in Resume
-[**similarWordsPOST()**](KeywordsSearchApi.md#similarWordsPOST) | **POST** /hr/v2/keywords/search/semantic/ | Similar Words
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**keywordsAutocompleteGET()**](KeywordsSearchApi.md#keywordsAutocompleteGET) | **GET** /hr/v2/keywords/search/autocomplete/ | Keywords Autocomplete |
+| [**similarWordsInResumePOST()**](KeywordsSearchApi.md#similarWordsInResumePOST) | **POST** /hr/v2/index/{indexname}/resume/{resume_id}/keywords/search/semantic/ | Similar Words in Resume |
+| [**similarWordsPOST()**](KeywordsSearchApi.md#similarWordsPOST) | **POST** /hr/v2/keywords/search/semantic/ | Similar Words |
 
 
 ## `keywordsAutocompleteGET()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **term** | **string**| Token to be completed |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **term** | **string**| Token to be completed | |
 
 ### Return type
 
@@ -112,13 +112,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **similar_words_query** | [**\OpenAPI\Client\Model\SimilarWordsQuery**](../Model/SimilarWordsQuery.md)|  |
- **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3]
- **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **similar_words_query** | [**\OpenAPI\Client\Model\SimilarWordsQuery**](../Model/SimilarWordsQuery.md)|  | |
+| **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3] |
+| **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional] |
 
 ### Return type
 
@@ -178,11 +178,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **similar_words_query** | [**\OpenAPI\Client\Model\SimilarWordsQuery**](../Model/SimilarWordsQuery.md)|  |
- **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3]
- **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **similar_words_query** | [**\OpenAPI\Client\Model\SimilarWordsQuery**](../Model/SimilarWordsQuery.md)|  | |
+| **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3] |
+| **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional] |
 
 ### Return type
 

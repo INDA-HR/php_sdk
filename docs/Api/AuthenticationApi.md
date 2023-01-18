@@ -1,10 +1,10 @@
 # OpenAPI\Client\AuthenticationApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**logInPOST()**](AuthenticationApi.md#logInPOST) | **POST** /hr/v2/auth/login/ | Log In
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**logInPOST()**](AuthenticationApi.md#logInPOST) | **POST** /hr/v2/auth/login/ | Log In |
 
 
 ## `logInPOST()`
@@ -42,9 +42,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **login_data** | [**\OpenAPI\Client\Model\LoginData**](../Model/LoginData.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **login_data** | [**\OpenAPI\Client\Model\LoginData**](../Model/LoginData.md)|  | |
 
 ### Return type
 

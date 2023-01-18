@@ -1,21 +1,21 @@
 # OpenAPI\Client\ApplicationManagementApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addApplicationPOST()**](ApplicationManagementApi.md#addApplicationPOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Add Application
-[**addApplicationStagePOST()**](ApplicationManagementApi.md#addApplicationStagePOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/hiring-pipeline/stage/ | Add Application Stage
-[**applicationStatusGET()**](ApplicationManagementApi.md#applicationStatusGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/status/ | Application Status
-[**applyPOST()**](ApplicationManagementApi.md#applyPOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/apply/ | Apply
-[**deleteApplicantsDELETE()**](ApplicationManagementApi.md#deleteApplicantsDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resumes/ | Delete Applicants
-[**deleteApplicationDELETE()**](ApplicationManagementApi.md#deleteApplicationDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Delete Application
-[**deleteApplicationStageDELETE()**](ApplicationManagementApi.md#deleteApplicationStageDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/hiring-pipeline/stage/ | Delete Application Stage
-[**deleteApplicationsDELETE()**](ApplicationManagementApi.md#deleteApplicationsDELETE) | **DELETE** /hr/v2/index/{indexname}/resume/{resume_id}/applications/jobads/ | Delete Applications
-[**getApplicantsGET()**](ApplicationManagementApi.md#getApplicantsGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resumes/ | Get Applicants
-[**getApplicationGET()**](ApplicationManagementApi.md#getApplicationGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Get Application
-[**getApplicationsGET()**](ApplicationManagementApi.md#getApplicationsGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/applications/jobads/ | Get Applications
-[**patchApplicationPATCH()**](ApplicationManagementApi.md#patchApplicationPATCH) | **PATCH** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Patch Application
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addApplicationPOST()**](ApplicationManagementApi.md#addApplicationPOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Add Application |
+| [**addApplicationStagePOST()**](ApplicationManagementApi.md#addApplicationStagePOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/hiring-pipeline/stage/ | Add Application Stage |
+| [**applicationStatusGET()**](ApplicationManagementApi.md#applicationStatusGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/status/ | Application Status |
+| [**applyPOST()**](ApplicationManagementApi.md#applyPOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/apply/ | Apply |
+| [**deleteApplicantsDELETE()**](ApplicationManagementApi.md#deleteApplicantsDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resumes/ | Delete Applicants |
+| [**deleteApplicationDELETE()**](ApplicationManagementApi.md#deleteApplicationDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Delete Application |
+| [**deleteApplicationStageDELETE()**](ApplicationManagementApi.md#deleteApplicationStageDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/hiring-pipeline/stage/ | Delete Application Stage |
+| [**deleteApplicationsDELETE()**](ApplicationManagementApi.md#deleteApplicationsDELETE) | **DELETE** /hr/v2/index/{indexname}/resume/{resume_id}/applications/jobads/ | Delete Applications |
+| [**getApplicantsGET()**](ApplicationManagementApi.md#getApplicantsGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resumes/ | Get Applicants |
+| [**getApplicationGET()**](ApplicationManagementApi.md#getApplicationGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Get Application |
+| [**getApplicationsGET()**](ApplicationManagementApi.md#getApplicationsGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/applications/jobads/ | Get Applications |
+| [**patchApplicationPATCH()**](ApplicationManagementApi.md#patchApplicationPATCH) | **PATCH** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resume/{resume_id}/ | Patch Application |
 
 
 ## `addApplicationPOST()`
@@ -60,12 +60,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **resume_id** | **string**|  |
- **base_application_request** | [**\OpenAPI\Client\Model\BaseApplicationRequest**](../Model/BaseApplicationRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **resume_id** | **string**|  | |
+| **base_application_request** | [**\OpenAPI\Client\Model\BaseApplicationRequest**](../Model/BaseApplicationRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -126,12 +126,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **application_status_request** | [**\OpenAPI\Client\Model\ApplicationStatusRequest**](../Model/ApplicationStatusRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **application_status_request** | [**\OpenAPI\Client\Model\ApplicationStatusRequest**](../Model/ApplicationStatusRequest.md)|  | |
 
 ### Return type
 
@@ -191,11 +191,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -258,14 +258,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **apply_item_request** | [**\OpenAPI\Client\Model\ApplyItemRequest**](../Model/ApplyItemRequest.md)|  |
- **resume_id** | **string**|  | [optional]
- **src_lang** | **string**| Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
- **dst_lang** | **string**| Optional. Destination language in which the following *Resume.Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **apply_item_request** | [**\OpenAPI\Client\Model\ApplyItemRequest**](../Model/ApplyItemRequest.md)|  | |
+| **resume_id** | **string**|  | [optional] |
+| **src_lang** | **string**| Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional] |
+| **dst_lang** | **string**| Optional. Destination language in which the following *Resume.Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional] |
 
 ### Return type
 
@@ -324,10 +324,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
 
 ### Return type
 
@@ -387,11 +387,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -453,13 +453,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **resume_id** | **string**|  |
- **status** | **string**| The status describes the hiring pipeline level. The statuses are: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;APPLIED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;SOURCED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;SCREEN&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;INTERVIEW&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;EVALUATION&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;OFFER&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;HIRED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;DISQUALIFIED&lt;/code&gt;. |
- **date** | **\DateTime**| The date in which the status changed. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **resume_id** | **string**|  | |
+| **status** | **string**| The status describes the hiring pipeline level. The statuses are: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;APPLIED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;SOURCED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;SCREEN&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;INTERVIEW&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;EVALUATION&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;OFFER&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;HIRED&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;DISQUALIFIED&lt;/code&gt;. | |
+| **date** | **\DateTime**| The date in which the status changed. | [optional] |
 
 ### Return type
 
@@ -518,10 +518,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -585,15 +585,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true]
- **cache_time** | **int**| Optional. Seconds.Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true] |
+| **cache_time** | **int**| Optional. Seconds.Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
 
 ### Return type
 
@@ -653,11 +653,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
 
 ### Return type
 
@@ -721,15 +721,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true]
- **cache_time** | **int**| Optional. Seconds. | [optional] [default to 300]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *search_id*. The *search_id* may or may not  change between requests; however, only the most recently received *search_id* should be used. | [optional]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true] |
+| **cache_time** | **int**| Optional. Seconds. | [optional] [default to 300] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *search_id*. The *search_id* may or may not  change between requests; however, only the most recently received *search_id* should be used. | [optional] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
 
 ### Return type
 
@@ -790,12 +790,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **resume_id** | **string**|  |
- **patch_application_request** | [**\OpenAPI\Client\Model\PatchApplicationRequest**](../Model/PatchApplicationRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **resume_id** | **string**|  | |
+| **patch_application_request** | [**\OpenAPI\Client\Model\PatchApplicationRequest**](../Model/PatchApplicationRequest.md)|  | |
 
 ### Return type
 

@@ -1,13 +1,13 @@
 # OpenAPI\Client\CompanyManagementApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addCompanyPOST()**](CompanyManagementApi.md#addCompanyPOST) | **POST** /hr/v2/company/ | Add Company
-[**companyAutocompleteGET()**](CompanyManagementApi.md#companyAutocompleteGET) | **GET** /hr/v2/company/name/search/autocomplete/ | Company Autocomplete
-[**getCompanyGET()**](CompanyManagementApi.md#getCompanyGET) | **GET** /hr/v2/company/{company_id}/ | Get Company
-[**patchCompanyPATCH()**](CompanyManagementApi.md#patchCompanyPATCH) | **PATCH** /hr/v2/company/{company_id}/ | Patch Company
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addCompanyPOST()**](CompanyManagementApi.md#addCompanyPOST) | **POST** /hr/v2/company/ | Add Company |
+| [**companyAutocompleteGET()**](CompanyManagementApi.md#companyAutocompleteGET) | **GET** /hr/v2/company/name/search/autocomplete/ | Company Autocomplete |
+| [**getCompanyGET()**](CompanyManagementApi.md#getCompanyGET) | **GET** /hr/v2/company/{company_id}/ | Get Company |
+| [**patchCompanyPATCH()**](CompanyManagementApi.md#patchCompanyPATCH) | **PATCH** /hr/v2/company/{company_id}/ | Patch Company |
 
 
 ## `addCompanyPOST()`
@@ -49,9 +49,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_request** | [**\OpenAPI\Client\Model\CompanyRequest**](../Model/CompanyRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_request** | [**\OpenAPI\Client\Model\CompanyRequest**](../Model/CompanyRequest.md)|  | |
 
 ### Return type
 
@@ -112,12 +112,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **term** | **string**| Token to be completed |
- **size** | **int**| Response size. | [optional] [default to 10]
- **token_order** | **string**| Whether to autocomplete the term in a sequential way or not. The default *any* value guarantees good performances as well as flexible results. | [optional] [default to &#39;any&#39;]
- **fuzzy** | **bool**| Fuzzy search. If *True* performs a fuzzy search with max edits set to 2. | [optional] [default to false]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **term** | **string**| Token to be completed | |
+| **size** | **int**| Response size. | [optional] [default to 10] |
+| **token_order** | **string**| Whether to autocomplete the term in a sequential way or not. The default *any* value guarantees good performances as well as flexible results. | [optional] [default to &#39;any&#39;] |
+| **fuzzy** | **bool**| Fuzzy search. If *True* performs a fuzzy search with max edits set to 2. | [optional] [default to false] |
 
 ### Return type
 
@@ -175,9 +175,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**|  | |
 
 ### Return type
 
@@ -236,10 +236,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **string**|  |
- **patch_company_request** | [**\OpenAPI\Client\Model\PatchCompanyRequest**](../Model/PatchCompanyRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**|  | |
+| **patch_company_request** | [**\OpenAPI\Client\Model\PatchCompanyRequest**](../Model/PatchCompanyRequest.md)|  | |
 
 ### Return type
 

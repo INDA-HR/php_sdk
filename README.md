@@ -80,7 +80,7 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
     }
   ],
   "require": {
-    "inda-hr/php_sdk": "2.1.0"
+    "inda-hr/php_sdk": "2.2.0"
   }
 }
 ```

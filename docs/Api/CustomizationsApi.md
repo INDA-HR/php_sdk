@@ -1,11 +1,11 @@
 # OpenAPI\Client\CustomizationsApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**customizeResumesPOST()**](CustomizationsApi.md#customizeResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/customize/ | Customize Resumes
-[**getResumeCustomizationsGET()**](CustomizationsApi.md#getResumeCustomizationsGET) | **GET** /hr/v2/index/{indexname}/resumes/mapping/ | Get Resume Customizations
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**customizeResumesPOST()**](CustomizationsApi.md#customizeResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/customize/ | Customize Resumes |
+| [**getResumeCustomizationsGET()**](CustomizationsApi.md#getResumeCustomizationsGET) | **GET** /hr/v2/index/{indexname}/resumes/mapping/ | Get Resume Customizations |
 
 
 ## `customizeResumesPOST()`
@@ -48,10 +48,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **custom_fields** | [**\OpenAPI\Client\Model\CustomFields**](../Model/CustomFields.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **custom_fields** | [**\OpenAPI\Client\Model\CustomFields**](../Model/CustomFields.md)|  | |
 
 ### Return type
 
@@ -109,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
 
 ### Return type
 

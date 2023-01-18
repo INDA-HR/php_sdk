@@ -1,11 +1,11 @@
 # OpenAPI\Client\FeedbackApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**infoExtractionFeedbackPOST()**](FeedbackApi.md#infoExtractionFeedbackPOST) | **POST** /hr/v2/feedback/index/{indexname}/resume/{resume_id}/parse/data/ | Info Extraction Feedback
-[**semanticSearchFeedbackPOST()**](FeedbackApi.md#semanticSearchFeedbackPOST) | **POST** /hr/v2/feedback/index/{indexname}/resume/{resume_id}/search/semantic/ | Semantic Search Feedback
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**infoExtractionFeedbackPOST()**](FeedbackApi.md#infoExtractionFeedbackPOST) | **POST** /hr/v2/feedback/index/{indexname}/resume/{resume_id}/parse/data/ | Info Extraction Feedback |
+| [**semanticSearchFeedbackPOST()**](FeedbackApi.md#semanticSearchFeedbackPOST) | **POST** /hr/v2/feedback/index/{indexname}/resume/{resume_id}/search/semantic/ | Semantic Search Feedback |
 
 
 ## `infoExtractionFeedbackPOST()`
@@ -49,11 +49,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **feedback_info_item** | [**\OpenAPI\Client\Model\FeedbackInfoItem**](../Model/FeedbackInfoItem.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **feedback_info_item** | [**\OpenAPI\Client\Model\FeedbackInfoItem**](../Model/FeedbackInfoItem.md)|  | |
 
 ### Return type
 
@@ -113,11 +113,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **semantic_feedback_request** | [**\OpenAPI\Client\Model\SemanticFeedbackRequest**](../Model/SemanticFeedbackRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **semantic_feedback_request** | [**\OpenAPI\Client\Model\SemanticFeedbackRequest**](../Model/SemanticFeedbackRequest.md)|  | |
 
 ### Return type
 

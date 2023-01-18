@@ -1,13 +1,13 @@
 # OpenAPI\Client\ResumeSearchApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fullTextSearchOnResumesPOST()**](ResumeSearchApi.md#fullTextSearchOnResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/search/full-text/ | Full-Text Search on Resumes
-[**searchApplicantsPOST()**](ResumeSearchApi.md#searchApplicantsPOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resumes/search/ | Search Applicants
-[**searchResumesEvidencePOST()**](ResumeSearchApi.md#searchResumesEvidencePOST) | **POST** /hr/v2/index/{indexname}/resumes/search/semantic/evidence/ | Search Resumes Evidence
-[**searchResumesPOST()**](ResumeSearchApi.md#searchResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/search/semantic/ | Search Resumes
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fullTextSearchOnResumesPOST()**](ResumeSearchApi.md#fullTextSearchOnResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/search/full-text/ | Full-Text Search on Resumes |
+| [**searchApplicantsPOST()**](ResumeSearchApi.md#searchApplicantsPOST) | **POST** /hr/v2/index/{indexname}/jobad/{jobad_id}/applications/resumes/search/ | Search Applicants |
+| [**searchResumesEvidencePOST()**](ResumeSearchApi.md#searchResumesEvidencePOST) | **POST** /hr/v2/index/{indexname}/resumes/search/semantic/evidence/ | Search Resumes Evidence |
+| [**searchResumesPOST()**](ResumeSearchApi.md#searchResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/search/semantic/ | Search Resumes |
 
 
 ## `fullTextSearchOnResumesPOST()`
@@ -57,17 +57,17 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **default_operator** | **string**| Optional. Change this to *AND* if you wish documents to match ALLof the tokens in a single query_terms element. | [optional] [default to &#39;OR&#39;]
- **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true]
- **cache_time** | **int**| Optional. Seconds. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
- **traditional_docs_search_query** | [**\OpenAPI\Client\Model\TraditionalDocsSearchQuery**](../Model/TraditionalDocsSearchQuery.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **default_operator** | **string**| Optional. Change this to *AND* if you wish documents to match ALLof the tokens in a single query_terms element. | [optional] [default to &#39;OR&#39;] |
+| **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true] |
+| **cache_time** | **int**| Optional. Seconds. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional] |
+| **traditional_docs_search_query** | [**\OpenAPI\Client\Model\TraditionalDocsSearchQuery**](../Model/TraditionalDocsSearchQuery.md)|  | [optional] |
 
 ### Return type
 
@@ -130,14 +130,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | [**JobadId**](../Model/.md)|  |
- **cache_time** | **int**| Optional. Seconds. | [optional] [default to 300]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
- **candidate_search_query** | [**\OpenAPI\Client\Model\CandidateSearchQuery**](../Model/CandidateSearchQuery.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | [**JobadId**](../Model/.md)|  | |
+| **cache_time** | **int**| Optional. Seconds. | [optional] [default to 300] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional] |
+| **candidate_search_query** | [**\OpenAPI\Client\Model\CandidateSearchQuery**](../Model/CandidateSearchQuery.md)|  | [optional] |
 
 ### Return type
 
@@ -198,12 +198,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **evidence_request** | [**\OpenAPI\Client\Model\EvidenceRequest**](../Model/EvidenceRequest.md)|  |
- **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3]
- **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **evidence_request** | [**\OpenAPI\Client\Model\EvidenceRequest**](../Model/EvidenceRequest.md)|  | |
+| **size** | **int**| Number of elements to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;5&lt;/code&gt;. | [optional] [default to 3] |
+| **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional] |
 
 ### Return type
 
@@ -270,18 +270,18 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true]
- **cache_time** | **int**| Optional. Seconds. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
- **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional]
- **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
- **docs_search_query** | [**\OpenAPI\Client\Model\DocsSearchQuery**](../Model/DocsSearchQuery.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true] |
+| **cache_time** | **int**| Optional. Seconds. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional] |
+| **src_lang** | **string**| Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. | [optional] |
+| **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional] |
+| **docs_search_query** | [**\OpenAPI\Client\Model\DocsSearchQuery**](../Model/DocsSearchQuery.md)|  | [optional] |
 
 ### Return type
 

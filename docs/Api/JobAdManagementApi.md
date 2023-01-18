@@ -1,14 +1,14 @@
 # OpenAPI\Client\JobAdManagementApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addJobadPOST()**](JobAdManagementApi.md#addJobadPOST) | **POST** /hr/v2/index/{indexname}/jobad/ | Add JobAd
-[**deleteJobadDELETE()**](JobAdManagementApi.md#deleteJobadDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/ | Delete JobAd
-[**getJobadGET()**](JobAdManagementApi.md#getJobadGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/ | Get JobAd
-[**getJobadsGET()**](JobAdManagementApi.md#getJobadsGET) | **GET** /hr/v2/index/{indexname}/jobads/ | Get JobAds
-[**patchJobadPATCH()**](JobAdManagementApi.md#patchJobadPATCH) | **PATCH** /hr/v2/index/{indexname}/jobad/{jobad_id}/ | Patch JobAd
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addJobadPOST()**](JobAdManagementApi.md#addJobadPOST) | **POST** /hr/v2/index/{indexname}/jobad/ | Add JobAd |
+| [**deleteJobadDELETE()**](JobAdManagementApi.md#deleteJobadDELETE) | **DELETE** /hr/v2/index/{indexname}/jobad/{jobad_id}/ | Delete JobAd |
+| [**getJobadGET()**](JobAdManagementApi.md#getJobadGET) | **GET** /hr/v2/index/{indexname}/jobad/{jobad_id}/ | Get JobAd |
+| [**getJobadsGET()**](JobAdManagementApi.md#getJobadsGET) | **GET** /hr/v2/index/{indexname}/jobads/ | Get JobAds |
+| [**patchJobadPATCH()**](JobAdManagementApi.md#patchJobadPATCH) | **PATCH** /hr/v2/index/{indexname}/jobad/{jobad_id}/ | Patch JobAd |
 
 
 ## `addJobadPOST()`
@@ -54,13 +54,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **job_ad_request** | [**\OpenAPI\Client\Model\JobAdRequest**](../Model/JobAdRequest.md)|  |
- **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
- **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional]
- **jobad_id** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **job_ad_request** | [**\OpenAPI\Client\Model\JobAdRequest**](../Model/JobAdRequest.md)|  | |
+| **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional] |
+| **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional] |
+| **jobad_id** | **string**|  | [optional] |
 
 ### Return type
 
@@ -119,10 +119,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | **string**|  | |
 
 ### Return type
 
@@ -181,10 +181,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | **string**|  | |
 
 ### Return type
 
@@ -247,14 +247,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true]
- **cache_time** | **int**| Optional. Seconds.Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. Other query parameters are uselesswhen *SearchID* is used. | [optional]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true] |
+| **cache_time** | **int**| Optional. Seconds.Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. Other query parameters are uselesswhen *SearchID* is used. | [optional] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
 
 ### Return type
 
@@ -315,12 +315,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_id** | **string**|  |
- **patch_job_ad_request** | [**\OpenAPI\Client\Model\PatchJobAdRequest**](../Model/PatchJobAdRequest.md)|  |
- **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_id** | **string**|  | |
+| **patch_job_ad_request** | [**\OpenAPI\Client\Model\PatchJobAdRequest**](../Model/PatchJobAdRequest.md)|  | |
+| **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional] |
 
 ### Return type
 

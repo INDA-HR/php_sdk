@@ -1,10 +1,10 @@
 # OpenAPI\Client\ResumeToResumesApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**similarResumesPOST()**](ResumeToResumesApi.md#similarResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/matching/resume/{resume_id}/ | Similar Resumes
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**similarResumesPOST()**](ResumeToResumesApi.md#similarResumesPOST) | **POST** /hr/v2/index/{indexname}/resumes/matching/resume/{resume_id}/ | Similar Resumes |
 
 
 ## `similarResumesPOST()`
@@ -52,15 +52,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **similar_docs_search_query** | [**\OpenAPI\Client\Model\SimilarDocsSearchQuery**](../Model/SimilarDocsSearchQuery.md)|  |
- **size** | **int**| Number of documents to return. | [optional] [default to 5]
- **offset** | **int**| Number of documents to skip. | [optional] [default to 0]
- **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **similar_docs_search_query** | [**\OpenAPI\Client\Model\SimilarDocsSearchQuery**](../Model/SimilarDocsSearchQuery.md)|  | |
+| **size** | **int**| Number of documents to return. | [optional] [default to 5] |
+| **offset** | **int**| Number of documents to skip. | [optional] [default to 0] |
+| **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0] |
+| **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional] |
 
 ### Return type
 

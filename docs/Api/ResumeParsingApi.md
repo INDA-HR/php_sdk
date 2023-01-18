@@ -1,14 +1,14 @@
 # OpenAPI\Client\ResumeParsingApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**anonymizeCvPOST()**](ResumeParsingApi.md#anonymizeCvPOST) | **POST** /hr/v2/parse/resume/anonymize/ | Anonymize CV
-[**bulkMapEntityPOST()**](ResumeParsingApi.md#bulkMapEntityPOST) | **POST** /hr/v2/keywords/bulk/map/entity/ | Bulk Map Entity
-[**mapEntityPOST()**](ResumeParsingApi.md#mapEntityPOST) | **POST** /hr/v2/keywords/map/entity/ | Map Entity
-[**parseResumePOST()**](ResumeParsingApi.md#parseResumePOST) | **POST** /hr/v2/parse/resume/data/ | Parse Resume
-[**textExtractionPOST()**](ResumeParsingApi.md#textExtractionPOST) | **POST** /hr/v2/parse/resume/text/ | Text Extraction
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**anonymizeCvPOST()**](ResumeParsingApi.md#anonymizeCvPOST) | **POST** /hr/v2/parse/resume/anonymize/ | Anonymize CV |
+| [**bulkMapEntityPOST()**](ResumeParsingApi.md#bulkMapEntityPOST) | **POST** /hr/v2/keywords/bulk/map/entity/ | Bulk Map Entity |
+| [**mapEntityPOST()**](ResumeParsingApi.md#mapEntityPOST) | **POST** /hr/v2/keywords/map/entity/ | Map Entity |
+| [**parseResumePOST()**](ResumeParsingApi.md#parseResumePOST) | **POST** /hr/v2/parse/resume/data/ | Parse Resume |
+| [**textExtractionPOST()**](ResumeParsingApi.md#textExtractionPOST) | **POST** /hr/v2/parse/resume/text/ | Text Extraction |
 
 
 ## `anonymizeCvPOST()`
@@ -51,10 +51,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **base_file_doc** | [**\OpenAPI\Client\Model\BaseFileDoc**](../Model/BaseFileDoc.md)|  |
- **src_lang** | **string**| Language to use to interpret the text. If missing, language detection is performed. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **base_file_doc** | [**\OpenAPI\Client\Model\BaseFileDoc**](../Model/BaseFileDoc.md)|  | |
+| **src_lang** | **string**| Language to use to interpret the text. If missing, language detection is performed. | [optional] |
 
 ### Return type
 
@@ -112,9 +112,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **multi_entity_input** | [**\OpenAPI\Client\Model\MultiEntityInput**](../Model/MultiEntityInput.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **multi_entity_input** | [**\OpenAPI\Client\Model\MultiEntityInput**](../Model/MultiEntityInput.md)|  | |
 
 ### Return type
 
@@ -172,9 +172,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **entity_input** | [**\OpenAPI\Client\Model\EntityInput**](../Model/EntityInput.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **entity_input** | [**\OpenAPI\Client\Model\EntityInput**](../Model/EntityInput.md)|  | |
 
 ### Return type
 
@@ -220,7 +220,7 @@ $apiInstance = new OpenAPI\Client\Api\ResumeParsingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$base_file = {"File":"<base64 of document>","FileExt":"<extension of document>"}; // \OpenAPI\Client\Model\BaseFile
+$base_file = {"File":"<binary of document>","FileExt":"<extension of document>"}; // \OpenAPI\Client\Model\BaseFile
 $src_lang = 'src_lang_example'; // string | Optional. Language to use to extract data from the *Attachment.CV.File*.If missing, the detected language from the input file text is assumed as `src_lang`.
 $dst_lang = 'dst_lang_example'; // string | Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected `src_lang` is assumed as `dst_lang`.
 $graphics = false; // bool | Whether to read skill graphs such as bars, pie charts, and symbols.
@@ -235,12 +235,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **base_file** | [**\OpenAPI\Client\Model\BaseFile**](../Model/BaseFile.md)|  |
- **src_lang** | **string**| Optional. Language to use to extract data from the *Attachment.CV.File*.If missing, the detected language from the input file text is assumed as &#x60;src_lang&#x60;. | [optional]
- **dst_lang** | **string**| Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional]
- **graphics** | **bool**| Whether to read skill graphs such as bars, pie charts, and symbols. | [optional] [default to false]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **base_file** | [**\OpenAPI\Client\Model\BaseFile**](../Model/BaseFile.md)|  | |
+| **src_lang** | **string**| Optional. Language to use to extract data from the *Attachment.CV.File*.If missing, the detected language from the input file text is assumed as &#x60;src_lang&#x60;. | [optional] |
+| **dst_lang** | **string**| Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional] |
+| **graphics** | **bool**| Whether to read skill graphs such as bars, pie charts, and symbols. | [optional] [default to false] |
 
 ### Return type
 
@@ -298,9 +298,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **base_file** | [**\OpenAPI\Client\Model\BaseFile**](../Model/BaseFile.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **base_file** | [**\OpenAPI\Client\Model\BaseFile**](../Model/BaseFile.md)|  | |
 
 ### Return type
 

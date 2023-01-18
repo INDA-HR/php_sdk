@@ -1,11 +1,11 @@
 # OpenAPI\Client\ResumeImportApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**awsImportPOST()**](ResumeImportApi.md#awsImportPOST) | **POST** /hr/v2/index/{indexname}/resumes/import/aws/ | AWS Import
-[**importStatusGET()**](ResumeImportApi.md#importStatusGET) | **GET** /hr/v2/index/{indexname}/resumes/import/aws/status/ | Import Status
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**awsImportPOST()**](ResumeImportApi.md#awsImportPOST) | **POST** /hr/v2/index/{indexname}/resumes/import/aws/ | AWS Import |
+| [**importStatusGET()**](ResumeImportApi.md#importStatusGET) | **GET** /hr/v2/index/{indexname}/resumes/import/aws/status/ | Import Status |
 
 
 ## `awsImportPOST()`
@@ -48,10 +48,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **docs_import_item_request** | [**\OpenAPI\Client\Model\DocsImportItemRequest**](../Model/DocsImportItemRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **docs_import_item_request** | [**\OpenAPI\Client\Model\DocsImportItemRequest**](../Model/DocsImportItemRequest.md)|  | |
 
 ### Return type
 
@@ -110,10 +110,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **import_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **import_id** | **string**|  | |
 
 ### Return type
 

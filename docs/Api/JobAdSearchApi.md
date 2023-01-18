@@ -1,11 +1,11 @@
 # OpenAPI\Client\JobAdSearchApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**fullTextSearchOnJobadsPOST()**](JobAdSearchApi.md#fullTextSearchOnJobadsPOST) | **POST** /hr/v2/index/{indexname}/jobads/search/full-text/ | Full-Text Search on JobAds
-[**searchApplicationsPOST()**](JobAdSearchApi.md#searchApplicationsPOST) | **POST** /hr/v2/index/{indexname}/resume/{resume_id}/applications/jobads/search/ | Search Applications
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**fullTextSearchOnJobadsPOST()**](JobAdSearchApi.md#fullTextSearchOnJobadsPOST) | **POST** /hr/v2/index/{indexname}/jobads/search/full-text/ | Full-Text Search on JobAds |
+| [**searchApplicationsPOST()**](JobAdSearchApi.md#searchApplicationsPOST) | **POST** /hr/v2/index/{indexname}/resume/{resume_id}/applications/jobads/search/ | Search Applications |
 
 
 ## `fullTextSearchOnJobadsPOST()`
@@ -55,17 +55,17 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **default_operator** | **string**| Optional. Change this to *AND* if you wish documents to match ALLof the tokens in a single query_terms element. | [optional] [default to &#39;OR&#39;]
- **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true]
- **cache_time** | **int**| Optional. Seconds. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
- **job_ad_full_text_search** | [**\OpenAPI\Client\Model\JobAdFullTextSearch**](../Model/JobAdFullTextSearch.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **default_operator** | **string**| Optional. Change this to *AND* if you wish documents to match ALLof the tokens in a single query_terms element. | [optional] [default to &#39;OR&#39;] |
+| **cache** | **bool**| Optional. Whether the search results should be cached or not. | [optional] [default to true] |
+| **cache_time** | **int**| Optional. Seconds. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. | [optional] [default to 300] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional] |
+| **job_ad_full_text_search** | [**\OpenAPI\Client\Model\JobAdFullTextSearch**](../Model/JobAdFullTextSearch.md)|  | [optional] |
 
 ### Return type
 
@@ -128,14 +128,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **cache_time** | **int**| Optional. Seconds. | [optional] [default to 300]
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50]
- **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional]
- **job_ad_search_query** | [**\OpenAPI\Client\Model\JobAdSearchQuery**](../Model/JobAdSearchQuery.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **cache_time** | **int**| Optional. Seconds. | [optional] [default to 300] |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 50] |
+| **search_id** | **string**| Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. | [optional] |
+| **job_ad_search_query** | [**\OpenAPI\Client\Model\JobAdSearchQuery**](../Model/JobAdSearchQuery.md)|  | [optional] |
 
 ### Return type
 

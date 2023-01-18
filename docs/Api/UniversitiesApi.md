@@ -1,11 +1,11 @@
 # OpenAPI\Client\UniversitiesApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getUniversityGET()**](UniversitiesApi.md#getUniversityGET) | **GET** /hr/v2/university/{university_id}/ | Get University
-[**universityAutocompleteGET()**](UniversitiesApi.md#universityAutocompleteGET) | **GET** /hr/v2/university/name/search/autocomplete/ | University Autocomplete
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getUniversityGET()**](UniversitiesApi.md#getUniversityGET) | **GET** /hr/v2/university/{university_id}/ | Get University |
+| [**universityAutocompleteGET()**](UniversitiesApi.md#universityAutocompleteGET) | **GET** /hr/v2/university/name/search/autocomplete/ | University Autocomplete |
 
 
 ## `getUniversityGET()`
@@ -48,10 +48,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **university_id** | **string**|  |
- **minimal** | **bool**| If set to True the API returns only the Overview of the University. | [optional] [default to false]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **university_id** | **string**|  | |
+| **minimal** | **bool**| If set to True the API returns only the Overview of the University. | [optional] [default to false] |
 
 ### Return type
 
@@ -119,19 +119,19 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **term** | **string**| Token to be completed |
- **size** | **int**| Response size. | [optional] [default to 10]
- **token_order** | **string**| Whether to autocomplete the term in a sequential way or not. The default *any* value guarantees good performances as well as flexible results. | [optional] [default to &#39;any&#39;]
- **fuzzy** | **bool**| Fuzzy search. If *True* performs a fuzzy search with max edits set to 2. | [optional] [default to false]
- **city** | [**string[]**](../Model/string.md)| Generally performing better using original language queries. | [optional]
- **country** | [**string[]**](../Model/string.md)| Generally performing better using english queries. | [optional]
- **country_code** | [**string[]**](../Model/string.md)| Standard upper case Country Codes. | [optional]
- **lat** | **float**|  | [optional]
- **lon** | **float**|  | [optional]
- **pivot** | **int**| When results are *pivot* kilometers away from *origin*, which is the geo point corresponding to the tuple *(lat, lon)*, have score 0.5. | [optional] [default to 30]
- **include_branches** | **bool**| Whether to include *University*&#39;s branches in the location filtering or not. | [optional] [default to true]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **term** | **string**| Token to be completed | |
+| **size** | **int**| Response size. | [optional] [default to 10] |
+| **token_order** | **string**| Whether to autocomplete the term in a sequential way or not. The default *any* value guarantees good performances as well as flexible results. | [optional] [default to &#39;any&#39;] |
+| **fuzzy** | **bool**| Fuzzy search. If *True* performs a fuzzy search with max edits set to 2. | [optional] [default to false] |
+| **city** | [**string[]**](../Model/string.md)| Generally performing better using original language queries. | [optional] |
+| **country** | [**string[]**](../Model/string.md)| Generally performing better using english queries. | [optional] |
+| **country_code** | [**string[]**](../Model/string.md)| Standard upper case Country Codes. | [optional] |
+| **lat** | **float**|  | [optional] |
+| **lon** | **float**|  | [optional] |
+| **pivot** | **int**| When results are *pivot* kilometers away from *origin*, which is the geo point corresponding to the tuple *(lat, lon)*, have score 0.5. | [optional] [default to 30] |
+| **include_branches** | **bool**| Whether to include *University*&#39;s branches in the location filtering or not. | [optional] [default to true] |
 
 ### Return type
 

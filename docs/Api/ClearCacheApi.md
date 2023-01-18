@@ -1,10 +1,10 @@
 # OpenAPI\Client\ClearCacheApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**clearSearchResultsDELETE()**](ClearCacheApi.md#clearSearchResultsDELETE) | **DELETE** /hr/v2/index/{indexname}/resumes/search/scroll/ | Clear Search Results
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**clearSearchResultsDELETE()**](ClearCacheApi.md#clearSearchResultsDELETE) | **DELETE** /hr/v2/index/{indexname}/resumes/search/scroll/ | Clear Search Results |
 
 
 ## `clearSearchResultsDELETE()`
@@ -47,10 +47,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **search_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **search_id** | **string**|  | |
 
 ### Return type
 

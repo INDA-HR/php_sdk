@@ -1,10 +1,10 @@
 # OpenAPI\Client\OccupationsApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**similarJobtitlesGET()**](OccupationsApi.md#similarJobtitlesGET) | **GET** /hr/v2/occupations/similar/semantic/ | Similar JobTitles
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**similarJobtitlesGET()**](OccupationsApi.md#similarJobtitlesGET) | **GET** /hr/v2/occupations/similar/semantic/ | Similar JobTitles |
 
 
 ## `similarJobtitlesGET()`
@@ -50,13 +50,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| Input job title to be analyzed |
- **size** | **int**| Number of similar job titles to return. | [optional] [default to 10]
- **min_score** | **float**| Minimum pertinence score. | [optional] [default to 0.5]
- **src_lang** | **string**| Optional. Language of the input job titles.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional]
- **dst_lang** | **string**| Optional. Destination language in which the output job titles are translated.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| Input job title to be analyzed | |
+| **size** | **int**| Number of similar job titles to return. | [optional] [default to 10] |
+| **min_score** | **float**| Minimum pertinence score. | [optional] [default to 0.5] |
+| **src_lang** | **string**| Optional. Language of the input job titles.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional] |
+| **dst_lang** | **string**| Optional. Destination language in which the output job titles are translated.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional] |
 
 ### Return type
 

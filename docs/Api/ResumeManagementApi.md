@@ -1,20 +1,20 @@
 # OpenAPI\Client\ResumeManagementApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addResumePOST()**](ResumeManagementApi.md#addResumePOST) | **POST** /hr/v2/index/{indexname}/resume/ | Add Resume
-[**deletePicDELETE()**](ResumeManagementApi.md#deletePicDELETE) | **DELETE** /hr/v2/index/{indexname}/resume/{resume_id}/pic/ | Delete Pic
-[**deleteResumeDELETE()**](ResumeManagementApi.md#deleteResumeDELETE) | **DELETE** /hr/v2/index/{indexname}/resume/{resume_id}/ | Delete Resume
-[**getCvGET()**](ResumeManagementApi.md#getCvGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/document/ | Get CV
-[**getCvTextGET()**](ResumeManagementApi.md#getCvTextGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/text/ | Get CV Text
-[**getPicGET()**](ResumeManagementApi.md#getPicGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/pic/ | Get Pic
-[**getResumeGET()**](ResumeManagementApi.md#getResumeGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/ | Get Resume
-[**patchResumePATCH()**](ResumeManagementApi.md#patchResumePATCH) | **PATCH** /hr/v2/index/{indexname}/resume/{resume_id}/ | Patch Resume
-[**resumeStatusGET()**](ResumeManagementApi.md#resumeStatusGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/status/ | Resume Status
-[**updatePicPUT()**](ResumeManagementApi.md#updatePicPUT) | **PUT** /hr/v2/index/{indexname}/resume/{resume_id}/pic/ | Update Pic
-[**updateResumePUT()**](ResumeManagementApi.md#updateResumePUT) | **PUT** /hr/v2/index/{indexname}/resume/{resume_id}/ | Update Resume
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**addResumePOST()**](ResumeManagementApi.md#addResumePOST) | **POST** /hr/v2/index/{indexname}/resume/ | Add Resume |
+| [**deletePicDELETE()**](ResumeManagementApi.md#deletePicDELETE) | **DELETE** /hr/v2/index/{indexname}/resume/{resume_id}/pic/ | Delete Pic |
+| [**deleteResumeDELETE()**](ResumeManagementApi.md#deleteResumeDELETE) | **DELETE** /hr/v2/index/{indexname}/resume/{resume_id}/ | Delete Resume |
+| [**getCvGET()**](ResumeManagementApi.md#getCvGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/document/ | Get CV |
+| [**getCvTextGET()**](ResumeManagementApi.md#getCvTextGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/text/ | Get CV Text |
+| [**getPicGET()**](ResumeManagementApi.md#getPicGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/pic/ | Get Pic |
+| [**getResumeGET()**](ResumeManagementApi.md#getResumeGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/ | Get Resume |
+| [**patchResumePATCH()**](ResumeManagementApi.md#patchResumePATCH) | **PATCH** /hr/v2/index/{indexname}/resume/{resume_id}/ | Patch Resume |
+| [**resumeStatusGET()**](ResumeManagementApi.md#resumeStatusGET) | **GET** /hr/v2/index/{indexname}/resume/{resume_id}/status/ | Resume Status |
+| [**updatePicPUT()**](ResumeManagementApi.md#updatePicPUT) | **PUT** /hr/v2/index/{indexname}/resume/{resume_id}/pic/ | Update Pic |
+| [**updateResumePUT()**](ResumeManagementApi.md#updateResumePUT) | **PUT** /hr/v2/index/{indexname}/resume/{resume_id}/ | Update Resume |
 
 
 ## `addResumePOST()`
@@ -61,14 +61,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **file_item_request** | [**\OpenAPI\Client\Model\FileItemRequest**](../Model/FileItemRequest.md)|  |
- **sync** | **bool**| Optional. Whether to wait for the resume processing or not. | [optional] [default to false]
- **resume_id** | **string**| Optional. ID to use for the resume. Already existing IDs will cause a 409 error. | [optional]
- **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
- **dst_lang** | **string**| Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **file_item_request** | [**\OpenAPI\Client\Model\FileItemRequest**](../Model/FileItemRequest.md)|  | |
+| **sync** | **bool**| Optional. Whether to wait for the resume processing or not. | [optional] [default to false] |
+| **resume_id** | **string**| Optional. ID to use for the resume. Already existing IDs will cause a 409 error. | [optional] |
+| **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional] |
+| **dst_lang** | **string**| Optional. Destination language in which the following *Data* entities are translated: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the input or detected &#x60;src_lang&#x60; is assumed as &#x60;dst_lang&#x60;. | [optional] |
 
 ### Return type
 
@@ -127,10 +127,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -189,10 +189,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -251,10 +251,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -313,10 +313,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -375,10 +375,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -437,10 +437,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -501,12 +501,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **patch_item_request** | [**\OpenAPI\Client\Model\PatchItemRequest**](../Model/PatchItemRequest.md)|  |
- **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the indexed *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **patch_item_request** | [**\OpenAPI\Client\Model\PatchItemRequest**](../Model/PatchItemRequest.md)|  | |
+| **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the indexed *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional] |
 
 ### Return type
 
@@ -565,10 +565,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
 
 ### Return type
 
@@ -628,11 +628,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **update_pic_request** | [**\OpenAPI\Client\Model\UpdatePicRequest**](../Model/UpdatePicRequest.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **update_pic_request** | [**\OpenAPI\Client\Model\UpdatePicRequest**](../Model/UpdatePicRequest.md)|  | |
 
 ### Return type
 
@@ -693,12 +693,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **update_item_request** | [**\OpenAPI\Client\Model\UpdateItemRequest**](../Model/UpdateItemRequest.md)|  |
- **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **update_item_request** | [**\OpenAPI\Client\Model\UpdateItemRequest**](../Model/UpdateItemRequest.md)|  | |
+| **src_lang** | **string**| Optional. Language in which the following *Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.File* language is assumed as &#x60;src_lang&#x60;. | [optional] |
 
 ### Return type
 

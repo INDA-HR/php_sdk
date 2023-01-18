@@ -1,12 +1,12 @@
 # OpenAPI\Client\JobAdKnowledgeExtractionApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**extractJobtitlesFromJobadPOST()**](JobAdKnowledgeExtractionApi.md#extractJobtitlesFromJobadPOST) | **POST** /hr/v2/parse/jobad/jobtitles/ | Extract JobTitles from JobAd
-[**extractLanguagesFromJobadPOST()**](JobAdKnowledgeExtractionApi.md#extractLanguagesFromJobadPOST) | **POST** /hr/v2/parse/jobad/languages/ | Extract Languages from JobAd
-[**extractSkillsFromJobadPOST()**](JobAdKnowledgeExtractionApi.md#extractSkillsFromJobadPOST) | **POST** /hr/v2/parse/jobad/skills/ | Extract Skills from JobAd
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**extractJobtitlesFromJobadPOST()**](JobAdKnowledgeExtractionApi.md#extractJobtitlesFromJobadPOST) | **POST** /hr/v2/parse/jobad/jobtitles/ | Extract JobTitles from JobAd |
+| [**extractLanguagesFromJobadPOST()**](JobAdKnowledgeExtractionApi.md#extractLanguagesFromJobadPOST) | **POST** /hr/v2/parse/jobad/languages/ | Extract Languages from JobAd |
+| [**extractSkillsFromJobadPOST()**](JobAdKnowledgeExtractionApi.md#extractSkillsFromJobadPOST) | **POST** /hr/v2/parse/jobad/skills/ | Extract Skills from JobAd |
 
 
 ## `extractJobtitlesFromJobadPOST()`
@@ -52,13 +52,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **job_ad_job_description_request** | [**\OpenAPI\Client\Model\JobAdJobDescriptionRequest**](../Model/JobAdJobDescriptionRequest.md)|  |
- **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
- **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional]
- **size** | **int**| Number of job titles to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;20&lt;/code&gt;. | [optional] [default to 10]
- **min_score** | **float**| Minimum score for the proposed job titles. The job titles with a score lower than this value will be neglected. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **job_ad_job_description_request** | [**\OpenAPI\Client\Model\JobAdJobDescriptionRequest**](../Model/JobAdJobDescriptionRequest.md)|  | |
+| **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional] |
+| **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional] |
+| **size** | **int**| Number of job titles to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;20&lt;/code&gt;. | [optional] [default to 10] |
+| **min_score** | **float**| Minimum score for the proposed job titles. The job titles with a score lower than this value will be neglected. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -120,13 +120,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **job_ad_job_description_request** | [**\OpenAPI\Client\Model\JobAdJobDescriptionRequest**](../Model/JobAdJobDescriptionRequest.md)|  |
- **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
- **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional]
- **size** | **int**| Number of languages to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;20&lt;/code&gt;. | [optional] [default to 10]
- **min_score** | **float**| Minimum score for the proposed languages. The languages with a score lower than this value will be neglected. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **job_ad_job_description_request** | [**\OpenAPI\Client\Model\JobAdJobDescriptionRequest**](../Model/JobAdJobDescriptionRequest.md)|  | |
+| **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional] |
+| **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional] |
+| **size** | **int**| Number of languages to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;20&lt;/code&gt;. | [optional] [default to 10] |
+| **min_score** | **float**| Minimum score for the proposed languages. The languages with a score lower than this value will be neglected. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -188,13 +188,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **job_ad_job_description_request** | [**\OpenAPI\Client\Model\JobAdJobDescriptionRequest**](../Model/JobAdJobDescriptionRequest.md)|  |
- **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
- **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional]
- **size** | **int**| Number of skills to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;20&lt;/code&gt;. | [optional] [default to 10]
- **min_score** | **float**| Minimum score for the proposed skills. The skills with a score lower than this value will be neglected. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **job_ad_job_description_request** | [**\OpenAPI\Client\Model\JobAdJobDescriptionRequest**](../Model/JobAdJobDescriptionRequest.md)|  | |
+| **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional] |
+| **dst_lang** | **string**| Extracted entities destination language. If left empty is assumed to be equal to the Job Description language. | [optional] |
+| **size** | **int**| Number of skills to be returned, must be greater than &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;0&lt;/code&gt; and smaller or equal to &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;20&lt;/code&gt;. | [optional] [default to 10] |
+| **min_score** | **float**| Minimum score for the proposed skills. The skills with a score lower than this value will be neglected. | [optional] [default to 0.2] |
 
 ### Return type
 

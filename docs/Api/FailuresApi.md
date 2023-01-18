@@ -1,10 +1,10 @@
 # OpenAPI\Client\FailuresApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getFailuresGET()**](FailuresApi.md#getFailuresGET) | **GET** /hr/v2/index/{indexname}/failures/ | Get Failures
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getFailuresGET()**](FailuresApi.md#getFailuresGET) | **GET** /hr/v2/index/{indexname}/failures/ | Get Failures |
 
 
 ## `getFailuresGET()`
@@ -50,13 +50,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **import_id** | **string**|  | [optional]
- **resume_id** | **string**|  | [optional]
- **jobad_id** | **string**|  | [optional]
- **doc_type** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **import_id** | **string**|  | [optional] |
+| **resume_id** | **string**|  | [optional] |
+| **jobad_id** | **string**|  | [optional] |
+| **doc_type** | **string**|  | [optional] |
 
 ### Return type
 

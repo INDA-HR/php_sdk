@@ -1,11 +1,11 @@
 # OpenAPI\Client\UtilitiesApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**clearIndexCacheDELETE()**](UtilitiesApi.md#clearIndexCacheDELETE) | **DELETE** /hr/v2/index/{indexname}/cache/ | Clear Index Cache
-[**healthStatusGET()**](UtilitiesApi.md#healthStatusGET) | **GET** /hr/v2/ | Health Status
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**clearIndexCacheDELETE()**](UtilitiesApi.md#clearIndexCacheDELETE) | **DELETE** /hr/v2/index/{indexname}/cache/ | Clear Index Cache |
+| [**healthStatusGET()**](UtilitiesApi.md#healthStatusGET) | **GET** /hr/v2/ | Health Status |
 
 
 ## `clearIndexCacheDELETE()`
@@ -54,16 +54,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **clean_failures** | **bool**| Whether or not the document failures should be cleaned. | [optional] [default to true]
- **clean_imports** | **bool**| Whether or not the import statuses should be cleaned. | [optional] [default to true]
- **clean_queues** | **bool**| Whether or not the queue should be cleaned.It cannot stop running tasks or prevent new tasks to be queued. | [optional] [default to true]
- **clean_fielddata** | **bool**| Whether or not the fields cache should be cleaned. | [optional] [default to true]
- **clean_queries** | **bool**| Whether or not the queries cache should be cleaned. | [optional] [default to true]
- **clean_requests** | **bool**| Whether or not the requests cache should be cleaned. | [optional] [default to true]
- **wait_for_completion** | **bool**| Whether or not the method should wait to responduntil the processing is completed. | [optional] [default to true]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **clean_failures** | **bool**| Whether or not the document failures should be cleaned. | [optional] [default to true] |
+| **clean_imports** | **bool**| Whether or not the import statuses should be cleaned. | [optional] [default to true] |
+| **clean_queues** | **bool**| Whether or not the queue should be cleaned.It cannot stop running tasks or prevent new tasks to be queued. | [optional] [default to true] |
+| **clean_fielddata** | **bool**| Whether or not the fields cache should be cleaned. | [optional] [default to true] |
+| **clean_queries** | **bool**| Whether or not the queries cache should be cleaned. | [optional] [default to true] |
+| **clean_requests** | **bool**| Whether or not the requests cache should be cleaned. | [optional] [default to true] |
+| **wait_for_completion** | **bool**| Whether or not the method should wait to responduntil the processing is completed. | [optional] [default to true] |
 
 ### Return type
 

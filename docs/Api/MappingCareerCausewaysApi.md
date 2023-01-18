@@ -1,13 +1,13 @@
 # OpenAPI\Client\MappingCareerCausewaysApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**careerRecommendationPOST()**](MappingCareerCausewaysApi.md#careerRecommendationPOST) | **POST** /hr/v2/resume/career/occupation/recommendation/ | Career Recommendation
-[**occupationActivitiesComparisonPOST()**](MappingCareerCausewaysApi.md#occupationActivitiesComparisonPOST) | **POST** /hr/v2/resume/career/occupation/activities/comparison/ | Occupation Activities Comparison
-[**occupationSkillComparisonPOST()**](MappingCareerCausewaysApi.md#occupationSkillComparisonPOST) | **POST** /hr/v2/resume/career/occupation/skills/comparison/ | Occupation Skill Comparison
-[**upskillingSimulatorPOST()**](MappingCareerCausewaysApi.md#upskillingSimulatorPOST) | **POST** /hr/v2/resume/career/simulator/upskilling/ | Upskilling simulator
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**careerRecommendationPOST()**](MappingCareerCausewaysApi.md#careerRecommendationPOST) | **POST** /hr/v2/resume/career/occupation/recommendation/ | Career Recommendation |
+| [**occupationActivitiesComparisonPOST()**](MappingCareerCausewaysApi.md#occupationActivitiesComparisonPOST) | **POST** /hr/v2/resume/career/occupation/activities/comparison/ | Occupation Activities Comparison |
+| [**occupationSkillComparisonPOST()**](MappingCareerCausewaysApi.md#occupationSkillComparisonPOST) | **POST** /hr/v2/resume/career/occupation/skills/comparison/ | Occupation Skill Comparison |
+| [**upskillingSimulatorPOST()**](MappingCareerCausewaysApi.md#upskillingSimulatorPOST) | **POST** /hr/v2/resume/career/simulator/upskilling/ | Upskilling simulator |
 
 
 ## `careerRecommendationPOST()`
@@ -51,11 +51,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **career_transition_request** | [**\OpenAPI\Client\Model\CareerTransitionRequest**](../Model/CareerTransitionRequest.md)|  |
- **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
- **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **career_transition_request** | [**\OpenAPI\Client\Model\CareerTransitionRequest**](../Model/CareerTransitionRequest.md)|  | |
+| **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;] |
+| **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -115,11 +115,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **work_activity_comparison_request** | [**\OpenAPI\Client\Model\WorkActivityComparisonRequest**](../Model/WorkActivityComparisonRequest.md)|  |
- **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
- **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **work_activity_comparison_request** | [**\OpenAPI\Client\Model\WorkActivityComparisonRequest**](../Model/WorkActivityComparisonRequest.md)|  | |
+| **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;] |
+| **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -179,11 +179,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **occupation_skills_comparison_request** | [**\OpenAPI\Client\Model\OccupationSkillsComparisonRequest**](../Model/OccupationSkillsComparisonRequest.md)|  |
- **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
- **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **occupation_skills_comparison_request** | [**\OpenAPI\Client\Model\OccupationSkillsComparisonRequest**](../Model/OccupationSkillsComparisonRequest.md)|  | |
+| **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;] |
+| **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -243,11 +243,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **upskilling_request** | [**\OpenAPI\Client\Model\UpskillingRequest**](../Model/UpskillingRequest.md)|  |
- **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;]
- **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **upskilling_request** | [**\OpenAPI\Client\Model\UpskillingRequest**](../Model/UpskillingRequest.md)|  | |
+| **dst_lang** | **string**| Output language. | [optional] [default to &#39;it&#39;] |
+| **min_score** | **float**| Minimum similarity score for ESCO mapping. | [optional] [default to 0.2] |
 
 ### Return type
 

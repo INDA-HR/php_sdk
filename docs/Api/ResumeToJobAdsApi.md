@@ -1,13 +1,13 @@
 # OpenAPI\Client\ResumeToJobAdsApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**matchJobadsEvidenceFromIndexedResumePOST()**](ResumeToJobAdsApi.md#matchJobadsEvidenceFromIndexedResumePOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/{resume_id}/evidence/ | Match JobAds Evidence from indexed Resume
-[**matchJobadsEvidencePOST()**](ResumeToJobAdsApi.md#matchJobadsEvidencePOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/evidence/ | Match JobAds Evidence
-[**matchJobadsFromIndexedResumePOST()**](ResumeToJobAdsApi.md#matchJobadsFromIndexedResumePOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/{resume_id}/ | Match JobAds from indexed Resume
-[**matchJobadsPOST()**](ResumeToJobAdsApi.md#matchJobadsPOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/ | Match JobAds
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**matchJobadsEvidenceFromIndexedResumePOST()**](ResumeToJobAdsApi.md#matchJobadsEvidenceFromIndexedResumePOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/{resume_id}/evidence/ | Match JobAds Evidence from indexed Resume |
+| [**matchJobadsEvidencePOST()**](ResumeToJobAdsApi.md#matchJobadsEvidencePOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/evidence/ | Match JobAds Evidence |
+| [**matchJobadsFromIndexedResumePOST()**](ResumeToJobAdsApi.md#matchJobadsFromIndexedResumePOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/{resume_id}/ | Match JobAds from indexed Resume |
+| [**matchJobadsPOST()**](ResumeToJobAdsApi.md#matchJobadsPOST) | **POST** /hr/v2/index/{indexname}/jobads/matching/resume/ | Match JobAds |
 
 
 ## `matchJobadsEvidenceFromIndexedResumePOST()`
@@ -51,11 +51,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **base_jobad_matching_evidence_query** | [**\OpenAPI\Client\Model\BaseJobadMatchingEvidenceQuery**](../Model/BaseJobadMatchingEvidenceQuery.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **base_jobad_matching_evidence_query** | [**\OpenAPI\Client\Model\BaseJobadMatchingEvidenceQuery**](../Model/BaseJobadMatchingEvidenceQuery.md)|  | |
 
 ### Return type
 
@@ -115,11 +115,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_matching_evidence_query** | [**\OpenAPI\Client\Model\JobadMatchingEvidenceQuery**](../Model/JobadMatchingEvidenceQuery.md)|  |
- **src_lang** | **string**| Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.PlainText* language is assumed as &#x60;src_lang&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_matching_evidence_query** | [**\OpenAPI\Client\Model\JobadMatchingEvidenceQuery**](../Model/JobadMatchingEvidenceQuery.md)|  | |
+| **src_lang** | **string**| Optional. Language in which the following *Resume.Data* entities are expressed: *Skills*, *WorkExperiences.Skills*, *JobTitles*, *WorkExperiences.PositionTitle* and *Languages*.If missing, the detected *Attachment.CV.PlainText* language is assumed as &#x60;src_lang&#x60;. | [optional] |
 
 ### Return type
 
@@ -184,16 +184,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **resume_id** | **string**|  |
- **base_jobad_matching_query** | [**\OpenAPI\Client\Model\BaseJobadMatchingQuery**](../Model/BaseJobadMatchingQuery.md)|  |
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 5]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
- **jobad_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **resume_id** | **string**|  | |
+| **base_jobad_matching_query** | [**\OpenAPI\Client\Model\BaseJobadMatchingQuery**](../Model/BaseJobadMatchingQuery.md)|  | |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 5] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0] |
+| **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional] |
+| **jobad_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional] |
 
 ### Return type
 
@@ -258,16 +258,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **jobad_matching_query** | [**\OpenAPI\Client\Model\JobadMatchingQuery**](../Model/JobadMatchingQuery.md)|  |
- **size** | **int**| Optional. Number of documents to return. | [optional] [default to 5]
- **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0]
- **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0]
- **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional]
- **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional]
- **jobad_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **jobad_matching_query** | [**\OpenAPI\Client\Model\JobadMatchingQuery**](../Model/JobadMatchingQuery.md)|  | |
+| **size** | **int**| Optional. Number of documents to return. | [optional] [default to 5] |
+| **offset** | **int**| Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. | [optional] [default to 0] |
+| **min_score** | **float**| Optional. Minimum pertinence score. | [optional] [default to 0] |
+| **src_lang** | **string**| Job Description language. If left empty each section&#39;s language will detected automatically. | [optional] |
+| **dst_lang** | [**string[]**](../Model/string.md)| Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. | [optional] |
+| **jobad_langs** | [**string[]**](../Model/string.md)| DEPRECATED: use &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;dst_langs&lt;/code&gt; instead. Results languages. If left empty then the results will not be filtered by language. | [optional] |
 
 ### Return type
 

@@ -1,11 +1,11 @@
 # OpenAPI\Client\SkillsApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**similarSkillsGET()**](SkillsApi.md#similarSkillsGET) | **GET** /hr/v2/skills/similar/semantic/ | Similar Skills
-[**skillsClassificationPOST()**](SkillsApi.md#skillsClassificationPOST) | **POST** /hr/v2/skills/classification/ | Skills Classification
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**similarSkillsGET()**](SkillsApi.md#similarSkillsGET) | **GET** /hr/v2/skills/similar/semantic/ | Similar Skills |
+| [**skillsClassificationPOST()**](SkillsApi.md#skillsClassificationPOST) | **POST** /hr/v2/skills/classification/ | Skills Classification |
 
 
 ## `similarSkillsGET()`
@@ -51,13 +51,13 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| Input skill to be analyzed |
- **size** | **int**| Number of similar skills to return. | [optional] [default to 5]
- **min_score** | **float**| Minimum pertinence score. | [optional] [default to 0.5]
- **src_lang** | **string**| Optional. Language of the input skills.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional]
- **dst_lang** | **string**| Optional. Language of the input skills.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| Input skill to be analyzed | |
+| **size** | **int**| Number of similar skills to return. | [optional] [default to 5] |
+| **min_score** | **float**| Minimum pertinence score. | [optional] [default to 0.5] |
+| **src_lang** | **string**| Optional. Language of the input skills.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional] |
+| **dst_lang** | **string**| Optional. Language of the input skills.If missing, the detected language is assumed as &#x60;src_lang&#x60;. | [optional] |
 
 ### Return type
 
@@ -116,10 +116,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **skills_classification_request** | [**\OpenAPI\Client\Model\SkillsClassificationRequest**](../Model/SkillsClassificationRequest.md)|  |
- **src_lang** | **string**| Language of the input skills. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **skills_classification_request** | [**\OpenAPI\Client\Model\SkillsClassificationRequest**](../Model/SkillsClassificationRequest.md)|  | |
+| **src_lang** | **string**| Language of the input skills. | [optional] |
 
 ### Return type
 

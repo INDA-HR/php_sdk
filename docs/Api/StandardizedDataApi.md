@@ -1,34 +1,34 @@
 # OpenAPI\Client\StandardizedDataApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getCompanySizeGET()**](StandardizedDataApi.md#getCompanySizeGET) | **GET** /hr/v2/data/company/size/ | Get Company Size
-[**getCompanyTypeGET()**](StandardizedDataApi.md#getCompanyTypeGET) | **GET** /hr/v2/data/company/type/ | Get Company Type
-[**getContractTypeGET()**](StandardizedDataApi.md#getContractTypeGET) | **GET** /hr/v2/data/contract/type/ | Get Contract Type
-[**getDisabilityGET()**](StandardizedDataApi.md#getDisabilityGET) | **GET** /hr/v2/data/disability/ | Get Disability
-[**getEducationTitleGET()**](StandardizedDataApi.md#getEducationTitleGET) | **GET** /hr/v2/data/education/title/ | Get Education Title
-[**getEmailLabelGET()**](StandardizedDataApi.md#getEmailLabelGET) | **GET** /hr/v2/data/email/label/ | Get Email Label
-[**getEmploymentTypeGET()**](StandardizedDataApi.md#getEmploymentTypeGET) | **GET** /hr/v2/data/employment/type/ | Get Employment Type
-[**getFieldOfStudyGET()**](StandardizedDataApi.md#getFieldOfStudyGET) | **GET** /hr/v2/data/education/field-of-study/ | Get Field Of Study
-[**getGenderGET()**](StandardizedDataApi.md#getGenderGET) | **GET** /hr/v2/data/gender/ | Get Gender
-[**getIndustriesGET()**](StandardizedDataApi.md#getIndustriesGET) | **GET** /hr/v2/data/industries/ | Get Industries
-[**getJobFunctionGET()**](StandardizedDataApi.md#getJobFunctionGET) | **GET** /hr/v2/data/job/function/ | Get Job Function
-[**getJobshiftTypeGET()**](StandardizedDataApi.md#getJobshiftTypeGET) | **GET** /hr/v2/data/jobshift/type/ | Get Jobshift Type
-[**getLicenseCodeGET()**](StandardizedDataApi.md#getLicenseCodeGET) | **GET** /hr/v2/data/license/type/{license_type}/code/ | Get License Code
-[**getLicenseTypeGET()**](StandardizedDataApi.md#getLicenseTypeGET) | **GET** /hr/v2/data/license/type/ | Get License Type
-[**getLinkLabelGET()**](StandardizedDataApi.md#getLinkLabelGET) | **GET** /hr/v2/data/link/label/ | Get Link Label
-[**getMaritalStatusGET()**](StandardizedDataApi.md#getMaritalStatusGET) | **GET** /hr/v2/data/marital-status/ | Get Marital Status
-[**getNamePrefixGET()**](StandardizedDataApi.md#getNamePrefixGET) | **GET** /hr/v2/data/name/prefix/ | Get Name Prefix
-[**getNameSuffixGET()**](StandardizedDataApi.md#getNameSuffixGET) | **GET** /hr/v2/data/name/suffix/ | Get Name Suffix
-[**getPatentStatusGET()**](StandardizedDataApi.md#getPatentStatusGET) | **GET** /hr/v2/data/patent/status/ | Get Patent Status
-[**getPhoneLabelGET()**](StandardizedDataApi.md#getPhoneLabelGET) | **GET** /hr/v2/data/phone/label/ | Get Phone Label
-[**getProtectedGroupGET()**](StandardizedDataApi.md#getProtectedGroupGET) | **GET** /hr/v2/data/protected-group/ | Get Protected Group
-[**getRemoteWorkingGET()**](StandardizedDataApi.md#getRemoteWorkingGET) | **GET** /hr/v2/data/employment/remote-working/ | Get Remote Working
-[**getSalaryFrequencyGET()**](StandardizedDataApi.md#getSalaryFrequencyGET) | **GET** /hr/v2/data/salary/frequency/ | Get Salary Frequency
-[**getSalaryTypeGET()**](StandardizedDataApi.md#getSalaryTypeGET) | **GET** /hr/v2/data/salary/type/ | Get Salary Type
-[**getSeniorityLevelGET()**](StandardizedDataApi.md#getSeniorityLevelGET) | **GET** /hr/v2/data/seniority/level/ | Get Seniority Level
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getCompanySizeGET()**](StandardizedDataApi.md#getCompanySizeGET) | **GET** /hr/v2/data/company/size/ | Get Company Size |
+| [**getCompanyTypeGET()**](StandardizedDataApi.md#getCompanyTypeGET) | **GET** /hr/v2/data/company/type/ | Get Company Type |
+| [**getContractTypeGET()**](StandardizedDataApi.md#getContractTypeGET) | **GET** /hr/v2/data/contract/type/ | Get Contract Type |
+| [**getDisabilityGET()**](StandardizedDataApi.md#getDisabilityGET) | **GET** /hr/v2/data/disability/ | Get Disability |
+| [**getEducationTitleGET()**](StandardizedDataApi.md#getEducationTitleGET) | **GET** /hr/v2/data/education/title/ | Get Education Title |
+| [**getEmailLabelGET()**](StandardizedDataApi.md#getEmailLabelGET) | **GET** /hr/v2/data/email/label/ | Get Email Label |
+| [**getEmploymentTypeGET()**](StandardizedDataApi.md#getEmploymentTypeGET) | **GET** /hr/v2/data/employment/type/ | Get Employment Type |
+| [**getFieldOfStudyGET()**](StandardizedDataApi.md#getFieldOfStudyGET) | **GET** /hr/v2/data/education/field-of-study/ | Get Field Of Study |
+| [**getGenderGET()**](StandardizedDataApi.md#getGenderGET) | **GET** /hr/v2/data/gender/ | Get Gender |
+| [**getIndustriesGET()**](StandardizedDataApi.md#getIndustriesGET) | **GET** /hr/v2/data/industries/ | Get Industries |
+| [**getJobFunctionGET()**](StandardizedDataApi.md#getJobFunctionGET) | **GET** /hr/v2/data/job/function/ | Get Job Function |
+| [**getJobshiftTypeGET()**](StandardizedDataApi.md#getJobshiftTypeGET) | **GET** /hr/v2/data/jobshift/type/ | Get Jobshift Type |
+| [**getLicenseCodeGET()**](StandardizedDataApi.md#getLicenseCodeGET) | **GET** /hr/v2/data/license/type/{license_type}/code/ | Get License Code |
+| [**getLicenseTypeGET()**](StandardizedDataApi.md#getLicenseTypeGET) | **GET** /hr/v2/data/license/type/ | Get License Type |
+| [**getLinkLabelGET()**](StandardizedDataApi.md#getLinkLabelGET) | **GET** /hr/v2/data/link/label/ | Get Link Label |
+| [**getMaritalStatusGET()**](StandardizedDataApi.md#getMaritalStatusGET) | **GET** /hr/v2/data/marital-status/ | Get Marital Status |
+| [**getNamePrefixGET()**](StandardizedDataApi.md#getNamePrefixGET) | **GET** /hr/v2/data/name/prefix/ | Get Name Prefix |
+| [**getNameSuffixGET()**](StandardizedDataApi.md#getNameSuffixGET) | **GET** /hr/v2/data/name/suffix/ | Get Name Suffix |
+| [**getPatentStatusGET()**](StandardizedDataApi.md#getPatentStatusGET) | **GET** /hr/v2/data/patent/status/ | Get Patent Status |
+| [**getPhoneLabelGET()**](StandardizedDataApi.md#getPhoneLabelGET) | **GET** /hr/v2/data/phone/label/ | Get Phone Label |
+| [**getProtectedGroupGET()**](StandardizedDataApi.md#getProtectedGroupGET) | **GET** /hr/v2/data/protected-group/ | Get Protected Group |
+| [**getRemoteWorkingGET()**](StandardizedDataApi.md#getRemoteWorkingGET) | **GET** /hr/v2/data/employment/remote-working/ | Get Remote Working |
+| [**getSalaryFrequencyGET()**](StandardizedDataApi.md#getSalaryFrequencyGET) | **GET** /hr/v2/data/salary/frequency/ | Get Salary Frequency |
+| [**getSalaryTypeGET()**](StandardizedDataApi.md#getSalaryTypeGET) | **GET** /hr/v2/data/salary/type/ | Get Salary Type |
+| [**getSeniorityLevelGET()**](StandardizedDataApi.md#getSeniorityLevelGET) | **GET** /hr/v2/data/seniority/level/ | Get Seniority Level |
 
 
 ## `getCompanySizeGET()`
@@ -71,10 +71,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -133,10 +133,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -195,10 +195,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -257,10 +257,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -319,10 +319,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -381,10 +381,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -443,10 +443,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -505,10 +505,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -567,10 +567,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -629,10 +629,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -691,10 +691,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -753,10 +753,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -816,11 +816,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **license_type** | **string**|  |
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **license_type** | **string**|  | |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -879,10 +879,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -941,10 +941,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1003,10 +1003,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1065,10 +1065,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1127,10 +1127,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1189,10 +1189,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1251,10 +1251,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1313,10 +1313,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1375,10 +1375,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1437,10 +1437,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1499,10 +1499,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 
@@ -1561,10 +1561,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;]
- **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **dst_lang** | **string**| The language in which the &#39;Value&#39; is returned. Supported languages: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;it&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;en&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;es&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pt&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;de&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;fr&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;pl&lt;/code&gt; | [optional] [default to &#39;it&#39;] |
+| **codes** | [**mixed[]**](../Model/mixed.md)| If &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;null&lt;/code&gt; the API returns all the corresponding &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;lang&lt;/code&gt; data. | [optional] |
 
 ### Return type
 

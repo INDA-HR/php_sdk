@@ -1,19 +1,19 @@
 # OpenAPI\Client\ESCOApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**escoOccupationsHierarchyGET()**](ESCOApi.md#escoOccupationsHierarchyGET) | **GET** /hr/v2/occupations/similar/esco/hierarchy/ | ESCO Occupations Hierarchy
-[**escoSkillsHierarchyGET()**](ESCOApi.md#escoSkillsHierarchyGET) | **GET** /hr/v2/skills/similar/esco/hierarchy/ | ESCO Skills Hierarchy
-[**fromDescriptionToEscoOccupationsPOST()**](ESCOApi.md#fromDescriptionToEscoOccupationsPOST) | **POST** /hr/v2/occupations/description/match/esco/ | From description to ESCO Occupations
-[**fromDescriptionToEscoSkillsPOST()**](ESCOApi.md#fromDescriptionToEscoSkillsPOST) | **POST** /hr/v2/skills/description/match/esco/ | From description to ESCO Skills
-[**mappingEscoGET()**](ESCOApi.md#mappingEscoGET) | **GET** /hr/v2/occupations/mapping/esco/ | Mapping ESCO
-[**mappingIscoGET()**](ESCOApi.md#mappingIscoGET) | **GET** /hr/v2/occupations/mapping/isco/ | Mapping ISCO
-[**mappingIstatCp2011GET()**](ESCOApi.md#mappingIstatCp2011GET) | **GET** /hr/v2/occupations/mapping/istat/ | Mapping ISTAT-CP2011
-[**mappingOnetGET()**](ESCOApi.md#mappingOnetGET) | **GET** /hr/v2/occupations/mapping/onet/ | Mapping O*NET
-[**similarEscoOccupationsGET()**](ESCOApi.md#similarEscoOccupationsGET) | **GET** /hr/v2/occupations/similar/esco/ | Similar ESCO Occupations
-[**similarEscoSkillsGET()**](ESCOApi.md#similarEscoSkillsGET) | **GET** /hr/v2/skills/similar/esco/ | Similar ESCO Skills
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**escoOccupationsHierarchyGET()**](ESCOApi.md#escoOccupationsHierarchyGET) | **GET** /hr/v2/occupations/similar/esco/hierarchy/ | ESCO Occupations Hierarchy |
+| [**escoSkillsHierarchyGET()**](ESCOApi.md#escoSkillsHierarchyGET) | **GET** /hr/v2/skills/similar/esco/hierarchy/ | ESCO Skills Hierarchy |
+| [**fromDescriptionToEscoOccupationsPOST()**](ESCOApi.md#fromDescriptionToEscoOccupationsPOST) | **POST** /hr/v2/occupations/description/match/esco/ | From description to ESCO Occupations |
+| [**fromDescriptionToEscoSkillsPOST()**](ESCOApi.md#fromDescriptionToEscoSkillsPOST) | **POST** /hr/v2/skills/description/match/esco/ | From description to ESCO Skills |
+| [**mappingEscoGET()**](ESCOApi.md#mappingEscoGET) | **GET** /hr/v2/occupations/mapping/esco/ | Mapping ESCO |
+| [**mappingIscoGET()**](ESCOApi.md#mappingIscoGET) | **GET** /hr/v2/occupations/mapping/isco/ | Mapping ISCO |
+| [**mappingIstatCp2011GET()**](ESCOApi.md#mappingIstatCp2011GET) | **GET** /hr/v2/occupations/mapping/istat/ | Mapping ISTAT-CP2011 |
+| [**mappingOnetGET()**](ESCOApi.md#mappingOnetGET) | **GET** /hr/v2/occupations/mapping/onet/ | Mapping O*NET |
+| [**similarEscoOccupationsGET()**](ESCOApi.md#similarEscoOccupationsGET) | **GET** /hr/v2/occupations/similar/esco/ | Similar ESCO Occupations |
+| [**similarEscoSkillsGET()**](ESCOApi.md#similarEscoSkillsGET) | **GET** /hr/v2/skills/similar/esco/ | Similar ESCO Skills |
 
 
 ## `escoOccupationsHierarchyGET()`
@@ -56,10 +56,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| It could be any word or sentence in several languages. |
- **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| It could be any word or sentence in several languages. | |
+| **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;] |
 
 ### Return type
 
@@ -118,10 +118,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| A word or a brief sentence in several languages. |
- **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| A word or a brief sentence in several languages. | |
+| **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;] |
 
 ### Return type
 
@@ -182,12 +182,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **description_input** | [**\OpenAPI\Client\Model\DescriptionInput**](../Model/DescriptionInput.md)|  |
- **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
- **size** | **int**| The maximum number of similar ESCO occupations retrieved by the algorithm. | [optional] [default to 1]
- **min_score** | **float**| Minimum score of the similar ESCO occupations with respect to the job title queried by the user. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **description_input** | [**\OpenAPI\Client\Model\DescriptionInput**](../Model/DescriptionInput.md)|  | |
+| **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;] |
+| **size** | **int**| The maximum number of similar ESCO occupations retrieved by the algorithm. | [optional] [default to 1] |
+| **min_score** | **float**| Minimum score of the similar ESCO occupations with respect to the job title queried by the user. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -248,12 +248,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **description_input** | [**\OpenAPI\Client\Model\DescriptionInput**](../Model/DescriptionInput.md)|  |
- **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
- **size** | **int**| The maximum number of similar ESCO skills retrieved by the algorithm. | [optional] [default to 1]
- **min_score** | **float**| Minimum score of the similar ESCO skills with respect to the skill queried by the user. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **description_input** | [**\OpenAPI\Client\Model\DescriptionInput**](../Model/DescriptionInput.md)|  | |
+| **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;] |
+| **size** | **int**| The maximum number of similar ESCO skills retrieved by the algorithm. | [optional] [default to 1] |
+| **min_score** | **float**| Minimum score of the similar ESCO skills with respect to the skill queried by the user. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -311,9 +311,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **string**| [ESCO code](https://ec.europa.eu/esco/portal/occupation). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **code** | **string**| [ESCO code](https://ec.europa.eu/esco/portal/occupation). | |
 
 ### Return type
 
@@ -371,9 +371,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **string**| [ISCO code](https://www.ilo.org/public/english/bureau/stat/isco/). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **code** | **string**| [ISCO code](https://www.ilo.org/public/english/bureau/stat/isco/). | |
 
 ### Return type
 
@@ -431,9 +431,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **string**| [ISTAT code](http://professioni.istat.it/cp2011/). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **code** | **string**| [ISTAT code](http://professioni.istat.it/cp2011/). | |
 
 ### Return type
 
@@ -491,9 +491,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **string**| [O*NET code](https://www.onetonline.org/). |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **code** | **string**| [O*NET code](https://www.onetonline.org/). | |
 
 ### Return type
 
@@ -554,12 +554,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| A word or a brief sentence in several languages. |
- **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;]
- **size** | **int**| The maximum number of similar ESCO occupations retrieved by the algorithm. | [optional] [default to 1]
- **min_score** | **float**| Minimum score of the similar ESCO occupations with respect to the job title queried by the user. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| A word or a brief sentence in several languages. | |
+| **dst_lang** | **string**| Language of the similar ESCO occupations. | [optional] [default to &#39;it&#39;] |
+| **size** | **int**| The maximum number of similar ESCO occupations retrieved by the algorithm. | [optional] [default to 1] |
+| **min_score** | **float**| Minimum score of the similar ESCO occupations with respect to the job title queried by the user. | [optional] [default to 0.2] |
 
 ### Return type
 
@@ -620,12 +620,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **string**| A word or a brief sentence in several languages. |
- **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;]
- **size** | **int**| The maximum number of similar ESCO skills retrieved by the algorithm. | [optional] [default to 1]
- **min_score** | **float**| Minimum score of the similar ESCO skills with respect to the skill queried by the user. | [optional] [default to 0.2]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **query** | **string**| A word or a brief sentence in several languages. | |
+| **dst_lang** | **string**| Language of the similar ESCO skills. | [optional] [default to &#39;it&#39;] |
+| **size** | **int**| The maximum number of similar ESCO skills retrieved by the algorithm. | [optional] [default to 1] |
+| **min_score** | **float**| Minimum score of the similar ESCO skills with respect to the skill queried by the user. | [optional] [default to 0.2] |
 
 ### Return type
 

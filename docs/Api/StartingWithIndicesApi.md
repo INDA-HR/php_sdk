@@ -1,11 +1,11 @@
 # OpenAPI\Client\StartingWithIndicesApi
 
-All URIs are relative to https://api.inda.ai.
+All URIs are relative to https://api.inda.ai, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**mostRecentResumesGET()**](StartingWithIndicesApi.md#mostRecentResumesGET) | **GET** /hr/v2/index/{indexname}/resumes/latest/ | Most Recent Resumes
-[**statsIndexGET()**](StartingWithIndicesApi.md#statsIndexGET) | **GET** /hr/v2/index/{indexname}/stats/ | Stats Index
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**mostRecentResumesGET()**](StartingWithIndicesApi.md#mostRecentResumesGET) | **GET** /hr/v2/index/{indexname}/resumes/latest/ | Most Recent Resumes |
+| [**statsIndexGET()**](StartingWithIndicesApi.md#statsIndexGET) | **GET** /hr/v2/index/{indexname}/stats/ | Stats Index |
 
 
 ## `mostRecentResumesGET()`
@@ -50,12 +50,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **sort_by** | **string**| The field the results will be sorted by. Available options: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;CreationDate\&quot;&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;LastModified\&quot;&lt;/code&gt; | [optional] [default to &#39;CreationDate&#39;]
- **sort_order** | **string**| The sort_order option can have the following values: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;asc\&quot;&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;desc\&quot;&lt;/code&gt;. The former will sort in ascending order, the latter in descending order. | [optional] [default to &#39;desc&#39;]
- **size** | **int**| Number of resumes to be returned | [optional] [default to 20]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **sort_by** | **string**| The field the results will be sorted by. Available options: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;CreationDate\&quot;&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;LastModified\&quot;&lt;/code&gt; | [optional] [default to &#39;CreationDate&#39;] |
+| **sort_order** | **string**| The sort_order option can have the following values: &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;asc\&quot;&lt;/code&gt;, &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;\&quot;desc\&quot;&lt;/code&gt;. The former will sort in ascending order, the latter in descending order. | [optional] [default to &#39;desc&#39;] |
+| **size** | **int**| Number of resumes to be returned | [optional] [default to 20] |
 
 ### Return type
 
@@ -114,10 +114,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexname** | **string**|  |
- **doc_type** | **string**|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **indexname** | **string**|  | |
+| **doc_type** | **string**|  | [optional] |
 
 ### Return type
 
