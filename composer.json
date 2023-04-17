@@ -10,13 +10,17 @@
         "rest",
         "api"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "https://inda.ai",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "OpenAPI-Generator contributors",
             "homepage": "https://openapi-generator.tech"
-        }
+        },
+        {
+            "name": "INDA team",
+            "homepage": "https://inda.ai"
+        }   
     ],
     "require": {
         "php": "^7.4 || ^8.0",
