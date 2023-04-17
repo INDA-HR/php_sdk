@@ -69,23 +69,9 @@ Should also work with PHP 8.0.
 
 ### Composer
 
-To install the bindings via [Composer](https://getcomposer.org/), add the following to `composer.json`:
+To install the latest version of the bindings via [Packagist](https://packagist.org/), run: 
 
-```json
-{
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/INDA-HR/php_sdk.git"
-    }
-  ],
-  "require": {
-    "inda-hr/php_sdk": "2.2.0"
-  }
-}
-```
-
-Then run `composer install`
+`composer require inda-hr/php_sdk`.
 
 ### Manual Installation
 
