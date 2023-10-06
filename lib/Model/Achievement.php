@@ -60,7 +60,7 @@ class Achievement implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'title' => '\OpenAPI\Client\Model\Title',
         'description' => '\OpenAPI\Client\Model\Description',
-        'year' => '\DateTime',
+        'year' => '\OpenAPI\Client\Model\Year',
         'link' => '\OpenAPI\Client\Model\ResumeLinkLink'
     ];
 
@@ -368,7 +368,7 @@ class Achievement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets year
      *
-     * @return \DateTime|null
+     * @return Year|null
      */
     public function getYear()
     {
@@ -378,7 +378,7 @@ class Achievement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets year
      *
-     * @param \DateTime|null $year year
+     * @param Year|null $year year
      *
      * @return self
      */
