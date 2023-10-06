@@ -30,6 +30,7 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
+use OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
@@ -41,7 +42,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -216,6 +217,37 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param string $property
      * @return bool
      */
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function getAllowedModes()
+    {
+        return self::ALLOWED_MODES;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeOverwrite()
+    {
+        return self::MODE_OVERWRITE;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeAppend()
+    {
+        return self::MODE_APPEND;
+    }
+
     public static function isNullable(string $property): bool
     {
         return self::openAPINullables()[$property] ?? false;
@@ -608,14 +640,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\EducationExperience[]|null $education_experiences Candidate's education experiences.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setEducationExperiences($education_experiences)
+    public function setEducationExperiences($education_experiences, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($education_experiences)) {
             throw new \InvalidArgumentException('non-nullable education_experiences cannot be null');
         }
-        $this->container['education_experiences'] = $education_experiences;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($education_experiences)) {
+                    $education_experiences = [$education_experiences];
+                }
+                $this->container['education_experiences'] = $education_experiences;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($education_experiences)) {
+                    $education_experiences = [$education_experiences];
+                }
+                $this->container['education_experiences'] = array_merge($education_experiences, $this->container['education_experiences'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -635,14 +686,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\WorkExperience[]|null $work_experiences Candidate's employment history.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setWorkExperiences($work_experiences)
+    public function setWorkExperiences($work_experiences,  $mode = self::MODE_OVERWRITE)
     {
         if (is_null($work_experiences)) {
             throw new \InvalidArgumentException('non-nullable work_experiences cannot be null');
         }
-        $this->container['work_experiences'] = $work_experiences;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($work_experiences)) {
+                    $work_experiences = [$work_experiences];
+                }
+                $this->container['work_experiences'] = $work_experiences;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($work_experiences)) {
+                    $work_experiences = [$work_experiences];
+                }
+                $this->container['work_experiences'] = array_merge($work_experiences, $this->container['work_experiences'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -689,14 +759,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Reference[]|null $references Candidate's references.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setReferences($references)
+    public function setReferences($references, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($references)) {
             throw new \InvalidArgumentException('non-nullable references cannot be null');
         }
-        $this->container['references'] = $references;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($references)) {
+                    $references = [$references];
+                }
+                $this->container['references'] = $references;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($references)) {
+                    $references = [$references];
+                }
+                $this->container['references'] = array_merge($references, $this->container['references'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -743,14 +832,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\OptionalResumeSkill[]|null $skills Candidate's skills.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setSkills($skills)
+    public function setSkills($skills, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($skills)) {
             throw new \InvalidArgumentException('non-nullable skills cannot be null');
         }
-        $this->container['skills'] = $skills;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($skills)) {
+                    $skills = [$skills];
+                }
+                $this->container['skills'] = $skills;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($skills)) {
+                    $skills = [$skills];
+                }
+                $this->container['skills'] = array_merge($skills, $this->container['skills'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -770,14 +878,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\OptionalResumeJobTitle[]|null $job_titles Candidate's job titles.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setJobTitles($job_titles)
+    public function setJobTitles($job_titles, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($job_titles)) {
             throw new \InvalidArgumentException('non-nullable job_titles cannot be null');
         }
-        $this->container['job_titles'] = $job_titles;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($job_titles)) {
+                    $job_titles = [$job_titles];
+                }
+                $this->container['job_titles'] = $job_titles;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($job_titles)) {
+                    $job_titles = [$job_titles];
+                }
+                $this->container['job_titles'] = array_merge($job_titles, $this->container['job_titles'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -797,14 +924,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\OptionalResumeLanguage[]|null $languages Candidate's language skills.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setLanguages($languages)
+    public function setLanguages($languages, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($languages)) {
             throw new \InvalidArgumentException('non-nullable languages cannot be null');
         }
-        $this->container['languages'] = $languages;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($languages)) {
+                    $languages = [$languages];
+                }
+                $this->container['languages'] = $languages;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($languages)) {
+                    $languages = [$languages];
+                }
+                $this->container['languages'] = array_merge($languages, $this->container['languages'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -824,14 +970,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Certification[]|null $certifications Certifications earned by the candidate.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setCertifications($certifications)
+    public function setCertifications($certifications, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($certifications)) {
             throw new \InvalidArgumentException('non-nullable certifications cannot be null');
         }
-        $this->container['certifications'] = $certifications;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($certifications)) {
+                    $certifications = [$certifications];
+                }
+                $this->container['certifications'] = $certifications;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($certifications)) {
+                    $certifications = [$certifications];
+                }
+                $this->container['certifications'] = array_merge($certifications, $this->container['certifications'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -851,14 +1016,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Publication[]|null $publications Candidate's publications, both academic papers and books.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setPublications($publications)
+    public function setPublications($publications, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($publications)) {
             throw new \InvalidArgumentException('non-nullable publications cannot be null');
         }
-        $this->container['publications'] = $publications;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($publications)) {
+                    $publications = [$publications];
+                }
+                $this->container['publications'] = $publications;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($publications)) {
+                    $publications = [$publications];
+                }
+                $this->container['publications'] = array_merge($publications, $this->container['publications'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -878,14 +1062,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Award[]|null $awards List of the awards won by the candidate.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setAwards($awards)
+    public function setAwards($awards, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($awards)) {
             throw new \InvalidArgumentException('non-nullable awards cannot be null');
         }
-        $this->container['awards'] = $awards;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($awards)) {
+                    $awards = [$awards];
+                }
+                $this->container['awards'] = $awards;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($awards)) {
+                    $awards = [$awards];
+                }
+                $this->container['awards'] = array_merge($awards, $this->container['awards'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -905,14 +1108,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Project[]|null $projects Projects the candidate worked or works on.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setProjects($projects)
+    public function setProjects($projects, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($projects)) {
             throw new \InvalidArgumentException('non-nullable projects cannot be null');
         }
-        $this->container['projects'] = $projects;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($projects)) {
+                    $projects = [$projects];
+                }
+                $this->container['projects'] = $projects;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($projects)) {
+                    $projects = [$projects];
+                }
+                $this->container['projects'] = array_merge($projects, $this->container['projects'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -932,14 +1154,34 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Achievement[]|null $achievements Achievements earned by the candidate.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setAchievements($achievements)
+    public function setAchievements($achievements, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($achievements)) {
             throw new \InvalidArgumentException('non-nullable achievements cannot be null');
         }
-        $this->container['achievements'] = $achievements;
+
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($achievements)) {
+                    $achievements = [$achievements];
+                }
+                $this->container['achievements'] = $achievements;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($achievements)) {
+                    $achievements = [$achievements];
+                }
+                $this->container['achievements'] = array_merge($achievements, $this->container['achievements'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -959,14 +1201,34 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Patent[]|null $patents Candidate's patents.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setPatents($patents)
+    public function setPatents($patents, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($patents)) {
             throw new \InvalidArgumentException('non-nullable patents cannot be null');
         }
-        $this->container['patents'] = $patents;
+
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($patents)) {
+                    $patents = [$patents];
+                }
+                $this->container['patents'] = $patents;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($patents)) {
+                    $patents = [$patents];
+                }
+                $this->container['patents'] = array_merge($patents, $this->container['patents'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -986,14 +1248,34 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Text[]|null $hobbies_and_interests List of candidate's hobbies and interests.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setHobbiesAndInterests($hobbies_and_interests)
+    public function setHobbiesAndInterests($hobbies_and_interests, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($hobbies_and_interests)) {
             throw new \InvalidArgumentException('non-nullable hobbies_and_interests cannot be null');
         }
-        $this->container['hobbies_and_interests'] = $hobbies_and_interests;
+
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($hobbies_and_interests)) {
+                    $hobbies_and_interests = [$hobbies_and_interests];
+                }
+                $this->container['hobbies_and_interests'] = $hobbies_and_interests;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($hobbies_and_interests)) {
+                    $hobbies_and_interests = [$hobbies_and_interests];
+                }
+                $this->container['hobbies_and_interests'] = array_merge($hobbies_and_interests, $this->container['hobbies_and_interests'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -1013,14 +1295,34 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\License[]|null $licenses Candidate's licenses.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setLicenses($licenses)
+    public function setLicenses($licenses, $mode = self::MODE_OVERWRITE )
     {
         if (is_null($licenses)) {
             throw new \InvalidArgumentException('non-nullable licenses cannot be null');
         }
-        $this->container['licenses'] = $licenses;
+
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($licenses)) {
+                    $licenses = [$licenses];
+                }
+                $this->container['licenses'] = $licenses;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($licenses)) {
+                    $licenses = [$licenses];
+                }
+                $this->container['licenses'] = array_merge($licenses, $this->container['licenses'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -1040,14 +1342,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Event[]|null $volunteering Candidate's works as volunteer.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setVolunteering($volunteering)
+    public function setVolunteering($volunteering, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($volunteering)) {
             throw new \InvalidArgumentException('non-nullable volunteering cannot be null');
         }
-        $this->container['volunteering'] = $volunteering;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($volunteering)) {
+                    $volunteering = [$volunteering];
+                }
+                $this->container['volunteering'] = $volunteering;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($volunteering)) {
+                    $volunteering = [$volunteering];
+                }
+                $this->container['volunteering'] = array_merge($volunteering, $this->container['volunteering'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -1067,14 +1388,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Event[]|null $conference_and_seminars Conferences and seminars that the candidate may have partecipated in.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setConferenceAndSeminars($conference_and_seminars)
+    public function setConferenceAndSeminars($conference_and_seminars, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($conference_and_seminars)) {
             throw new \InvalidArgumentException('non-nullable conference_and_seminars cannot be null');
         }
-        $this->container['conference_and_seminars'] = $conference_and_seminars;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($conference_and_seminars)) {
+                    $conference_and_seminars = [$conference_and_seminars];
+                }
+                $this->container['conference_and_seminars'] = $conference_and_seminars;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($conference_and_seminars)) {
+                    $conference_and_seminars = [$conference_and_seminars];
+                }
+                $this->container['conference_and_seminars'] = array_merge($conference_and_seminars, $this->container['conference_and_seminars'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -1094,14 +1434,34 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\MilitaryService[]|null $military_history Candidate's military history.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setMilitaryHistory($military_history)
+    public function setMilitaryHistory($military_history,  $mode = self::MODE_OVERWRITE)
     {
         if (is_null($military_history)) {
             throw new \InvalidArgumentException('non-nullable military_history cannot be null');
         }
-        $this->container['military_history'] = $military_history;
+
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($military_history)) {
+                    $military_history = [$military_history];
+                }
+                $this->container['military_history'] = $military_history;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($military_history)) {
+                    $military_history = [$military_history];
+                }
+                $this->container['military_history'] = array_merge($military_history, $this->container['military_history'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -1121,14 +1481,33 @@ class ResumeCommonData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Other[]|null $others Candidate's additional information not covered by the previous fields.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setOthers($others)
+    public function setOthers($others, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($others)) {
             throw new \InvalidArgumentException('non-nullable others cannot be null');
         }
-        $this->container['others'] = $others;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($others)) {
+                    $others = [$others];
+                }
+                $this->container['others'] = $others;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($others)) {
+                    $others = [$others];
+                }
+                $this->container['others'] = array_merge($others, $this->container['others'] ?: []);
+                break;
+        }
 
         return $this;
     }
