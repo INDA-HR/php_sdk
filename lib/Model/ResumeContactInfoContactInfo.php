@@ -379,7 +379,6 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
                 break;
         }
 
-
         return $this;
     }
 
@@ -398,14 +397,33 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
      *
      * @param \OpenAPI\Client\Model\ResumeEmailAddressEmailAddress[]|null $email_addresses List of email addresses.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setEmailAddresses($email_addresses)
+    public function setEmailAddresses($email_addresses, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($email_addresses)) {
             throw new \InvalidArgumentException('non-nullable email_addresses cannot be null');
         }
-        $this->container['email_addresses'] = $email_addresses;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($email_addresses)) {
+                    $email_addresses = [$email_addresses];
+                }
+                $this->container['email_addresses'] = $email_addresses;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($email_addresses)) {
+                    $email_addresses = [$email_addresses];
+                }
+                $this->container['email_addresses'] = array_merge($email_addresses, $this->container['email_addresses'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -425,14 +443,33 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
      *
      * @param \OpenAPI\Client\Model\ResumeLinkLink[]|null $links List of relevant links.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setLinks($links)
+    public function setLinks($links, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($links)) {
             throw new \InvalidArgumentException('non-nullable links cannot be null');
         }
-        $this->container['links'] = $links;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($links)) {
+                    $links = [$links];
+                }
+                $this->container['links'] = $links;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($links)) {
+                    $links = [$links];
+                }
+                $this->container['links'] = array_merge($links, $this->container['links'] ?: []);
+                break;
+        }
 
         return $this;
     }
