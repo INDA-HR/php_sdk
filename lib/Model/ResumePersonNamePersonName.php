@@ -30,6 +30,7 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
+use OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
@@ -41,7 +42,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResumePersonNamePersonName implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResumePersonNamePersonName implements ModelModeInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -151,6 +152,36 @@ class ResumePersonNamePersonName implements ModelInterface, ArrayAccess, \JsonSe
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function getAllowedModes()
+    {
+        return self::ALLOWED_MODES;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeOverwrite()
+    {
+        return self::MODE_OVERWRITE;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeAppend()
+    {
+        return self::MODE_APPEND;
     }
 
     /**
@@ -394,14 +425,33 @@ class ResumePersonNamePersonName implements ModelInterface, ArrayAccess, \JsonSe
      *
      * @param \OpenAPI\Client\Model\BaseModelsName[]|null $middle_names Person's middle names.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setMiddleNames($middle_names)
+    public function setMiddleNames($middle_names, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($middle_names)) {
             throw new \InvalidArgumentException('non-nullable middle_names cannot be null');
         }
-        $this->container['middle_names'] = $middle_names;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($middle_names)) {
+                    $middle_names = [$middle_names];
+                }
+                $this->container['middle_names'] = $middle_names;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($middle_names)) {
+                    $middle_names = [$middle_names];
+                }
+                $this->container['middle_names'] = array_merge($middle_names, $this->container['middle_names'] ?: []);
+                break;
+        }
 
         return $this;
     }
