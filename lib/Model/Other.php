@@ -59,7 +59,7 @@ class Other implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'title' => '\OpenAPI\Client\Model\Title',
-        'date' => '\DateTime',
+        'date' => '\OpenAPI\Client\Model\Date',
         'description' => '\OpenAPI\Client\Model\Description',
         'link' => '\OpenAPI\Client\Model\ResumeLinkLink'
     ];
@@ -341,7 +341,7 @@ class Other implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date
      *
-     * @return \DateTime|null
+     * @return Date|null
      */
     public function getDate()
     {
@@ -351,7 +351,7 @@ class Other implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param \DateTime|null $date date
+     * @param Date|null $date date
      *
      * @return self
      */
