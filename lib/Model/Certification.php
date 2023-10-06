@@ -60,7 +60,7 @@ class Certification implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'certification_name' => '\OpenAPI\Client\Model\BaseModelsName',
         'description' => '\OpenAPI\Client\Model\Description',
-        'first_issued_date' => '\DateTime',
+        'first_issued_date' => '\OpenAPI\Client\Model\FirstIssuedDate',
         'issuing_authority' => '\OpenAPI\Client\Model\Organization',
         'url' => '\OpenAPI\Client\Model\ResumeLinkURL'
     ];
@@ -375,7 +375,7 @@ class Certification implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets first_issued_date
      *
-     * @return \DateTime|null
+     * @return FirstIssuedDate|null
      */
     public function getFirstIssuedDate()
     {
@@ -385,7 +385,7 @@ class Certification implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets first_issued_date
      *
-     * @param \DateTime|null $first_issued_date first_issued_date
+     * @param FirstIssuedDate|null $first_issued_date first_issued_date
      *
      * @return self
      */
