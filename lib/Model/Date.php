@@ -59,7 +59,7 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'details' => '\OpenAPI\Client\Model\BaseDetails',
-        'value' => '\DateTime'
+        'value' => 'string'
     ];
 
     /**
@@ -327,7 +327,7 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets value
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getValue()
     {
@@ -337,7 +337,7 @@ class Date implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value
      *
-     * @param \DateTime|null $value value
+     * @param string|null $value value
      *
      * @return self
      */
