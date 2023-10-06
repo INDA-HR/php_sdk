@@ -65,8 +65,8 @@ class EducationExperience implements ModelModeInterface, ModelInterface, ArrayAc
         'final_grade' => '\OpenAPI\Client\Model\FinalGrade',
         'education_level_code' => '\OpenAPI\Client\Model\ResumeEducationExperiencesEducationLevelCode',
         'description' => '\OpenAPI\Client\Model\Description',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => '\OpenAPI\Client\Model\StartDate',
+        'end_date' => '\OpenAPI\Client\Model\EndDate',
         'ongoing' => '\OpenAPI\Client\Model\Ongoing',
         'location' => '\OpenAPI\Client\Model\ResumeLocationsLocation',
         'organization' => '\OpenAPI\Client\Model\Organization',
@@ -570,7 +570,7 @@ class EducationExperience implements ModelModeInterface, ModelInterface, ArrayAc
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return StartDate|null
      */
     public function getStartDate()
     {
@@ -580,7 +580,7 @@ class EducationExperience implements ModelModeInterface, ModelInterface, ArrayAc
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param StartDate|null $start_date start_date
      *
      * @return self
      */
@@ -597,7 +597,7 @@ class EducationExperience implements ModelModeInterface, ModelInterface, ArrayAc
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return EndDate|null
      */
     public function getEndDate()
     {
@@ -607,7 +607,7 @@ class EducationExperience implements ModelModeInterface, ModelInterface, ArrayAc
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param EndDate|null $end_date end_date
      *
      * @return self
      */
