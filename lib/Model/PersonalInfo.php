@@ -60,7 +60,7 @@ class PersonalInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \
       */
     protected static $openAPITypes = [
         'person_name' => '\OpenAPI\Client\Model\ResumePersonNamePersonName',
-        'birthdate' => '\DateTime',
+        'birthdate' => '\OpenAPI\Client\Model\Birthdate',
         'age' => '\OpenAPI\Client\Model\Age',
         'nationalities' => '\OpenAPI\Client\Model\Nationality[]',
         'citizenships' => '\OpenAPI\Client\Model\Citizenship[]',
@@ -414,7 +414,7 @@ class PersonalInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \
     /**
      * Gets birthdate
      *
-     * @return \DateTime|null
+     * @return Birthdate|null
      */
     public function getBirthdate()
     {
@@ -424,7 +424,7 @@ class PersonalInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \
     /**
      * Sets birthdate
      *
-     * @param \DateTime|null $birthdate birthdate
+     * @param Birthdate|null $birthdate birthdate
      *
      * @return self
      */
