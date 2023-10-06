@@ -30,6 +30,7 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
+use http\Encoding\Stream\Enbrotli;
 use OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
 
@@ -63,8 +64,8 @@ class WorkExperience implements ModelModeInterface, ModelInterface, ArrayAccess,
         'duration' => '\OpenAPI\Client\Model\BaseDuration',
         'position_title' => '\OpenAPI\Client\Model\OptionalResumeJobTitle',
         'description' => '\OpenAPI\Client\Model\Description',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => '\OpenAPI\Client\Model\StartDate',
+        'end_date' => '\OpenAPI\Client\Model\EndDate',
         'ongoing' => '\OpenAPI\Client\Model\Ongoing',
         'location' => '\OpenAPI\Client\Model\ResumeLocationsLocation',
         'remote_working' => '\OpenAPI\Client\Model\RemoteWorking',
@@ -516,7 +517,7 @@ class WorkExperience implements ModelModeInterface, ModelInterface, ArrayAccess,
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return StartDate|null
      */
     public function getStartDate()
     {
@@ -526,7 +527,7 @@ class WorkExperience implements ModelModeInterface, ModelInterface, ArrayAccess,
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param StartDate|null $start_date start_date
      *
      * @return self
      */
@@ -543,7 +544,7 @@ class WorkExperience implements ModelModeInterface, ModelInterface, ArrayAccess,
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return EndDate|null
      */
     public function getEndDate()
     {
@@ -553,7 +554,7 @@ class WorkExperience implements ModelModeInterface, ModelInterface, ArrayAccess,
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param EndDate|null $end_date end_date
      *
      * @return self
      */
