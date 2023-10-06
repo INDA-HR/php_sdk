@@ -30,7 +30,9 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
+use \OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
+
 
 /**
  * ResumeContactInfoContactInfo Class Doc Comment
@@ -41,22 +43,22 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResumeContactInfoContactInfo implements ModelInterface, ArrayAccess, \JsonSerializable
+class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ResumeContact_infoContactInfo';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'phone_numbers' => '\OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber[]',
         'email_addresses' => '\OpenAPI\Client\Model\ResumeEmailAddressEmailAddress[]',
@@ -64,12 +66,12 @@ class ResumeContactInfoContactInfo implements ModelInterface, ArrayAccess, \Json
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'phone_numbers' => null,
         'email_addresses' => null,
@@ -77,25 +79,55 @@ class ResumeContactInfoContactInfo implements ModelInterface, ArrayAccess, \Json
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var boolean[]
+     */
     protected static array $openAPINullables = [
         'phone_numbers' => false,
-		'email_addresses' => false,
-		'links' => false
+        'email_addresses' => false,
+        'links' => false
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var boolean[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function getAllowedModes()
+    {
+        return self::ALLOWED_MODES;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeOverwrite()
+    {
+        return self::MODE_OVERWRITE;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeAppend()
+    {
+        return self::MODE_APPEND;
+    }
+
+    /**
+     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -263,14 +295,14 @@ class ResumeContactInfoContactInfo implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param string $variableName
+     * @param array  $fields
+     * @param mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -317,16 +349,36 @@ class ResumeContactInfoContactInfo implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets phone_numbers
      *
-     * @param \OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber[]|null $phone_numbers List of phone numbers.
+     * @param \OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber[]|\OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber|null $phone_numbers List of phone numbers.
+     *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
      *
      * @return self
      */
-    public function setPhoneNumbers($phone_numbers)
+    public function setPhoneNumbers($phone_numbers, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($phone_numbers)) {
             throw new \InvalidArgumentException('non-nullable phone_numbers cannot be null');
         }
-        $this->container['phone_numbers'] = $phone_numbers;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($phone_numbers)) {
+                    $phone_numbers = [$phone_numbers];
+                }
+                $this->container['phone_numbers'] = $phone_numbers;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($phone_numbers)) {
+                    $phone_numbers = [$phone_numbers];
+                }
+                $this->container['phone_numbers'] = array_merge($phone_numbers, $this->container['phone_numbers'] ?: []);
+                break;
+        }
+
 
         return $this;
     }
@@ -448,7 +500,7 @@ class ResumeContactInfoContactInfo implements ModelInterface, ArrayAccess, \Json
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
