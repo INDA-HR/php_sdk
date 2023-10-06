@@ -60,7 +60,7 @@ class Award implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'title' => '\OpenAPI\Client\Model\Title',
         'description' => '\OpenAPI\Client\Model\Description',
-        'year' => '\DateTime',
+        'year' => '\OpenAPI\Client\Model\Year',
         'awarder' => '\OpenAPI\Client\Model\Organization'
     ];
 
@@ -368,7 +368,7 @@ class Award implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets year
      *
-     * @return \DateTime|null
+     * @return Year|null
      */
     public function getYear()
     {
@@ -378,7 +378,7 @@ class Award implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets year
      *
-     * @param \DateTime|null $year year
+     * @param Year|null $year year
      *
      * @return self
      */
