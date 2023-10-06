@@ -30,6 +30,7 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
+use OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
@@ -41,7 +42,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class WorkExperience implements ModelInterface, ArrayAccess, \JsonSerializable
+class WorkExperience implements ModelModeInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -172,6 +173,36 @@ class WorkExperience implements ModelInterface, ArrayAccess, \JsonSerializable
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function getAllowedModes()
+    {
+        return self::ALLOWED_MODES;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeOverwrite()
+    {
+        return self::MODE_OVERWRITE;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeAppend()
+    {
+        return self::MODE_APPEND;
     }
 
     /**
@@ -686,14 +717,33 @@ class WorkExperience implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\OptionalResumeSkill[]|null $skills Skills related to the experience.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setSkills($skills)
+    public function setSkills($skills, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($skills)) {
             throw new \InvalidArgumentException('non-nullable skills cannot be null');
         }
-        $this->container['skills'] = $skills;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($skills)) {
+                    $skills = [$skills];
+                }
+                $this->container['skills'] = $skills;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($skills)) {
+                    $skills = [$skills];
+                }
+                $this->container['skills'] = array_merge($skills, $this->container['skills'] ?: []);
+                break;
+        }
 
         return $this;
     }
