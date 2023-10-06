@@ -30,6 +30,7 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
+use OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
@@ -41,7 +42,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PersonalInfo implements ModelInterface, ArrayAccess, \JsonSerializable
+class PersonalInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -174,6 +175,36 @@ class PersonalInfo implements ModelInterface, ArrayAccess, \JsonSerializable
     public static function isNullable(string $property): bool
     {
         return self::openAPINullables()[$property] ?? false;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function getAllowedModes()
+    {
+        return self::ALLOWED_MODES;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeOverwrite()
+    {
+        return self::MODE_OVERWRITE;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeAppend()
+    {
+        return self::MODE_APPEND;
     }
 
     /**
@@ -449,14 +480,33 @@ class PersonalInfo implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Nationality[]|null $nationalities Person's list of nationalities.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setNationalities($nationalities)
+    public function setNationalities($nationalities, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($nationalities)) {
             throw new \InvalidArgumentException('non-nullable nationalities cannot be null');
         }
-        $this->container['nationalities'] = $nationalities;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($nationalities)) {
+                    $nationalities = [$nationalities];
+                }
+                $this->container['nationalities'] = $nationalities;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($nationalities)) {
+                    $nationalities = [$nationalities];
+                }
+                $this->container['nationalities'] = array_merge($nationalities, $this->container['nationalities'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -476,14 +526,33 @@ class PersonalInfo implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\Citizenship[]|null $citizenships Person's list of citizenships.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setCitizenships($citizenships)
+    public function setCitizenships($citizenships,  $mode = self::MODE_OVERWRITE)
     {
         if (is_null($citizenships)) {
             throw new \InvalidArgumentException('non-nullable citizenships cannot be null');
         }
-        $this->container['citizenships'] = $citizenships;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($citizenships)) {
+                    $citizenships = [$citizenships];
+                }
+                $this->container['citizenships'] = $citizenships;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($citizenships)) {
+                    $citizenships = [$citizenships];
+                }
+                $this->container['citizenships'] = array_merge($citizenships, $this->container['citizenships'] ?: []);
+                break;
+        }
 
         return $this;
     }
@@ -557,14 +626,33 @@ class PersonalInfo implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param \OpenAPI\Client\Model\ProtectedGroup[]|null $protected_groups Protected groups to which the person belongs. Check the [Standardized Data](https://api.inda.ai/hr/docs/v2/#tag/Standardized-Data) section for more details.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setProtectedGroups($protected_groups)
+    public function setProtectedGroups($protected_groups, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($protected_groups)) {
             throw new \InvalidArgumentException('non-nullable protected_groups cannot be null');
         }
-        $this->container['protected_groups'] = $protected_groups;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($protected_groups)) {
+                    $protected_groups = [$protected_groups];
+                }
+                $this->container['protected_groups'] = $protected_groups;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($protected_groups)) {
+                    $protected_groups = [$protected_groups];
+                }
+                $this->container['protected_groups'] = array_merge($protected_groups, $this->container['protected_groups'] ?: []);
+                break;
+        }
 
         return $this;
     }
