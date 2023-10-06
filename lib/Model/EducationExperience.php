@@ -30,6 +30,7 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
+use OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
@@ -41,7 +42,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class EducationExperience implements ModelInterface, ArrayAccess, \JsonSerializable
+class EducationExperience implements ModelModeInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -172,6 +173,36 @@ class EducationExperience implements ModelInterface, ArrayAccess, \JsonSerializa
     private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return array
+     */
+    public static function getAllowedModes()
+    {
+        return self::ALLOWED_MODES;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeOverwrite()
+    {
+        return self::MODE_OVERWRITE;
+    }
+
+    /**
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @return string
+     */
+    public static function getModeAppend()
+    {
+        return self::MODE_APPEND;
     }
 
     /**
@@ -686,14 +717,33 @@ class EducationExperience implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param \OpenAPI\Client\Model\Text[]|null $courses List of attended courses.
      *
+     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     *
      * @return self
      */
-    public function setCourses($courses)
+    public function setCourses($courses, $mode = self::MODE_OVERWRITE)
     {
         if (is_null($courses)) {
             throw new \InvalidArgumentException('non-nullable courses cannot be null');
         }
-        $this->container['courses'] = $courses;
+        if (!in_array($mode, self::ALLOWED_MODES)) {
+            throw new \InvalidArgumentException('Invalid mode');
+        }
+
+        switch ($mode) {
+            case self::MODE_OVERWRITE:
+                if (!is_countable($courses)) {
+                    $courses = [$courses];
+                }
+                $this->container['courses'] = $courses;
+                break;
+            case self::MODE_APPEND:
+                if (!is_countable($courses)) {
+                    $courses = [$courses];
+                }
+                $this->container['courses'] = array_merge($courses, $this->container['courses'] ?: []);
+                break;
+        }
 
         return $this;
     }
