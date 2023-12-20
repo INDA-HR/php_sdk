@@ -60,8 +60,8 @@ class License implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'license_type' => '\OpenAPI\Client\Model\LicenseType',
         'license_type_code' => '\OpenAPI\Client\Model\DrivingLicenseTypeCode',
-        'first_issued_date' => '\DateTime',
-        'expiry_date' => '\DateTime'
+        'first_issued_date' => '\OpenAPI\Client\Model\FirstIssuedDate',
+        'expiry_date' => '\OpenAPI\Client\Model\ExpiryDate',
     ];
 
     /**
@@ -368,7 +368,7 @@ class License implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets first_issued_date
      *
-     * @return \DateTime|null
+     * @return FirstIssuedDate|null
      */
     public function getFirstIssuedDate()
     {
@@ -378,7 +378,7 @@ class License implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets first_issued_date
      *
-     * @param \DateTime|null $first_issued_date first_issued_date
+     * @param FirstIssuedDate|null $first_issued_date first_issued_date
      *
      * @return self
      */
@@ -395,7 +395,7 @@ class License implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets expiry_date
      *
-     * @return \DateTime|null
+     * @return ExpiryDate|null
      */
     public function getExpiryDate()
     {
@@ -405,7 +405,7 @@ class License implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets expiry_date
      *
-     * @param \DateTime|null $expiry_date expiry_date
+     * @param ExpiryDate|null $expiry_date expiry_date
      *
      * @return self
      */

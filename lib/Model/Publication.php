@@ -61,7 +61,7 @@ class Publication implements ModelInterface, ArrayAccess, \JsonSerializable
         'title' => '\OpenAPI\Client\Model\Title',
         'description' => '\OpenAPI\Client\Model\Description',
         'doi' => '\OpenAPI\Client\Model\Text',
-        'year' => '\DateTime',
+        'year' => '\OpenAPI\Client\Model\Year',
         'link' => '\OpenAPI\Client\Model\ResumeLinkLink'
     ];
 
@@ -402,7 +402,7 @@ class Publication implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets year
      *
-     * @return \DateTime|null
+     * @return Year|null
      */
     public function getYear()
     {
@@ -412,7 +412,7 @@ class Publication implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets year
      *
-     * @param \DateTime|null $year year
+     * @param Year|null $year year
      *
      * @return self
      */

@@ -63,8 +63,8 @@ class MilitaryService implements ModelInterface, ArrayAccess, \JsonSerializable
         'starting_rank' => '\OpenAPI\Client\Model\Title',
         'current_or_ending_rank' => '\OpenAPI\Client\Model\Title',
         'location' => '\OpenAPI\Client\Model\ResumeLocationsLocation',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => '\OpenAPI\Client\Model\StartDate',
+        'end_date' => '\OpenAPI\Client\Model\EndDate',
         'ongoing' => '\OpenAPI\Client\Model\Ongoing'
     ];
 
@@ -477,7 +477,7 @@ class MilitaryService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return StartDate|null
      */
     public function getStartDate()
     {
@@ -487,7 +487,7 @@ class MilitaryService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param StartDate|null $start_date start_date
      *
      * @return self
      */
@@ -504,7 +504,7 @@ class MilitaryService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return EndDate|null
      */
     public function getEndDate()
     {
@@ -514,7 +514,7 @@ class MilitaryService implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param EndDate|null $end_date end_date
      *
      * @return self
      */

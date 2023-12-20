@@ -62,8 +62,8 @@ class Project implements ModelInterface, ArrayAccess, \JsonSerializable
         'description' => '\OpenAPI\Client\Model\Description',
         'roles' => '\OpenAPI\Client\Model\Role[]',
         'keywords' => '\OpenAPI\Client\Model\Keyword[]',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => '\OpenAPI\Client\Model\StartDate',
+        'end_date' => '\OpenAPI\Client\Model\EndDate',
         'ongoing' => '\OpenAPI\Client\Model\Ongoing',
         'link' => '\OpenAPI\Client\Model\ResumeLinkLink'
     ];
@@ -450,7 +450,7 @@ class Project implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return StartDate|null
      */
     public function getStartDate()
     {
@@ -460,7 +460,7 @@ class Project implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param StartDate|null $start_date start_date
      *
      * @return self
      */
@@ -477,7 +477,7 @@ class Project implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return EndDate|null
      */
     public function getEndDate()
     {
@@ -487,7 +487,7 @@ class Project implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param EndDate|null $end_date end_date
      *
      * @return self
      */

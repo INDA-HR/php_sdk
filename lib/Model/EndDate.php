@@ -1,6 +1,6 @@
 <?php
 /**
- * ResumeContactInfoContactInfo
+ * Birthdate
  *
  * PHP version 7.4
  *
@@ -30,12 +30,10 @@
 namespace OpenAPI\Client\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\Model\Interface\ModelModeInterface;
 use \OpenAPI\Client\ObjectSerializer;
 
-
 /**
- * ResumeContactInfoContactInfo Class Doc Comment
+ * EndDate Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -43,91 +41,58 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \JsonSerializable
+class EndDate implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
-    protected static $openAPIModelName = 'ResumeContact_infoContactInfo';
+      * The original name of the model.
+      *
+      * @var string
+      */
+    protected static $openAPIModelName = 'EndDate';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $openAPITypes = [
-        'phone_numbers' => '\OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber[]',
-        'email_addresses' => '\OpenAPI\Client\Model\ResumeEmailAddressEmailAddress[]',
-        'links' => '\OpenAPI\Client\Model\ResumeLinkLink[]'
+        'details' => '\OpenAPI\Client\Model\BaseDetails',
+        'value' => 'string'
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     * @phpstan-var array<string, string|null>
-     * @psalm-var array<string, string|null>
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
+      */
     protected static $openAPIFormats = [
-        'phone_numbers' => null,
-        'email_addresses' => null,
-        'links' => null
+        'details' => null,
+        'value' => null
     ];
 
     /**
-     * Array of nullable properties. Used for (de)serialization
-     *
-     * @var boolean[]
-     */
+      * Array of nullable properties. Used for (de)serialization
+      *
+      * @var boolean[]
+      */
     protected static array $openAPINullables = [
-        'phone_numbers' => false,
-        'email_addresses' => false,
-        'links' => false
+        'details' => false,
+		'value' => false
     ];
 
     /**
-     * If a nullable field gets set to null, insert it here
-     *
-     * @var boolean[]
-     */
+      * If a nullable field gets set to null, insert it here
+      *
+      * @var boolean[]
+      */
     protected array $openAPINullablesSetToNull = [];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function getAllowedModes()
-    {
-        return self::ALLOWED_MODES;
-    }
-
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return string
-     */
-    public static function getModeOverwrite()
-    {
-        return self::MODE_OVERWRITE;
-    }
-
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return string
-     */
-    public static function getModeAppend()
-    {
-        return self::MODE_APPEND;
-    }
-
-    /**
-     * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
      */
@@ -205,9 +170,8 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        'phone_numbers' => 'PhoneNumbers',
-        'email_addresses' => 'EmailAddresses',
-        'links' => 'Links'
+        'details' => 'Details',
+        'value' => 'Value'
     ];
 
     /**
@@ -216,9 +180,8 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        'phone_numbers' => 'setPhoneNumbers',
-        'email_addresses' => 'setEmailAddresses',
-        'links' => 'setLinks'
+        'details' => 'setDetails',
+        'value' => 'setValue'
     ];
 
     /**
@@ -227,9 +190,8 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        'phone_numbers' => 'getPhoneNumbers',
-        'email_addresses' => 'getEmailAddresses',
-        'links' => 'getLinks'
+        'details' => 'getDetails',
+        'value' => 'getValue'
     ];
 
     /**
@@ -289,20 +251,19 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('phone_numbers', $data ?? [], null);
-        $this->setIfExists('email_addresses', $data ?? [], null);
-        $this->setIfExists('links', $data ?? [], null);
+        $this->setIfExists('details', $data ?? [], null);
+        $this->setIfExists('value', $data ?? [], null);
     }
 
     /**
-     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-     * $this->openAPINullablesSetToNull array
-     *
-     * @param string $variableName
-     * @param array  $fields
-     * @param mixed  $defaultValue
-     */
+    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+    * $this->openAPINullablesSetToNull array
+    *
+    * @param string $variableName
+    * @param array  $fields
+    * @param mixed  $defaultValue
+    */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -337,139 +298,55 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
 
 
     /**
-     * Gets phone_numbers
+     * Gets details
      *
-     * @return \OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber[]|null
+     * @return \OpenAPI\Client\Model\BaseDetails|null
      */
-    public function getPhoneNumbers()
+    public function getDetails()
     {
-        return $this->container['phone_numbers'];
+        return $this->container['details'];
     }
 
     /**
-     * Sets phone_numbers
+     * Sets details
      *
-     * @param \OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber[]|\OpenAPI\Client\Model\ResumePhoneNumbersPhoneNumber|null $phone_numbers List of phone numbers.
-     *
-     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     * @param \OpenAPI\Client\Model\BaseDetails|null $details details
      *
      * @return self
      */
-    public function setPhoneNumbers($phone_numbers, $mode = self::MODE_OVERWRITE)
+    public function setDetails($details)
     {
-        if (is_null($phone_numbers)) {
-            throw new \InvalidArgumentException('non-nullable phone_numbers cannot be null');
+        if (is_null($details)) {
+            throw new \InvalidArgumentException('non-nullable details cannot be null');
         }
-        if (!in_array($mode, self::ALLOWED_MODES)) {
-            throw new \InvalidArgumentException('Invalid mode');
-        }
-
-        switch ($mode) {
-            case self::MODE_OVERWRITE:
-                if (!is_countable($phone_numbers)) {
-                    $phone_numbers = [$phone_numbers];
-                }
-                $this->container['phone_numbers'] = $phone_numbers;
-                break;
-            case self::MODE_APPEND:
-                if (!is_countable($phone_numbers)) {
-                    $phone_numbers = [$phone_numbers];
-                }
-                $this->container['phone_numbers'] = array_merge($phone_numbers, $this->container['phone_numbers'] ?: []);
-                break;
-        }
+        $this->container['details'] = $details;
 
         return $this;
     }
 
     /**
-     * Gets email_addresses
+     * Gets value
      *
-     * @return \OpenAPI\Client\Model\ResumeEmailAddressEmailAddress[]|null
+     * @return string|null
      */
-    public function getEmailAddresses()
+    public function getValue()
     {
-        return $this->container['email_addresses'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets email_addresses
+     * Sets value
      *
-     * @param \OpenAPI\Client\Model\ResumeEmailAddressEmailAddress[]|null $email_addresses List of email addresses.
-     *
-     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
+     * @param string|null $value value
      *
      * @return self
      */
-    public function setEmailAddresses($email_addresses, $mode = self::MODE_OVERWRITE)
+    public function setValue($value)
     {
-        if (is_null($email_addresses)) {
-            throw new \InvalidArgumentException('non-nullable email_addresses cannot be null');
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
-        if (!in_array($mode, self::ALLOWED_MODES)) {
-            throw new \InvalidArgumentException('Invalid mode');
-        }
-
-        switch ($mode) {
-            case self::MODE_OVERWRITE:
-                if (!is_countable($email_addresses)) {
-                    $email_addresses = [$email_addresses];
-                }
-                $this->container['email_addresses'] = $email_addresses;
-                break;
-            case self::MODE_APPEND:
-                if (!is_countable($email_addresses)) {
-                    $email_addresses = [$email_addresses];
-                }
-                $this->container['email_addresses'] = array_merge($email_addresses, $this->container['email_addresses'] ?: []);
-                break;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Gets links
-     *
-     * @return \OpenAPI\Client\Model\ResumeLinkLink[]|null
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     *
-     * @param \OpenAPI\Client\Model\ResumeLinkLink[]|null $links List of relevant links.
-     *
-     * @param string $mode {@see self::MODE_OVERWRITE|self::MODE_APPEND}
-     *
-     * @return self
-     */
-    public function setLinks($links, $mode = self::MODE_OVERWRITE)
-    {
-        if (is_null($links)) {
-            throw new \InvalidArgumentException('non-nullable links cannot be null');
-        }
-        if (!in_array($mode, self::ALLOWED_MODES)) {
-            throw new \InvalidArgumentException('Invalid mode');
-        }
-
-        switch ($mode) {
-            case self::MODE_OVERWRITE:
-                if (!is_countable($links)) {
-                    $links = [$links];
-                }
-                $this->container['links'] = $links;
-                break;
-            case self::MODE_APPEND:
-                if (!is_countable($links)) {
-                    $links = [$links];
-                }
-                $this->container['links'] = array_merge($links, $this->container['links'] ?: []);
-                break;
-        }
+        $this->container['value'] = $value;
 
         return $this;
     }
@@ -537,7 +414,7 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-        return ObjectSerializer::sanitizeForSerialization($this);
+       return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

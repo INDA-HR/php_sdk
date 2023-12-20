@@ -59,8 +59,8 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'title' => '\OpenAPI\Client\Model\Title',
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => '\OpenAPI\Client\Model\StartDate',
+        'end_date' => '\OpenAPI\Client\Model\EndDate',
         'ongoing' => '\OpenAPI\Client\Model\Ongoing',
         'description' => '\OpenAPI\Client\Model\Description',
         'location' => '\OpenAPI\Client\Model\ResumeLocationsLocation',
@@ -362,7 +362,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets start_date
      *
-     * @return \DateTime|null
+     * @return StartDate|null
      */
     public function getStartDate()
     {
@@ -372,7 +372,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets start_date
      *
-     * @param \DateTime|null $start_date start_date
+     * @param StartDate|null $start_date start_date
      *
      * @return self
      */
@@ -389,7 +389,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets end_date
      *
-     * @return \DateTime|null
+     * @return EndDate|null
      */
     public function getEndDate()
     {
@@ -399,7 +399,7 @@ class Event implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets end_date
      *
-     * @param \DateTime|null $end_date end_date
+     * @param EndDate|null $end_date end_date
      *
      * @return self
      */
