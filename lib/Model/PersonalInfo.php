@@ -504,7 +504,7 @@ class PersonalInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \
                 if (!is_countable($nationalities)) {
                     $nationalities = [$nationalities];
                 }
-                $this->container['nationalities'] = array_merge($nationalities, $this->container['nationalities'] ?: []);
+                $this->container['nationalities'] = array_merge($this->container['nationalities'] ?: [],$nationalities );
                 break;
         }
 
@@ -550,7 +550,7 @@ class PersonalInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \
                 if (!is_countable($citizenships)) {
                     $citizenships = [$citizenships];
                 }
-                $this->container['citizenships'] = array_merge($citizenships, $this->container['citizenships'] ?: []);
+                $this->container['citizenships'] = array_merge( $this->container['citizenships'] ?: [], $citizenships);
                 break;
         }
 
@@ -650,7 +650,7 @@ class PersonalInfo implements ModelModeInterface, ModelInterface, ArrayAccess, \
                 if (!is_countable($protected_groups)) {
                     $protected_groups = [$protected_groups];
                 }
-                $this->container['protected_groups'] = array_merge($protected_groups, $this->container['protected_groups'] ?: []);
+                $this->container['protected_groups'] = array_merge( $this->container['protected_groups'] ?: [], $protected_groups);
                 break;
         }
 

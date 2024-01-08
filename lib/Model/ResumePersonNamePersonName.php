@@ -449,7 +449,7 @@ class ResumePersonNamePersonName implements ModelModeInterface, ModelInterface, 
                 if (!is_countable($middle_names)) {
                     $middle_names = [$middle_names];
                 }
-                $this->container['middle_names'] = array_merge($middle_names, $this->container['middle_names'] ?: []);
+                $this->container['middle_names'] = array_merge( $this->container['middle_names'] ?: [], $middle_names);
                 break;
         }
 

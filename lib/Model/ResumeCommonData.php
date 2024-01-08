@@ -664,7 +664,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($education_experiences)) {
                     $education_experiences = [$education_experiences];
                 }
-                $this->container['education_experiences'] = array_merge($education_experiences, $this->container['education_experiences'] ?: []);
+                $this->container['education_experiences'] = array_merge($this->container['education_experiences'] ?: [], $education_experiences);
                 break;
         }
 
@@ -710,7 +710,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($work_experiences)) {
                     $work_experiences = [$work_experiences];
                 }
-                $this->container['work_experiences'] = array_merge($work_experiences, $this->container['work_experiences'] ?: []);
+                $this->container['work_experiences'] = array_merge( $this->container['work_experiences'] ?: [], $work_experiences);
                 break;
         }
 
@@ -783,7 +783,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($references)) {
                     $references = [$references];
                 }
-                $this->container['references'] = array_merge($references, $this->container['references'] ?: []);
+                $this->container['references'] = array_merge( $this->container['references'] ?: [], $references);
                 break;
         }
 
@@ -856,7 +856,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($skills)) {
                     $skills = [$skills];
                 }
-                $this->container['skills'] = array_merge($skills, $this->container['skills'] ?: []);
+                $this->container['skills'] = array_merge( $this->container['skills'] ?: [], $skills);
                 break;
         }
 
@@ -902,7 +902,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($job_titles)) {
                     $job_titles = [$job_titles];
                 }
-                $this->container['job_titles'] = array_merge($job_titles, $this->container['job_titles'] ?: []);
+                $this->container['job_titles'] = array_merge( $this->container['job_titles'] ?: [], $job_titles);
                 break;
         }
 
@@ -948,7 +948,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($languages)) {
                     $languages = [$languages];
                 }
-                $this->container['languages'] = array_merge($languages, $this->container['languages'] ?: []);
+                $this->container['languages'] = array_merge( $this->container['languages'] ?: [], $languages);
                 break;
         }
 
@@ -994,7 +994,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($certifications)) {
                     $certifications = [$certifications];
                 }
-                $this->container['certifications'] = array_merge($certifications, $this->container['certifications'] ?: []);
+                $this->container['certifications'] = array_merge( $this->container['certifications'] ?: [], $certifications);
                 break;
         }
 
@@ -1040,7 +1040,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($publications)) {
                     $publications = [$publications];
                 }
-                $this->container['publications'] = array_merge($publications, $this->container['publications'] ?: []);
+                $this->container['publications'] = array_merge( $this->container['publications'] ?: [], $publications);
                 break;
         }
 
@@ -1086,7 +1086,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($awards)) {
                     $awards = [$awards];
                 }
-                $this->container['awards'] = array_merge($awards, $this->container['awards'] ?: []);
+                $this->container['awards'] = array_merge( $this->container['awards'] ?: [], $awards);
                 break;
         }
 
@@ -1132,7 +1132,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($projects)) {
                     $projects = [$projects];
                 }
-                $this->container['projects'] = array_merge($projects, $this->container['projects'] ?: []);
+                $this->container['projects'] = array_merge( $this->container['projects'] ?: [], $projects);
                 break;
         }
 
@@ -1179,7 +1179,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($achievements)) {
                     $achievements = [$achievements];
                 }
-                $this->container['achievements'] = array_merge($achievements, $this->container['achievements'] ?: []);
+                $this->container['achievements'] = array_merge( $this->container['achievements'] ?: [], $achievements);
                 break;
         }
 
@@ -1226,7 +1226,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($patents)) {
                     $patents = [$patents];
                 }
-                $this->container['patents'] = array_merge($patents, $this->container['patents'] ?: []);
+                $this->container['patents'] = array_merge( $this->container['patents'] ?: [], $patents);
                 break;
         }
 
@@ -1273,7 +1273,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($hobbies_and_interests)) {
                     $hobbies_and_interests = [$hobbies_and_interests];
                 }
-                $this->container['hobbies_and_interests'] = array_merge($hobbies_and_interests, $this->container['hobbies_and_interests'] ?: []);
+                $this->container['hobbies_and_interests'] = array_merge( $this->container['hobbies_and_interests'] ?: [], $hobbies_and_interests);
                 break;
         }
 
@@ -1320,7 +1320,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($licenses)) {
                     $licenses = [$licenses];
                 }
-                $this->container['licenses'] = array_merge($licenses, $this->container['licenses'] ?: []);
+                $this->container['licenses'] = array_merge( $this->container['licenses'] ?: [], $licenses);
                 break;
         }
 
@@ -1366,7 +1366,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($volunteering)) {
                     $volunteering = [$volunteering];
                 }
-                $this->container['volunteering'] = array_merge($volunteering, $this->container['volunteering'] ?: []);
+                $this->container['volunteering'] = array_merge( $this->container['volunteering'] ?: [], $volunteering);
                 break;
         }
 
@@ -1412,7 +1412,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($conference_and_seminars)) {
                     $conference_and_seminars = [$conference_and_seminars];
                 }
-                $this->container['conference_and_seminars'] = array_merge($conference_and_seminars, $this->container['conference_and_seminars'] ?: []);
+                $this->container['conference_and_seminars'] = array_merge( $this->container['conference_and_seminars'] ?: [], $conference_and_seminars);
                 break;
         }
 
@@ -1459,7 +1459,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($military_history)) {
                     $military_history = [$military_history];
                 }
-                $this->container['military_history'] = array_merge($military_history, $this->container['military_history'] ?: []);
+                $this->container['military_history'] = array_merge( $this->container['military_history'] ?: [], $military_history);
                 break;
         }
 
@@ -1505,7 +1505,7 @@ class ResumeCommonData implements ModelModeInterface, ModelInterface, ArrayAcces
                 if (!is_countable($others)) {
                     $others = [$others];
                 }
-                $this->container['others'] = array_merge($others, $this->container['others'] ?: []);
+                $this->container['others'] = array_merge( $this->container['others'] ?: [], $others);
                 break;
         }
 

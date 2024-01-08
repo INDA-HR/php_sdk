@@ -741,7 +741,7 @@ class EducationExperience implements ModelModeInterface, ModelInterface, ArrayAc
                 if (!is_countable($courses)) {
                     $courses = [$courses];
                 }
-                $this->container['courses'] = array_merge($courses, $this->container['courses'] ?: []);
+                $this->container['courses'] = array_merge($this->container['courses'] ?: [], $courses);
                 break;
         }
 
