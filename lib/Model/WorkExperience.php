@@ -742,7 +742,7 @@ class WorkExperience implements ModelModeInterface, ModelInterface, ArrayAccess,
                 if (!is_countable($skills)) {
                     $skills = [$skills];
                 }
-                $this->container['skills'] = array_merge($skills, $this->container['skills'] ?: []);
+                $this->container['skills'] = array_merge($this->container['skills'] ?: [], $skills);
                 break;
         }
 

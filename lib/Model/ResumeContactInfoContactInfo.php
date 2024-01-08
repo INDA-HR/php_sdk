@@ -375,7 +375,7 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
                 if (!is_countable($phone_numbers)) {
                     $phone_numbers = [$phone_numbers];
                 }
-                $this->container['phone_numbers'] = array_merge($phone_numbers, $this->container['phone_numbers'] ?: []);
+                $this->container['phone_numbers'] = array_merge( $this->container['phone_numbers'] ?: [], $phone_numbers);
                 break;
         }
 
@@ -421,7 +421,7 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
                 if (!is_countable($email_addresses)) {
                     $email_addresses = [$email_addresses];
                 }
-                $this->container['email_addresses'] = array_merge($email_addresses, $this->container['email_addresses'] ?: []);
+                $this->container['email_addresses'] = array_merge( $this->container['email_addresses'] ?: [], $email_addresses );
                 break;
         }
 
@@ -467,7 +467,7 @@ class ResumeContactInfoContactInfo implements ModelModeInterface, ModelInterface
                 if (!is_countable($links)) {
                     $links = [$links];
                 }
-                $this->container['links'] = array_merge($links, $this->container['links'] ?: []);
+                $this->container['links'] = array_merge( $this->container['links'] ?: [], $links);
                 break;
         }
 
