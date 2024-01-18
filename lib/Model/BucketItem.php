@@ -60,7 +60,7 @@ class BucketItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'resume' => 'object',
         'url' => 'string',
-        'internal_id' => '\OpenAPI\Client\Model\Internalid'
+        'internal_id' => 'string'
     ];
 
     /**
@@ -370,7 +370,7 @@ class BucketItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets internal_id
      *
-     * @return \OpenAPI\Client\Model\Internalid
+     * @return string
      */
     public function getInternalId()
     {
@@ -380,7 +380,7 @@ class BucketItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets internal_id
      *
-     * @param \OpenAPI\Client\Model\Internalid $internal_id internal_id
+     * @param string $internal_id internal_id
      *
      * @return self
      */

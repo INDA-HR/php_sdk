@@ -58,7 +58,7 @@ class ImportItemResponse implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'internal_id' => '\OpenAPI\Client\Model\Internalid',
+        'internal_id' => 'string',
         'resume_id' => 'string'
     ];
 
@@ -306,7 +306,7 @@ class ImportItemResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets internal_id
      *
-     * @return \OpenAPI\Client\Model\Internalid
+     * @return string
      */
     public function getInternalId()
     {
@@ -316,7 +316,7 @@ class ImportItemResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets internal_id
      *
-     * @param \OpenAPI\Client\Model\Internalid $internal_id internal_id
+     * @param string $internal_id internal_id
      *
      * @return self
      */
