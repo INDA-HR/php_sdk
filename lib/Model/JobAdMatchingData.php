@@ -59,8 +59,9 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'job_title' => '\OpenAPI\Client\Model\JobTitleHeader',
+        'header' => '\OpenAPI\Client\Model\BaseBenefitsValueModelStrictStr',
         'job_description' => '\OpenAPI\Client\Model\JobDescription',
-        'employer_id' => 'string',
+        'employer' => '\OpenAPI\Client\Model\JobadCommonEmployer',
         'contact_info' => '\OpenAPI\Client\Model\JobadContactInfoContactInfo[]',
         'job_locations' => '\OpenAPI\Client\Model\BaseLocationsLocation[]',
         'relocation_preferences' => '\OpenAPI\Client\Model\RelocationPreferences',
@@ -92,8 +93,9 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'job_title' => null,
+        'header' => null,
         'job_description' => null,
-        'employer_id' => 'uuid4',
+        'employer' => null,
         'contact_info' => null,
         'job_locations' => null,
         'relocation_preferences' => null,
@@ -123,8 +125,9 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'job_title' => false,
+        'header' => false,
 		'job_description' => false,
-		'employer_id' => false,
+		'employer' => false,
 		'contact_info' => false,
 		'job_locations' => false,
 		'relocation_preferences' => false,
@@ -234,8 +237,9 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'job_title' => 'JobTitle',
+        'header' => 'Header',
         'job_description' => 'JobDescription',
-        'employer_id' => 'EmployerID',
+        'employer' => 'Employer',
         'contact_info' => 'ContactInfo',
         'job_locations' => 'JobLocations',
         'relocation_preferences' => 'RelocationPreferences',
@@ -265,8 +269,9 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'job_title' => 'setJobTitle',
+        'header' => 'setHeader',
         'job_description' => 'setJobDescription',
-        'employer_id' => 'setEmployerId',
+        'employer' => 'setEmployer',
         'contact_info' => 'setContactInfo',
         'job_locations' => 'setJobLocations',
         'relocation_preferences' => 'setRelocationPreferences',
@@ -296,8 +301,9 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'job_title' => 'getJobTitle',
+        'header' => 'getHeader',
         'job_description' => 'getJobDescription',
-        'employer_id' => 'getEmployerId',
+        'employer' => 'getEmployer',
         'contact_info' => 'getContactInfo',
         'job_locations' => 'getJobLocations',
         'relocation_preferences' => 'getRelocationPreferences',
@@ -378,8 +384,9 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(array $data = null)
     {
         $this->setIfExists('job_title', $data ?? [], null);
+        $this->setIfExists('header', $data ?? [], null);
         $this->setIfExists('job_description', $data ?? [], null);
-        $this->setIfExists('employer_id', $data ?? [], null);
+        $this->setIfExists('employer', $data ?? [], null);
         $this->setIfExists('contact_info', $data ?? [], null);
         $this->setIfExists('job_locations', $data ?? [], null);
         $this->setIfExists('relocation_preferences', $data ?? [], null);
@@ -489,6 +496,30 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
+     * Gets header
+     *
+     * @return \OpenAPI\Client\Model\BaseBenefitsValueModelStrictStr|null
+     */
+    public function getHeader()
+    {
+        return $this->container['header'];
+    }
+
+    /**
+     * Sets header
+     *
+     * @param \OpenAPI\Client\Model\BaseBenefitsValueModelStrictStr|null $header header
+     *
+     * @return self
+     */
+    public function setHeader($header)
+    {
+        $this->container['header'] = $header;
+
+        return $this;
+    }
+
+    /**
      * Gets job_description
      *
      * @return \OpenAPI\Client\Model\JobDescription
@@ -516,28 +547,25 @@ class JobAdMatchingData implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets employer_id
+     * Gets employer
      *
-     * @return string|null
+     * @return \OpenAPI\Client\Model\JobadCommonEmployer|null
      */
-    public function getEmployerId()
+    public function getEmployer()
     {
-        return $this->container['employer_id'];
+        return $this->container['employer'];
     }
 
     /**
-     * Sets employer_id
+     * Sets employer
      *
-     * @param string|null $employer_id CompanyID of the employer company.
+     * @param \OpenAPI\Client\Model\JobadCommonEmployer|null $employer employer
      *
      * @return self
      */
-    public function setEmployerId($employer_id)
+    public function setEmployer($employer)
     {
-        if (is_null($employer_id)) {
-            throw new \InvalidArgumentException('non-nullable employer_id cannot be null');
-        }
-        $this->container['employer_id'] = $employer_id;
+        $this->container['employer'] = $employer;
 
         return $this;
     }

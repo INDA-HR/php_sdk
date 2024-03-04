@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **job_title** | [**\OpenAPI\Client\Model\JobTitleHeader**](JobTitleHeader.md) |  |
+**header** | [**\OpenAPI\Client\Model\BaseBenefitsValueModelStrictStr**](BaseBenefitsValueModelStrictStr.md) |  | [optional]
 **job_description** | [**\OpenAPI\Client\Model\JobDescription**](JobDescription.md) |  |
-**employer_id** | **string** | CompanyID of the employer company. | [optional]
+**employer** | [**\OpenAPI\Client\Model\JobadCommonEmployer**](JobadCommonEmployer.md) |  | [optional]
 **contact_info** | [**\OpenAPI\Client\Model\JobadContactInfoContactInfo[]**](JobadContactInfoContactInfo.md) | Whom to contact for the job position. | [optional]
 **job_locations** | [**\OpenAPI\Client\Model\BaseLocationsLocation[]**](BaseLocationsLocation.md) | Locations of the opened position. | [optional]
 **relocation_preferences** | [**\OpenAPI\Client\Model\RelocationPreferences**](RelocationPreferences.md) |  | [optional]
