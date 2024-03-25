@@ -1,6 +1,6 @@
 <?php
 /**
- * JobadId
+ * FilterFieldCentre
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * JobadId Class Doc Comment
+ * FilterFieldCentre Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
+class FilterFieldGeoDistanceCentre implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,26 +50,28 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Jobad_Id';
+    protected static $openAPIModelName = 'FilterFieldCentre';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
-      * @var string[]
+      * @var float[]
       */
     protected static $openAPITypes = [
-        'value' => 'string'
+        'lat' => 'float',
+        'lon' => 'float',
     ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
       *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
+      * @var float[]
+      * @phpstan-var array<string, float|null>
+      * @psalm-var array<string, float|null>
       */
     protected static $openAPIFormats = [
-        'value' => null
+        'lat' => null,
+        'lon' => null,
     ];
 
     /**
@@ -78,7 +80,8 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'value' => false
+        'lat' => false,
+        'lon' => false,
     ];
 
     /**
@@ -161,13 +164,14 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Array of attributes where the key is the local name,
+     * Array of attributes where the term is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'Value'
+        'lat' => 'Lat',
+        'lon' => 'Lon',
     ];
 
     /**
@@ -176,7 +180,8 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'lat' => 'setLat',
+        'lon' => 'setLon',
     ];
 
     /**
@@ -185,11 +190,12 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'lat' => 'getLat',
+        'lon' => 'getLon',
     ];
 
     /**
-     * Array of attributes where the key is the local name,
+     * Array of attributes where the term is the local name,
      * and the value is the original name
      *
      * @return array
@@ -245,7 +251,8 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('lat', $data ?? [], null);
+        $this->setIfExists('lon', $data ?? [], null);
     }
 
     /**
@@ -259,7 +266,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
-        if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
+        if (self::isNullable($variableName) && array_term_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;
         }
 
@@ -288,32 +295,61 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return count($this->listInvalidProperties()) === 0;
     }
+
     /**
-     * Gets value
+     * Gets lat
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getValue()
+    public function getLat()
     {
-        return $this->container['value'];
+        return $this->container['lat'];
     }
 
     /**
-     * Sets value
+     * Sets lat
      *
-     * @param string|null $value value
+     * @param float|null $lat lat
      *
      * @return self
      */
-    public function setValue($value)
+    public function setLat($lat)
     {
-        if (is_null($value)) {
-            throw new \InvalidArgumentException('non-nullable value cannot be null');
+        if (is_null($lat)) {
+            throw new \InvalidArgumentException('non-nullable Lat cannot be null');
         }
-        $this->container['value'] = $value;
+        $this->container['lat'] = $lat;
 
         return $this;
     }
+
+    /**
+     * Gets lon
+     *
+     * @return float|null
+     */
+    public function getLon()
+    {
+        return $this->container['lon'];
+    }
+
+    /**
+     * Sets lon
+     *
+     * @param float|null $lon lon
+     *
+     * @return self
+     */
+    public function setLon($lon)
+    {
+        if (is_null($lon)) {
+            throw new \InvalidArgumentException('non-nullable Lon cannot be null');
+        }
+        $this->container['lon'] = $lon;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -342,7 +378,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
+     * @param string|null $offset Offset
      * @param mixed    $value  Value to be set
      *
      * @return void
@@ -404,5 +440,3 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -286,8 +286,8 @@ class Skills implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['required'] === null) {
             $invalidProperties[] = "'required' can't be null";
         }
-        if ((count($this->container['required']) > 10)) {
-            $invalidProperties[] = "invalid value for 'required', number of items must be less than or equal to 10.";
+        if ((count($this->container['required']) > 20)) {
+            $invalidProperties[] = "invalid value for 'required', number of items must be less than or equal to 20.";
         }
 
         if ((count($this->container['required']) < 1)) {
@@ -297,8 +297,8 @@ class Skills implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['preferred'] === null) {
             $invalidProperties[] = "'preferred' can't be null";
         }
-        if ((count($this->container['preferred']) > 10)) {
-            $invalidProperties[] = "invalid value for 'preferred', number of items must be less than or equal to 10.";
+        if ((count($this->container['preferred']) > 20)) {
+            $invalidProperties[] = "invalid value for 'preferred', number of items must be less than or equal to 20.";
         }
 
         if ((count($this->container['preferred']) < 1)) {
@@ -343,8 +343,8 @@ class Skills implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable required cannot be null');
         }
 
-        if ((count($required) > 10)) {
-            throw new \InvalidArgumentException('invalid value for $required when calling Skills., number of items must be less than or equal to 10.');
+        if ((count($required) > 20)) {
+            throw new \InvalidArgumentException('invalid value for $required when calling Skills., number of items must be less than or equal to 20.');
         }
         if ((count($required) < 1)) {
             throw new \InvalidArgumentException('invalid length for $required when calling Skills., number of items must be greater than or equal to 1.');
@@ -377,8 +377,8 @@ class Skills implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable preferred cannot be null');
         }
 
-        if ((count($preferred) > 10)) {
-            throw new \InvalidArgumentException('invalid value for $preferred when calling Skills., number of items must be less than or equal to 10.');
+        if ((count($preferred) > 20)) {
+            throw new \InvalidArgumentException('invalid value for $preferred when calling Skills., number of items must be less than or equal to 20.');
         }
         if ((count($preferred) < 1)) {
             throw new \InvalidArgumentException('invalid length for $preferred when calling Skills., number of items must be greater than or equal to 1.');

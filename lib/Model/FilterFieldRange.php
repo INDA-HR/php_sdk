@@ -1,6 +1,6 @@
 <?php
 /**
- * JobadId
+ * FilterFieldRange
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * JobadId Class Doc Comment
+ * FilterFieldRange Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
+class FilterFieldRange implements FilterFieldInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Jobad_Id';
+    protected static $openAPIModelName = 'FilterFieldRange';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,10 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'value' => 'string'
+        'gt' => 'string',
+        'gte' => 'string',
+        'lt' => 'string',
+        'lte' => 'string',
     ];
 
     /**
@@ -69,7 +72,10 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'value' => null
+        'gt' => null,
+        'gte' => null,
+        'lt' => null,
+        'lte' => null,
     ];
 
     /**
@@ -78,7 +84,10 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'value' => false
+        'gt' => false,
+        'gte' => false,
+        'lt' => false,
+        'lte' => false,
     ];
 
     /**
@@ -167,7 +176,10 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'Value'
+        'gt' => 'GT',
+        'gte' => 'GTE',
+        'lt' => 'LT',
+        'lte' => 'LTE',
     ];
 
     /**
@@ -176,7 +188,10 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'gt' => 'setGt',
+        'gte' => 'setGte',
+        'lt' => 'setLt',
+        'lte' => 'setLte',
     ];
 
     /**
@@ -185,7 +200,10 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'gt' => 'getGt',
+        'gte' => 'getGte',
+        'lt' => 'getLt',
+        'lte' => 'getLte'
     ];
 
     /**
@@ -245,7 +263,10 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('gt', $data ?? [], null);
+        $this->setIfExists('gte', $data ?? [], null);
+        $this->setIfExists('lt', $data ?? [], null);
+        $this->setIfExists('lte', $data ?? [], null);
     }
 
     /**
@@ -259,7 +280,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
-        if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
+        if (self::isNullable($variableName) && array_term_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;
         }
 
@@ -288,32 +309,115 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return count($this->listInvalidProperties()) === 0;
     }
+
     /**
-     * Gets value
+     * Gets gt
      *
      * @return string|null
      */
-    public function getValue()
+    public function getGt()
     {
-        return $this->container['value'];
+        return $this->container['GT'];
     }
 
     /**
-     * Sets value
+     * Sets gt
      *
-     * @param string|null $value value
+     * @param string|null $gt gt
      *
      * @return self
      */
-    public function setValue($value)
+    public function setGt($gt)
     {
-        if (is_null($value)) {
-            throw new \InvalidArgumentException('non-nullable value cannot be null');
+        if (is_null($gt)) {
+            throw new \InvalidArgumentException('non-nullable GT cannot be null');
         }
-        $this->container['value'] = $value;
+        $this->container['GT'] = $gt;
 
         return $this;
     }
+
+    /**
+     * Gets gte
+     *
+     * @return string|null
+     */
+    public function getGte()
+    {
+        return $this->container['GTE'];
+    }
+
+    /**
+     * Sets gte
+     *
+     * @param string|null $gte gte
+     *
+     * @return self
+     */
+    public function setGte($gte)
+    {
+        if (is_null($gte)) {
+            throw new \InvalidArgumentException('non-nullable GTE cannot be null');
+        }
+        $this->container['GTE'] = $gte;
+
+        return $this;
+    }
+
+    /**
+     * Gets lte
+     *
+     * @return string|null
+     */
+    public function getLte()
+    {
+        return $this->container['LTE'];
+    }
+
+    /**
+     * Sets lte
+     *
+     * @param string|null $lte lte
+     *
+     * @return self
+     */
+    public function setLte($lte)
+    {
+        if (is_null($lte)) {
+            throw new \InvalidArgumentException('non-nullable LTE cannot be null');
+        }
+        $this->container['LTE'] = $lte;
+
+        return $this;
+    }
+
+    /**
+     * Gets lt
+     *
+     * @return string|null
+     */
+    public function getLt()
+    {
+        return $this->container['LT'];
+    }
+
+    /**
+     * Sets lt
+     *
+     * @param string|null $lt lt
+     *
+     * @return self
+     */
+    public function setLt($lt)
+    {
+        if (is_null($lt)) {
+            throw new \InvalidArgumentException('non-nullable LT cannot be null');
+        }
+        $this->container['LT'] = $lt;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -342,7 +446,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
+     * @param string|null $offset Offset
      * @param mixed    $value  Value to be set
      *
      * @return void
@@ -404,5 +508,3 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-

@@ -38,6 +38,7 @@ use GuzzleHttp\RequestOptions;
 use OpenAPI\Client\ApiException;
 use OpenAPI\Client\Configuration;
 use OpenAPI\Client\HeaderSelector;
+use OpenAPI\Client\Model\JobadId;
 use OpenAPI\Client\ObjectSerializer;
 
 /**
@@ -487,7 +488,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -910,7 +911,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -1282,7 +1283,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -1677,7 +1678,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -2060,7 +2061,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -2448,7 +2449,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -2880,7 +2881,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -3747,7 +3748,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -4143,7 +4144,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }
@@ -5026,7 +5027,7 @@ class ApplicationManagementApi
         if ($jobad_id !== null) {
             $resourcePath = str_replace(
                 '{' . 'jobad_id' . '}',
-                ObjectSerializer::toPathValue($jobad_id),
+                $jobad_id->getValue(),
                 $resourcePath
             );
         }

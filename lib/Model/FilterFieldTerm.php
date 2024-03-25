@@ -1,6 +1,6 @@
 <?php
 /**
- * JobadId
+ * FilterFieldTerm
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * JobadId Class Doc Comment
+ * FilterFieldTerm Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
+class FilterFieldTerm implements FilterFieldInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Jobad_Id';
+    protected static $openAPIModelName = 'FilterFieldTerm';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'value' => 'string'
+        'term' => 'string',
     ];
 
     /**
@@ -69,7 +69,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'value' => null
+        'term' => null,
     ];
 
     /**
@@ -78,7 +78,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'value' => false
+        'term' => false,
     ];
 
     /**
@@ -161,13 +161,13 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Array of attributes where the key is the local name,
+     * Array of attributes where the term is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'Value'
+        'term' => 'Term',
     ];
 
     /**
@@ -176,7 +176,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'term' => 'setTerm',
     ];
 
     /**
@@ -185,11 +185,11 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'term' => 'getTerm',
     ];
 
     /**
-     * Array of attributes where the key is the local name,
+     * Array of attributes where the term is the local name,
      * and the value is the original name
      *
      * @return array
@@ -245,7 +245,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('term', $data ?? [], null);
     }
 
     /**
@@ -259,7 +259,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
-        if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
+        if (self::isNullable($variableName) && array_term_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;
         }
 
@@ -288,32 +288,34 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return count($this->listInvalidProperties()) === 0;
     }
+
     /**
-     * Gets value
+     * Gets term
      *
      * @return string|null
      */
-    public function getValue()
+    public function getTerm()
     {
-        return $this->container['value'];
+        return $this->container['Term'];
     }
 
     /**
-     * Sets value
+     * Sets term
      *
-     * @param string|null $value value
+     * @param string|null $term term
      *
      * @return self
      */
-    public function setValue($value)
+    public function setTerm($term)
     {
-        if (is_null($value)) {
-            throw new \InvalidArgumentException('non-nullable value cannot be null');
+        if (is_null($term)) {
+            throw new \InvalidArgumentException('non-nullable Term cannot be null');
         }
-        $this->container['value'] = $value;
+        $this->container['Term'] = $term;
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -342,7 +344,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
+     * @param string|null $offset Offset
      * @param mixed    $value  Value to be set
      *
      * @return void
@@ -404,5 +406,3 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
