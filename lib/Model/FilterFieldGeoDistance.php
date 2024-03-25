@@ -1,6 +1,6 @@
 <?php
 /**
- * FilterField
+ * FilterFieldGeoDistance
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * FilterField Class Doc Comment
+ * FilterFieldGeoDistance Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,57 +41,54 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
+class FilterFieldGeoDistance implements FilterFieldInterface, ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
     /**
-     * The original name of the model.
-     *
-     * @var string
-     */
-    protected static $openAPIModelName = 'FilterField';
+      * The original name of the model.
+      *
+      * @var string
+      */
+    protected static $openAPIModelName = 'FilterFieldGeoDistance';
 
     /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @var string[]
-     */
+      * Array of property to type mappings. Used for (de)serialization
+      *
+      * @var string[]
+      */
     protected static $openAPITypes = [
-        'field' => 'string',
-        'type' => 'string',
-        'value' => '\OpenAPI\Client\Model\FilterFieldInterface'
+        'distance' => 'string',
+        'centre' => '\OpenAPI\Client\Model\FilterFieldGeoDistanceCentre',
     ];
 
     /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @var string[]
-     * @phpstan-var array<string, string|null>
-     * @psalm-var array<string, string|null>
-     */
+      * Array of property to format mappings. Used for (de)serialization
+      *
+      * @var string[]
+      * @phpstan-var array<string, string|null>
+      * @psalm-var array<string, string|null>
+      */
     protected static $openAPIFormats = [
-        'field' => null,
-        'type' => null,
-        'value' => null
+        'distance' => null,
+        'centre' => null,
     ];
 
     /**
-     * Array of nullable properties. Used for (de)serialization
-     *
-     * @var boolean[]
-     */
+      * Array of nullable properties. Used for (de)serialization
+      *
+      * @var boolean[]
+      */
     protected static array $openAPINullables = [
-        'field' => false,
-        'type' => false,
-        'value' => false
+        'distance' => false,
+        'centre' => false,
     ];
 
     /**
-     * If a nullable field gets set to null, insert it here
-     *
-     * @var boolean[]
-     */
+      * If a nullable field gets set to null, insert it here
+      *
+      * @var boolean[]
+      */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -167,15 +164,14 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Array of attributes where the key is the local name,
+     * Array of attributes where the term is the local name,
      * and the value is the original name
      *
      * @var string[]
      */
     protected static $attributeMap = [
-        'field' => 'Field',
-        'type' => 'Type',
-        'value' => 'Value'
+        'distance' => 'Distance',
+        'centre' => 'Centre',
     ];
 
     /**
@@ -184,9 +180,8 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'field' => 'setField',
-        'type' => 'setType',
-        'value' => 'setValue'
+        'distance' => 'setDistance',
+        'centre' => 'setCentre',
     ];
 
     /**
@@ -195,13 +190,12 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'field' => 'getField',
-        'type' => 'getType',
-        'value' => 'getValue'
+        'distance' => 'getDistance',
+        'centre' => 'getCentre',
     ];
 
     /**
-     * Array of attributes where the key is the local name,
+     * Array of attributes where the term is the local name,
      * and the value is the original name
      *
      * @return array
@@ -257,23 +251,22 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('field', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('value', $data ?? [], null);
+        $this->setIfExists('distance', $data ?? [], null);
+        $this->setIfExists('centre', $data ?? [], null);
     }
 
     /**
-     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-     * $this->openAPINullablesSetToNull array
-     *
-     * @param string $variableName
-     * @param array  $fields
-     * @param mixed  $defaultValue
-     */
+    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+    * $this->openAPINullablesSetToNull array
+    *
+    * @param string $variableName
+    * @param array  $fields
+    * @param mixed  $defaultValue
+    */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
-        if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
+        if (self::isNullable($variableName) && array_term_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;
         }
 
@@ -289,15 +282,6 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['field'] === null) {
-            $invalidProperties[] = "'field' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -312,87 +296,60 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
     /**
-     * Gets field
+     * Gets distance
      *
-     * @return string
+     * @return string|null
      */
-    public function getField()
+    public function getDistance()
     {
-        return $this->container['field'];
+        return $this->container['Distance'];
     }
 
     /**
-     * Sets field
+     * Sets distance
      *
-     * @param string $field field
+     * @param string|null $distance distance
      *
      * @return self
      */
-    public function setField($field)
+    public function setDistance($distance)
     {
-        if (is_null($field)) {
-            throw new \InvalidArgumentException('non-nullable field cannot be null');
+        if (is_null($distance)) {
+            throw new \InvalidArgumentException('non-nullable Distance cannot be null');
         }
-        $this->container['field'] = $field;
+        $this->container['Distance'] = $distance;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets centre
      *
-     * @return string
+     * @return FilterFieldGeoDistanceCentre|null
      */
-    public function getType()
+    public function getCentre()
     {
-        return $this->container['type'];
+        return $this->container['Centre'];
     }
 
     /**
-     * Sets type
+     * Sets centre
      *
-     * @param string $type type
+     * @param FilterFieldGeoDistanceCentre|null $centre centre
      *
      * @return self
      */
-    public function setType($type)
+    public function setCentre($centre)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($centre)) {
+            throw new \InvalidArgumentException('non-nullable Centre cannot be null');
         }
-        $this->container['type'] = $type;
+        $this->container['Centre'] = $centre;
 
         return $this;
     }
 
-    /**
-     * Gets value
-     *
-     * @return FilterFieldInterface
-     */
-    public function getValue(): FilterFieldInterface
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param FilterFieldInterface $value value
-     *
-     * @return self
-     */
-    public function setValue($value)
-    {
-        if (is_null($value)) {
-            throw new \InvalidArgumentException('non-nullable value cannot be null');
-        }
-        $this->container['value'] = $value;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -421,7 +378,7 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
+     * @param string|null $offset Offset
      * @param mixed    $value  Value to be set
      *
      * @return void
@@ -457,7 +414,7 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-        return ObjectSerializer::sanitizeForSerialization($this);
+       return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
@@ -483,5 +440,3 @@ class FilterField implements ModelInterface, ArrayAccess, \JsonSerializable
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
