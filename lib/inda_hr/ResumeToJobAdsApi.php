@@ -890,9 +890,9 @@ class ResumeToJobAdsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SearchJobAdMatchResponse|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function matchJobadsFromIndexedResumePOST($indexname, $resume_id, $base_jobad_matching_query = null, $size = 5, $offset = 0, $min_score = 0, $dst_lang = null, $jobad_langs = null, string $contentType = self::contentTypes['matchJobadsFromIndexedResumePOST'][0])
+    public function matchJobadsFromIndexedResumePOST($indexname, $resume_id, $base_jobad_matching_query = null, $size = 5, $offset = 0, $min_score = 0, $dst_lang = null, $jobad_langs = null, bool $exclude_applicants = false, string $contentType = self::contentTypes['matchJobadsFromIndexedResumePOST'][0])
     {
-        list($response) = $this->matchJobadsFromIndexedResumePOSTWithHttpInfo($indexname, $resume_id, $base_jobad_matching_query, $size, $offset, $min_score, $dst_lang, $jobad_langs, $contentType);
+        list($response) = $this->matchJobadsFromIndexedResumePOSTWithHttpInfo($indexname, $resume_id, $base_jobad_matching_query, $size, $offset, $min_score, $dst_lang, $jobad_langs, $exclude_applicants, $contentType);
         return $response;
     }
 
@@ -915,9 +915,9 @@ class ResumeToJobAdsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\SearchJobAdMatchResponse|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function matchJobadsFromIndexedResumePOSTWithHttpInfo($indexname, $resume_id, $base_jobad_matching_query, $size = 5, $offset = 0, $min_score = 0, $dst_lang = null, $jobad_langs = null, string $contentType = self::contentTypes['matchJobadsFromIndexedResumePOST'][0])
+    public function matchJobadsFromIndexedResumePOSTWithHttpInfo($indexname, $resume_id, $base_jobad_matching_query, $size = 5, $offset = 0, $min_score = 0, $dst_lang = null, $jobad_langs = null, bool $exclude_applicants = false, string $contentType = self::contentTypes['matchJobadsFromIndexedResumePOST'][0])
     {
-        $request = $this->matchJobadsFromIndexedResumePOSTRequest($indexname, $resume_id, $base_jobad_matching_query, $size, $offset, $min_score, $dst_lang, $jobad_langs, $contentType);
+        $request = $this->matchJobadsFromIndexedResumePOSTRequest($indexname, $resume_id, $base_jobad_matching_query, $size, $offset, $min_score, $dst_lang, $jobad_langs, $exclude_applicants, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1152,7 +1152,7 @@ class ResumeToJobAdsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function matchJobadsFromIndexedResumePOSTRequest($indexname, $resume_id, $base_jobad_matching_query, $size = 5, $offset = 0, $min_score = 0, $dst_lang = null, $jobad_langs = null, string $contentType = self::contentTypes['matchJobadsFromIndexedResumePOST'][0])
+    public function matchJobadsFromIndexedResumePOSTRequest($indexname, $resume_id, $base_jobad_matching_query, $size = 5, $offset = 0, $min_score = 0, $dst_lang = null, $jobad_langs = null, bool $exclude_applicants = false, string $contentType = self::contentTypes['matchJobadsFromIndexedResumePOST'][0])
     {
 
         // verify the required parameter 'indexname' is set
@@ -1242,7 +1242,15 @@ class ResumeToJobAdsApi
             true, // explode
             false // required
         ) ?? []);
-
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $exclude_applicants,
+            'exclude_applicants', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
 
         // path params
         if ($indexname !== null) {
