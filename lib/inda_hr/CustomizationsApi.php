@@ -78,9 +78,15 @@ class CustomizationsApi
         'getResumeCustomizationsGET' => [
             'application/json',
         ],
+        'customizeJobAdsPOST' => [
+            'application/json',
+        ],
+        'getJobAdCustomizationsGET' => [
+            'application/json',
+        ],
     ];
 
-/**
+    /**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -90,7 +96,7 @@ class CustomizationsApi
         ClientInterface $client = null,
         Configuration $config = null,
         HeaderSelector $selector = null,
-        $hostIndex = 0
+                        $hostIndex = 0
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -764,6 +770,652 @@ class CustomizationsApi
             $httpBody
         );
     }
+
+    ###########
+    # JOB-ADS #
+    ###########
+
+    /**
+     * Operation customizeResumesPOST
+     *
+     * Customize Resumes
+     *
+     * @param  string $indexname indexname (required)
+     * @param  \OpenAPI\Client\Model\CustomFields $custom_fields custom_fields (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customizeResumesPOST'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CustomizedFields|\OpenAPI\Client\Model\HTTPValidationError
+     */
+    public function customizeJobAdsPOST($indexname, $custom_fields, string $contentType = self::contentTypes['customizeJobAdsPOST'][0])
+    {
+        list($response) = $this->customizeJobAdsPOSTWithHttpInfo($indexname, $custom_fields, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation customizeJobAdsPOSTWithHttpInfo
+     *
+     * Customize JobAds
+     *
+     * @param  string $indexname (required)
+     * @param  \OpenAPI\Client\Model\CustomFields $custom_fields (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customizeJobAdsPOST'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CustomizedFields|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customizeJobAdsPOSTWithHttpInfo($indexname, $custom_fields, string $contentType = self::contentTypes['customizeJobAdsPOST'][0])
+    {
+        $request = $this->customizeJobAdsPOSTRequest($indexname, $custom_fields, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\CustomizedFields' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\CustomizedFields' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\CustomizedFields', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\HTTPValidationError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\HTTPValidationError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\HTTPValidationError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\CustomizedFields';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CustomizedFields',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\HTTPValidationError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customizeJobAdsPOSTAsync
+     *
+     * Customize JobAds
+     *
+     * @param  string $indexname (required)
+     * @param  \OpenAPI\Client\Model\CustomFields $custom_fields (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customizeJobAdsPOST'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function customizeJobAdsPOSTAsync($indexname, $custom_fields, string $contentType = self::contentTypes['customizeJobAdsPOST'][0])
+    {
+        return $this->customizeJobAdsPOSTAsyncWithHttpInfo($indexname, $custom_fields, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation customizeJobAdsPOSTAsyncWithHttpInfo
+     *
+     * Customize JobAds
+     *
+     * @param  string $indexname (required)
+     * @param  \OpenAPI\Client\Model\CustomFields $custom_fields (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customizeJobAdsPOST'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function customizeJobAdsPOSTAsyncWithHttpInfo($indexname, $custom_fields, string $contentType = self::contentTypes['customizeJobAdsPOST'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CustomizedFields';
+        $request = $this->customizeJobAdsPOSTRequest($indexname, $custom_fields, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'customizeJobAdsPOST'
+     *
+     * @param  string $indexname (required)
+     * @param  \OpenAPI\Client\Model\CustomFields $custom_fields (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['customizeJobAdsPOST'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function customizeJobAdsPOSTRequest($indexname, $custom_fields, string $contentType = self::contentTypes['customizeJobAdsPOST'][0])
+    {
+
+        // verify the required parameter 'indexname' is set
+        if ($indexname === null || (is_array($indexname) && count($indexname) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $indexname when calling customizeJobAdsPOST'
+            );
+        }
+
+        // verify the required parameter 'custom_fields' is set
+        if ($custom_fields === null || (is_array($custom_fields) && count($custom_fields) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $custom_fields when calling customizeJobAdsPOST'
+            );
+        }
+
+
+        $resourcePath = '/hr/v2/index/{indexname}/jobads/customize/';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($indexname !== null) {
+            $resourcePath = str_replace(
+                '{' . 'indexname' . '}',
+                ObjectSerializer::toPathValue($indexname),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($custom_fields)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($custom_fields));
+            } else {
+                $httpBody = $custom_fields;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getJobAdCustomizationsGET
+     *
+     * Get JobAd Customizations
+     *
+     * @param  string $indexname indexname (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJobAdCustomizationsGET'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\MappingResponse|\OpenAPI\Client\Model\HTTPValidationError
+     */
+    public function getJobAdCustomizationsGET($indexname, string $contentType = self::contentTypes['getJobAdCustomizationsGET'][0])
+    {
+        list($response) = $this->getJobAdCustomizationsGETWithHttpInfo($indexname, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getJobAdCustomizationsGETWithHttpInfo
+     *
+     * Get JobAd Customizations
+     *
+     * @param  string $indexname (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJobAdCustomizationsGET'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\MappingResponse|\OpenAPI\Client\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getJobAdCustomizationsGETWithHttpInfo($indexname, string $contentType = self::contentTypes['getJobAdCustomizationsGET'][0])
+    {
+        $request = $this->getJobAdCustomizationsGETRequest($indexname, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\OpenAPI\Client\Model\MappingResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\MappingResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\MappingResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\OpenAPI\Client\Model\HTTPValidationError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\OpenAPI\Client\Model\HTTPValidationError' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\HTTPValidationError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\OpenAPI\Client\Model\MappingResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\MappingResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\HTTPValidationError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getJobAdCustomizationsGETAsync
+     *
+     * Get JobAd Customizations
+     *
+     * @param  string $indexname (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJobAdCustomizationsGET'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getJobAdCustomizationsGETAsync($indexname, string $contentType = self::contentTypes['getJobAdCustomizationsGET'][0])
+    {
+        return $this->getJobAdCustomizationsGETAsyncWithHttpInfo($indexname, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getJobAdCustomizationsGETAsyncWithHttpInfo
+     *
+     * Get JobAd Customizations
+     *
+     * @param  string $indexname (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJobAdCustomizationsGET'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getJobAdCustomizationsGETAsyncWithHttpInfo($indexname, string $contentType = self::contentTypes['getJobAdCustomizationsGET'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\MappingResponse';
+        $request = $this->getJobAdCustomizationsGETRequest($indexname, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getJobAdCustomizationsGET'
+     *
+     * @param  string $indexname (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getJobAdCustomizationsGET'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getJobAdCustomizationsGETRequest($indexname, string $contentType = self::contentTypes['getJobAdCustomizationsGET'][0])
+    {
+
+        // verify the required parameter 'indexname' is set
+        if ($indexname === null || (is_array($indexname) && count($indexname) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $indexname when calling getJobAdCustomizationsGET'
+            );
+        }
+
+
+        $resourcePath = '/hr/v2/index/{indexname}/jobads/mapping/';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($indexname !== null) {
+            $resourcePath = str_replace(
+                '{' . 'indexname' . '}',
+                ObjectSerializer::toPathValue($indexname),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    ###########################################
+
 
     /**
      * Create http client option
