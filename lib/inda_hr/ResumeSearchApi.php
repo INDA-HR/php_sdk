@@ -1789,21 +1789,19 @@ class ResumeSearchApi
      * Create request for operation 'searchResumesPOST'
      *
      * @param  string $indexname (required)
-     * @param  bool $cache Optional. Whether the search results should be cached or not. (optional, default to true)
-     * @param  int $cache_time Optional. Seconds. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;false&lt;/code&gt;. (optional, default to 300)
      * @param  int $size Optional. Number of documents to return. (optional, default to 50)
      * @param  int $offset Optional. Number of documents to skip. Ignored if *cache* is &lt;code style&#x3D;&#39;color: #333333; opacity: 0.9&#39;&gt;true&lt;/code&gt;. (optional, default to 0)
      * @param  float $min_score Optional. Minimum pertinence score. (optional, default to 0)
-     * @param  string $search_id Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used. (optional)
      * @param  string $src_lang Queries language. If left empty each query&#39;s language will detected automatically, if not it is not explicitly set into the request body. (optional)
      * @param  string[] $dst_lang Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results. (optional)
+     * @param  string $sort_by Results are sorted by selected field values. (optional)
      * @param  \OpenAPI\Client\Model\DocsSearchQuery $docs_search_query (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['searchResumesPOST'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchResumesPOSTRequest($indexname, $cache = true, $cache_time = 300, $size = 50, $offset = 0, $min_score = 0, $search_id = null, $src_lang = null, $dst_lang = null, $docs_search_query = null, string $contentType = self::contentTypes['searchResumesPOST'][0])
+    public function searchResumesPOSTRequest($indexname, $size = 50, $offset = 0, $min_score = 0, $src_lang = null, $dst_lang = null, $sort_by = null, $docs_search_query = null, string $contentType = self::contentTypes['searchResumesPOST'][0])
     {
 
         // verify the required parameter 'indexname' is set
@@ -1813,10 +1811,6 @@ class ResumeSearchApi
             );
         }
 
-
-        if ($cache_time !== null && $cache_time > 600) {
-            throw new \InvalidArgumentException('invalid value for "$cache_time" when calling ResumeSearchApi.searchResumesPOST, must be smaller than or equal to 600.');
-        }
         
         if ($size !== null && $size > 1000) {
             throw new \InvalidArgumentException('invalid value for "$size" when calling ResumeSearchApi.searchResumesPOST, must be smaller than or equal to 1000.');
@@ -1829,8 +1823,6 @@ class ResumeSearchApi
         if ($min_score !== null && $min_score < 0.0) {
             throw new \InvalidArgumentException('invalid value for "$min_score" when calling ResumeSearchApi.searchResumesPOST, must be bigger than or equal to 0.0.');
         }
-        
-
 
         if ($dst_lang !== null && count($dst_lang) > 6) {
             throw new \InvalidArgumentException('invalid value for "$dst_lang" when calling ResumeSearchApi.searchResumesPOST, number of items must be less than or equal to 6.');
@@ -1848,24 +1840,6 @@ class ResumeSearchApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $cache,
-            'cache', // param base name
-            'boolean', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $cache_time,
-            'cache_time', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $size,
@@ -1895,15 +1869,6 @@ class ResumeSearchApi
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $search_id,
-            'search_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $src_lang,
             'src_lang', // param base name
             'string', // openApiType
@@ -1916,6 +1881,15 @@ class ResumeSearchApi
             $dst_lang,
             'dst_lang', // param base name
             'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $sort_by,
+            'sort_by', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required
