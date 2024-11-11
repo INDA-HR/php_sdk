@@ -1533,7 +1533,7 @@ class ResumeSearchApi
      */
     public function searchResumesPOSTWithHttpInfo($indexname, $size = 50, $offset = 0, $min_score = 0, $src_lang = null, $dst_lang = null, $sort_by = null, $docs_search_query = null, string $contentType = self::contentTypes['searchResumesPOST'][0])
     {
-        $request = $this->searchResumesPOSTRequest($indexname, $size, $offset, $min_score, $search_id, $src_lang, $dst_lang, $sort_by, $docs_search_query, $contentType);
+        $request = $this->searchResumesPOSTRequest($indexname, $size, $offset, $min_score, $src_lang, $dst_lang, $sort_by, $docs_search_query, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
