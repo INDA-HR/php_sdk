@@ -250,18 +250,16 @@ $apiInstance = new OpenAPI\Client\Api\ResumeSearchApi(
     $config
 );
 $indexname = 'indexname_example'; // string
-$cache = true; // bool | Optional. Whether the search results should be cached or not.
-$cache_time = 300; // int | Optional. Seconds. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>false</code>.
 $size = 50; // int | Optional. Number of documents to return.
 $offset = 0; // int | Optional. Number of documents to skip. Ignored if *cache* is <code style='color: #333333; opacity: 0.9'>true</code>.
 $min_score = 0; // float | Optional. Minimum pertinence score.
-$search_id = 'search_id_example'; // string | Both the initial search request and each subsequent scroll request returns a *SearchID*. The *SearchID* may or may not  change between requests; however, only the most recently received *SearchID* should be used.
 $src_lang = 'src_lang_example'; // string | Queries language. If left empty each query's language will detected automatically, if not it is not explicitly set into the request body.
 $dst_lang = array('dst_lang_example'); // string[] | Results languages. If left empty then the results will not be filtered by language and the they will contain multi-language results.
+$sort_by = 'CreationDate'; // string | Optional. Results are sorted by selected field values. 
 $docs_search_query = new \OpenAPI\Client\Model\DocsSearchQuery(); // \OpenAPI\Client\Model\DocsSearchQuery
 
 try {
-    $result = $apiInstance->searchResumesPOST($indexname, $cache, $cache_time, $size, $offset, $min_score, $search_id, $src_lang, $dst_lang, $docs_search_query);
+    $result = $apiInstance->searchResumesPOST($indexname, $size, $offset, $min_score, $src_lang, $dst_lang, $sort_by,$docs_search_query);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ResumeSearchApi->searchResumesPOST: ', $e->getMessage(), PHP_EOL;
