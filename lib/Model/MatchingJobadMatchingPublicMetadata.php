@@ -235,6 +235,7 @@ class MatchingJobadMatchingPublicMetadata implements ModelInterface, ArrayAccess
     public const LANGUAGE_PT = 'pt';
     public const LANGUAGE_DE = 'de';
     public const LANGUAGE_FR = 'fr';
+    public const LANGUAGE_PL = 'pl';
 
     /**
      * Gets allowable values of the enum
@@ -250,6 +251,7 @@ class MatchingJobadMatchingPublicMetadata implements ModelInterface, ArrayAccess
             self::LANGUAGE_PT,
             self::LANGUAGE_DE,
             self::LANGUAGE_FR,
+            self::LANGUAGE_PL,
         ];
     }
 

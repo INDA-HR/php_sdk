@@ -247,6 +247,7 @@ class WeightedQueryTerm implements ModelInterface, ArrayAccess, \JsonSerializabl
     public const LANGUAGE_DE = 'de';
     public const LANGUAGE_PT = 'pt';
     public const LANGUAGE_ES = 'es';
+    public const LANGUAGE_PL = 'pl';
 
     /**
      * Gets allowable values of the enum
@@ -262,6 +263,7 @@ class WeightedQueryTerm implements ModelInterface, ArrayAccess, \JsonSerializabl
             self::LANGUAGE_DE,
             self::LANGUAGE_PT,
             self::LANGUAGE_ES,
+            self::LANGUAGE_PL,
         ];
     }
 

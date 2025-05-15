@@ -253,6 +253,7 @@ class ParseResumeDocument implements ModelInterface, ArrayAccess, \JsonSerializa
     public const LANGUAGE_PT = 'pt';
     public const LANGUAGE_DE = 'de';
     public const LANGUAGE_ES = 'es';
+    public const LANGUAGE_PL = 'pl';
 
     /**
      * Gets allowable values of the enum
@@ -268,6 +269,7 @@ class ParseResumeDocument implements ModelInterface, ArrayAccess, \JsonSerializa
             self::LANGUAGE_PT,
             self::LANGUAGE_DE,
             self::LANGUAGE_ES,
+            self::LANGUAGE_PL,
         ];
     }
 
