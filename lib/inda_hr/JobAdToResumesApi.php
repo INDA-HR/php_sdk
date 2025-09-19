@@ -892,7 +892,7 @@ class JobAdToResumesApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\SearchResumeMatchResponse|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\HTTPValidationError
      */
-    public function matchResumesFromIndexedJobadPOST($indexname, $jobad_id, $base_resume_matching_query, $size = 20, $offset = 0, $min_score = 0, $dst_lang = null, $resume_langs = null, $only_applicants = false, $exclude_applicants = false, string $contentType = self::contentTypes['matchResumesFromIndexedJobadPOST'][0])
+    public function matchResumesFromIndexedJobadPOST($indexname, $jobad_id, $base_resume_matching_query = null, $size = 20, $offset = 0, $min_score = 0, $dst_lang = null, $resume_langs = null, $only_applicants = false, $exclude_applicants = false, string $contentType = self::contentTypes['matchResumesFromIndexedJobadPOST'][0])
     {
         list($response) = $this->matchResumesFromIndexedJobadPOSTWithHttpInfo($indexname, $jobad_id, $base_resume_matching_query, $size, $offset, $min_score, $dst_lang, $resume_langs, $only_applicants, $exclude_applicants, $contentType);
         return $response;
@@ -1176,13 +1176,6 @@ class JobAdToResumesApi
         if ($jobad_id === null || (is_array($jobad_id) && count($jobad_id) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $jobad_id when calling matchResumesFromIndexedJobadPOST'
-            );
-        }
-
-        // verify the required parameter 'base_resume_matching_query' is set
-        if ($base_resume_matching_query === null || (is_array($base_resume_matching_query) && count($base_resume_matching_query) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $base_resume_matching_query when calling matchResumesFromIndexedJobadPOST'
             );
         }
 

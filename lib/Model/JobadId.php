@@ -58,7 +58,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        
+        'value' => 'string'
     ];
 
     /**
@@ -69,7 +69,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        
+        'value' => null
     ];
 
     /**
@@ -78,7 +78,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        
+        'value' => false
     ];
 
     /**
@@ -167,7 +167,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'value' => 'Value'
     ];
 
     /**
@@ -176,7 +176,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        
+        'value' => 'setValue'
     ];
 
     /**
@@ -185,7 +185,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        
+        'value' => 'getValue'
     ];
 
     /**
@@ -245,6 +245,7 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('value', $data ?? [], null);
     }
 
     /**
@@ -287,7 +288,32 @@ class JobadId implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return count($this->listInvalidProperties()) === 0;
     }
+    /**
+     * Gets value
+     *
+     * @return string|null
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
 
+    /**
+     * Sets value
+     *
+     * @param string|null $value value
+     *
+     * @return self
+     */
+    public function setValue($value)
+    {
+        if (is_null($value)) {
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
+        }
+        $this->container['value'] = $value;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

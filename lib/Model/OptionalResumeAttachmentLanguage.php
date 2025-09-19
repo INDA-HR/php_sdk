@@ -235,6 +235,7 @@ class OptionalResumeAttachmentLanguage implements ModelInterface, ArrayAccess, \
     public const LANGUAGE_EN = 'en';
     public const LANGUAGE_DE = 'de';
     public const LANGUAGE_ES = 'es';
+    public const LANGUAGE_PL = 'pl';
 
     /**
      * Gets allowable values of the enum
@@ -250,6 +251,7 @@ class OptionalResumeAttachmentLanguage implements ModelInterface, ArrayAccess, \
             self::LANGUAGE_EN,
             self::LANGUAGE_DE,
             self::LANGUAGE_ES,
+            self::LANGUAGE_PL,
         ];
     }
 

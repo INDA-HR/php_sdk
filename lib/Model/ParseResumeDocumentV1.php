@@ -251,6 +251,9 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
     public const LANGUAGE_EN = 'en';
     public const LANGUAGE_FR = 'fr';
     public const LANGUAGE_PT = 'pt';
+    public const LANGUAGE_DE = 'de';
+    public const LANGUAGE_ES = 'es';
+    public const LANGUAGE_PL = 'pl';
 
     /**
      * Gets allowable values of the enum
@@ -264,6 +267,9 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
             self::LANGUAGE_EN,
             self::LANGUAGE_FR,
             self::LANGUAGE_PT,
+            self::LANGUAGE_DE,
+            self::LANGUAGE_ES,
+            self::LANGUAGE_PL,
         ];
     }
 

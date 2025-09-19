@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FileItemRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class FileItemRequest extends CustomizableModelAbstract implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -260,6 +260,7 @@ class FileItemRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
         $this->setIfExists('attachments', $data ?? [], null);
+        parent::__construct([]);
     }
 
     /**

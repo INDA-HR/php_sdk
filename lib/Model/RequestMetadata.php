@@ -235,6 +235,7 @@ class RequestMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
     public const LANGUAGE_DE = 'de';
     public const LANGUAGE_FR = 'fr';
     public const LANGUAGE_ES = 'es';
+    public const LANGUAGE_PL = 'pl';
 
     /**
      * Gets allowable values of the enum
@@ -250,6 +251,7 @@ class RequestMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
             self::LANGUAGE_DE,
             self::LANGUAGE_FR,
             self::LANGUAGE_ES,
+            self::LANGUAGE_PL,
         ];
     }
 

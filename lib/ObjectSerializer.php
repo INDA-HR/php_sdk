@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ObjectSerializer
  *
@@ -30,6 +31,7 @@
 namespace OpenAPI\Client;
 
 use GuzzleHttp\Psr7\Utils;
+use OpenAPI\Client\Model\CustomizableModelAbstract;
 use OpenAPI\Client\Model\ModelInterface;
 
 /**
@@ -64,7 +66,7 @@ class ObjectSerializer
      *
      * @return scalar|object|array|null serialized form of $data
      */
-    public static function sanitizeForSerialization($data, $type = null, $format = null)
+    public static function sanitizeForSerialization($data, $type = null, $format = null, bool $root = true)
     {
         if (is_scalar($data) || null === $data) {
             return $data;
@@ -76,7 +78,7 @@ class ObjectSerializer
 
         if (is_array($data)) {
             foreach ($data as $property => $value) {
-                $data[$property] = self::sanitizeForSerialization($value);
+                $data[$property] = self::sanitizeForSerialization(data: $value, root: false);
             }
             return $data;
         }
@@ -100,18 +102,51 @@ class ObjectSerializer
                         }
                     }
                     if (($data::isNullable($property) && $data->isNullableSetToNull($property)) || $value !== null) {
-                        $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
+                        $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization(data: $value, type: $openAPIType, format: $formats[$property], root: false);
+                    }
+                }
+                if ($root) {
+                    if (is_subclass_of($data, CustomizableModelAbstract::class)) {
+                        $customFields = $data->getCustomizableFields();
+                        if (!empty($customFields)) {
+                            $originalValues = $values;
+                            $customFields = self::dotNotationToNestedArray($customFields);
+                            $values = array_merge_recursive($originalValues, $customFields);
+                        }
                     }
                 }
             } else {
-                foreach($data as $property => $value) {
-                    $values[$property] = self::sanitizeForSerialization($value);
+                foreach ($data as $property => $value) {
+                    $values[$property] = self::sanitizeForSerialization(data: $value, root: false);
                 }
             }
+
             return (object)$values;
         } else {
             return (string)$data;
         }
+    }
+
+    /**
+     *
+     * @param array $dotNotationArray
+     * @return mixed
+     */
+    private static function dotNotationToNestedArray(array $dotNotationArray)
+    {
+        $nestedArray = [];
+        foreach ($dotNotationArray as $key => $value) {
+            $parts = explode('.', $key);
+            $pointer = &$nestedArray;
+            foreach ($parts as $part) {
+                if (!isset($pointer[$part])) {
+                    $pointer[$part] = [];
+                }
+                $pointer = &$pointer[$part];
+            }
+            $pointer = $value;
+        }
+        return $nestedArray;
     }
 
     /**
@@ -140,7 +175,9 @@ class ObjectSerializer
      */
     public static function sanitizeTimestamp($timestamp)
     {
-        if (!is_string($timestamp)) return $timestamp;
+        if (!is_string($timestamp)) {
+            return $timestamp;
+        }
 
         return preg_replace('/(:\d{2}.\d{6})\d*/', '$1', $timestamp);
     }
@@ -236,7 +273,7 @@ class ObjectSerializer
         }
 
         # Handle DateTime objects in query
-        if($openApiType === "\\DateTime" && $value instanceof \DateTime) {
+        if ($openApiType === "\\DateTime" && $value instanceof \DateTime) {
             return ["{$paramName}" => $value->format(self::$dateTimeFormat)];
         }
 
@@ -246,7 +283,9 @@ class ObjectSerializer
         // since \GuzzleHttp\Psr7\Query::build fails with nested arrays
         // need to flatten array first
         $flattenArray = function ($arr, $name, &$result = []) use (&$flattenArray, $style, $explode) {
-            if (!is_array($arr)) return $arr;
+            if (!is_array($arr)) {
+                return $arr;
+            }
 
             foreach ($arr as $k => $v) {
                 $prop = ($style === 'deepObject') ? $prop = "{$name}[{$k}]" : $k;
@@ -474,7 +513,7 @@ class ObjectSerializer
             // determine file name
             if (
                 is_array($httpHeaders)
-                && array_key_exists('Content-Disposition', $httpHeaders) 
+                && array_key_exists('Content-Disposition', $httpHeaders)
                 && preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)
             ) {
                 $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . DIRECTORY_SEPARATOR . self::sanitizeFilename($match[1]);

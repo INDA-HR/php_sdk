@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PatchJobAdRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class PatchJobAdRequest extends CustomizableModelAbstract implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -253,6 +253,7 @@ class PatchJobAdRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('metadata', $data ?? [], null);
+        parent::__construct([]);
     }
 
     /**

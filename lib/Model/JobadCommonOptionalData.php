@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class JobadCommonOptionalData implements ModelInterface, ArrayAccess, \JsonSerializable
+class JobadCommonOptionalData extends CustomizableModelAbstract implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -400,6 +400,7 @@ class JobadCommonOptionalData implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('benefits', $data ?? [], null);
         $this->setIfExists('expiration_date', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        parent::__construct([]);
     }
 
     /**

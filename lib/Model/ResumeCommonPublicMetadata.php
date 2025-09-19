@@ -247,6 +247,7 @@ class ResumeCommonPublicMetadata implements ModelInterface, ArrayAccess, \JsonSe
     public const LANGUAGE_ES = 'es';
     public const LANGUAGE_EN = 'en';
     public const LANGUAGE_IT = 'it';
+    public const LANGUAGE_PL = 'pl';
 
     /**
      * Gets allowable values of the enum
@@ -262,6 +263,7 @@ class ResumeCommonPublicMetadata implements ModelInterface, ArrayAccess, \JsonSe
             self::LANGUAGE_ES,
             self::LANGUAGE_EN,
             self::LANGUAGE_IT,
+            self::LANGUAGE_PL,
         ];
     }
 
