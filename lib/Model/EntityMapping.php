@@ -58,7 +58,7 @@ class EntityMapping implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string|null'
+        'id' => 'string'
     ];
 
     /**
