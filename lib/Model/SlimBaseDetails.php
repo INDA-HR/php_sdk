@@ -58,7 +58,8 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'is_validated' => 'bool'
+        'is_validated' => 'bool',
+        'zlocation_identifier' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'is_validated' => null
+        'is_validated' => null,
+        'zlocation_identifier' => null
     ];
 
     /**
@@ -78,7 +80,8 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'is_validated' => false
+        'is_validated' => false,
+        'zlocation_identifier' => false
     ];
 
     /**
@@ -167,7 +170,8 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_validated' => 'IsValidated'
+        'is_validated' => 'IsValidated',
+        'zlocation_identifier' => 'ZLocationIdentifier'
     ];
 
     /**
@@ -176,7 +180,8 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'is_validated' => 'setIsValidated'
+        'is_validated' => 'setIsValidated',
+        'zlocation_identifier' => 'setZLocationIdentifier'
     ];
 
     /**
@@ -185,7 +190,8 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'is_validated' => 'getIsValidated'
+        'is_validated' => 'getIsValidated',
+        'zlocation_identifier' => 'getZLocationIdentifier'
     ];
 
     /**
@@ -246,6 +252,7 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('is_validated', $data ?? [], false);
+        $this->setIfExists('zlocation_identifier', $data ?? [], null);
     }
 
     /**
@@ -289,6 +296,33 @@ class SlimBaseDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets zlocation_identifier
+     *
+     * @return string|null
+     */
+    public function getZLocationIdentifier()
+    {
+        return $this->container['zlocation_identifier'];
+    }
+
+    /**
+     * Sets zlocation_identifier
+     *
+     * @param string|null $zlocation_identifier zlocation_identifier
+     *
+     * @return self
+     */
+    public function setZLocationIdentifier($zlocation_identifier)
+    {
+        if (is_null($zlocation_identifier)) {
+            throw new \InvalidArgumentException('non-nullable zlocation_identifier cannot be null');
+        }
+        $this->container['zlocation_identifier'] = $zlocation_identifier;
+
+        return $this;
+    }
 
     /**
      * Gets is_validated
