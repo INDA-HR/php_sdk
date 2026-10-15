@@ -89,7 +89,7 @@ class ResumeParsingApi
         ],
     ];
 
-/**
+    /**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -99,7 +99,7 @@ class ResumeParsingApi
         ClientInterface $client = null,
         Configuration $config = null,
         HeaderSelector $selector = null,
-        $hostIndex = 0
+                        $hostIndex = 0
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -1207,9 +1207,9 @@ class ResumeParsingApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\ExtractionItem|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel
      */
-    public function parseResumePOST($base_file, $src_lang = null, $dst_lang = null, $graphics = false, string $contentType = self::contentTypes['parseResumePOST'][0])
+    public function parseResumePOST($base_file, $src_lang = null, $dst_lang = null, $graphics = false, string $contentType = self::contentTypes['parseResumePOST'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
-        list($response) = $this->parseResumePOSTWithHttpInfo($base_file, $src_lang, $dst_lang, $graphics, $contentType);
+        list($response) = $this->parseResumePOSTWithHttpInfo($base_file, $src_lang, $dst_lang, $graphics, $contentType, $isOcrEnabled, $cacheEnabled, $IdContentCache);
         return $response;
     }
 
@@ -1228,9 +1228,9 @@ class ResumeParsingApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\ExtractionItem|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function parseResumePOSTWithHttpInfo($base_file, $src_lang = null, $dst_lang = null, $graphics = false, string $contentType = self::contentTypes['parseResumePOST'][0])
+    public function parseResumePOSTWithHttpInfo($base_file, $src_lang = null, $dst_lang = null, $graphics = false, string $contentType = self::contentTypes['parseResumePOST'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
-        $request = $this->parseResumePOSTRequest($base_file, $src_lang, $dst_lang, $graphics, $contentType);
+        $request = $this->parseResumePOSTRequest($base_file, $src_lang, $dst_lang, $graphics, $contentType, $isOcrEnabled, $cacheEnabled, $IdContentCache);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1522,7 +1522,7 @@ class ResumeParsingApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function parseResumePOSTRequest($base_file, $src_lang = null, $dst_lang = null, $graphics = false, string $contentType = self::contentTypes['parseResumePOST'][0])
+    public function parseResumePOSTRequest($base_file, $src_lang = null, $dst_lang = null, $graphics = false, string $contentType = self::contentTypes['parseResumePOST'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
 
         // verify the required parameter 'base_file' is set
@@ -1566,6 +1566,34 @@ class ResumeParsingApi
             $graphics,
             'graphics', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // query params - isOcrEnabled
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $isOcrEnabled,
+            'ocr_enabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params - cacheEnabled
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cacheEnabled,
+            'cache_enabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params - IdContentCache
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $IdContentCache,
+            'cache_id', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             false // required

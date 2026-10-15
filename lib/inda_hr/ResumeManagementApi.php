@@ -107,7 +107,7 @@ class ResumeManagementApi
         ],
     ];
 
-/**
+    /**
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
@@ -117,7 +117,7 @@ class ResumeManagementApi
         ClientInterface $client = null,
         Configuration $config = null,
         HeaderSelector $selector = null,
-        $hostIndex = 0
+                        $hostIndex = 0
     ) {
         $this->client = $client ?: new Client();
         $this->config = $config ?: new Configuration();
@@ -170,9 +170,9 @@ class ResumeManagementApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BaseItemIdResponse|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\BaseItemIdResponse|\OpenAPI\Client\Model\ItemIdResponse
      */
-    public function addResumePOST($indexname, $file_item_request, $sync = false, $resume_id = null, $src_lang = null, $dst_lang = null, string $contentType = self::contentTypes['addResumePOST'][0])
+    public function addResumePOST($indexname, $file_item_request, $sync = false, $resume_id = null, $src_lang = null, $dst_lang = null, string $contentType = self::contentTypes['addResumePOST'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
-        list($response) = $this->addResumePOSTWithHttpInfo($indexname, $file_item_request, $sync, $resume_id, $src_lang, $dst_lang, $contentType);
+        list($response) = $this->addResumePOSTWithHttpInfo($indexname, $file_item_request, $sync, $resume_id, $src_lang, $dst_lang, $contentType, $isOcrEnabled, $cacheEnabled, $IdContentCache);
         return $response;
     }
 
@@ -193,9 +193,9 @@ class ResumeManagementApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BaseItemIdResponse|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\BaseItemIdResponse|\OpenAPI\Client\Model\ItemIdResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addResumePOSTWithHttpInfo($indexname, $file_item_request, $sync = false, $resume_id = null, $src_lang = null, $dst_lang = null, string $contentType = self::contentTypes['addResumePOST'][0])
+    public function addResumePOSTWithHttpInfo($indexname, $file_item_request, $sync = false, $resume_id = null, $src_lang = null, $dst_lang = null, string $contentType = self::contentTypes['addResumePOST'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
-        $request = $this->addResumePOSTRequest($indexname, $file_item_request, $sync, $resume_id, $src_lang, $dst_lang, $contentType);
+        $request = $this->addResumePOSTRequest($indexname, $file_item_request, $sync, $resume_id, $src_lang, $dst_lang, $contentType, $isOcrEnabled, $cacheEnabled, $IdContentCache);
 
         try {
             $options = $this->createHttpClientOption();
@@ -493,7 +493,7 @@ class ResumeManagementApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function addResumePOSTRequest($indexname, $file_item_request, $sync = false, $resume_id = null, $src_lang = null, $dst_lang = null, string $contentType = self::contentTypes['addResumePOST'][0])
+    public function addResumePOSTRequest($indexname, $file_item_request, $sync = false, $resume_id = null, $src_lang = null, $dst_lang = null, string $contentType = self::contentTypes['addResumePOST'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
 
         // verify the required parameter 'indexname' is set
@@ -553,6 +553,34 @@ class ResumeManagementApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $dst_lang,
             'dst_lang', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // query params - isOcrEnabled
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $isOcrEnabled,
+            'ocr_enabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params - cacheEnabled
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cacheEnabled,
+            'cache_enabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params - IdContentCache
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $IdContentCache,
+            'cache_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode
@@ -4040,9 +4068,9 @@ class ResumeManagementApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\BaseItemIdResponse|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\BaseModelsErrorModel|\OpenAPI\Client\Model\BaseModelsErrorModel
      */
-    public function updateResumePUT($indexname, $resume_id, $update_item_request, $src_lang = null, string $contentType = self::contentTypes['updateResumePUT'][0])
+    public function updateResumePUT($indexname, $resume_id, $update_item_request, $src_lang = null, string $contentType = self::contentTypes['updateResumePUT'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
-        list($response) = $this->updateResumePUTWithHttpInfo($indexname, $resume_id, $update_item_request, $src_lang, $contentType);
+        list($response) = $this->updateResumePUTWithHttpInfo($indexname, $resume_id, $update_item_request, $src_lang, $contentType, $isOcrEnabled, $cacheEnabled, $IdContentCache);
         return $response;
     }
 
@@ -4061,9 +4089,9 @@ class ResumeManagementApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\BaseItemIdResponse|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\ErrorModel|\OpenAPI\Client\Model\BaseModelsErrorModel|\OpenAPI\Client\Model\BaseModelsErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateResumePUTWithHttpInfo($indexname, $resume_id, $update_item_request, $src_lang = null, string $contentType = self::contentTypes['updateResumePUT'][0])
+    public function updateResumePUTWithHttpInfo($indexname, $resume_id, $update_item_request, $src_lang = null, string $contentType = self::contentTypes['updateResumePUT'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
-        $request = $this->updateResumePUTRequest($indexname, $resume_id, $update_item_request, $src_lang, $contentType);
+        $request = $this->updateResumePUTRequest($indexname, $resume_id, $update_item_request, $src_lang, $contentType, $isOcrEnabled, $cacheEnabled, $IdContentCache);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4332,7 +4360,7 @@ class ResumeManagementApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function updateResumePUTRequest($indexname, $resume_id, $update_item_request, $src_lang = null, string $contentType = self::contentTypes['updateResumePUT'][0])
+    public function updateResumePUTRequest($indexname, $resume_id, $update_item_request, $src_lang = null, string $contentType = self::contentTypes['updateResumePUT'][0], bool $isOcrEnabled = false, bool $cacheEnabled = false, ?string $IdContentCache = null)
     {
 
         // verify the required parameter 'indexname' is set
@@ -4369,6 +4397,34 @@ class ResumeManagementApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $src_lang,
             'src_lang', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+        // query params - isOcrEnabled
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $isOcrEnabled,
+            'ocr_enabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params - cacheEnabled
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $cacheEnabled,
+            'cache_enabled', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params - IdContentCache
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $IdContentCache,
+            'cache_id', // param base name
             'string', // openApiType
             'form', // style
             true, // explode

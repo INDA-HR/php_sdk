@@ -46,49 +46,52 @@ class BaseItemIdResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'BaseItemIdResponse';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'id' => 'string',
-        'analysis_status' => 'string'
+        'analysis_status' => 'string',
+        'cache_id' => 'string'
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'id' => 'uuid4',
-        'analysis_status' => null
+        'analysis_status' => null,
+        'cache_id' => null
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var boolean[]
+     */
     protected static array $openAPINullables = [
         'id' => false,
-		'analysis_status' => false
+        'analysis_status' => false,
+        'cache_id' => false
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var boolean[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -171,7 +174,8 @@ class BaseItemIdResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'id' => 'ID',
-        'analysis_status' => 'AnalysisStatus'
+        'analysis_status' => 'AnalysisStatus',
+        'cache_id' => 'CacheID',
     ];
 
     /**
@@ -181,7 +185,8 @@ class BaseItemIdResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'id' => 'setId',
-        'analysis_status' => 'setAnalysisStatus'
+        'analysis_status' => 'setAnalysisStatus',
+        'cache_id' => 'setCacheID',
     ];
 
     /**
@@ -191,7 +196,8 @@ class BaseItemIdResponse implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'id' => 'getId',
-        'analysis_status' => 'getAnalysisStatus'
+        'analysis_status' => 'getAnalysisStatus',
+        'cache_id' => 'getCacheID',
     ];
 
     /**
@@ -253,17 +259,18 @@ class BaseItemIdResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('analysis_status', $data ?? [], null);
+        $this->setIfExists('cache_id', $data ?? [], null);
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param string $variableName
+     * @param array  $fields
+     * @param mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -353,6 +360,31 @@ class BaseItemIdResponse implements ModelInterface, ArrayAccess, \JsonSerializab
 
         return $this;
     }
+
+    /**
+     * Gets cache_id
+     *
+     * @return string|null
+     */
+    public function getCacheID()
+    {
+        return $this->container['cache_id'];
+    }
+
+    /**
+     * Sets cache_id
+     *
+     * @param string|null $cache_id CV Content cache ID
+     *
+     * @return self
+     */
+    public function setCacheID($cache_id)
+    {
+        $this->container['cache_id'] = $cache_id;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -417,7 +449,7 @@ class BaseItemIdResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
