@@ -46,55 +46,58 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = 'ParseResumeDocumentV1';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'plain_text' => 'string',
         'language' => 'string',
         'filename' => 'string',
-        'file_ext' => 'string'
+        'file_ext' => 'string',
+        'cache_id' => 'string'
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'plain_text' => null,
         'language' => null,
         'filename' => null,
-        'file_ext' => null
+        'file_ext' => null,
+        'cache_id' => null
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var boolean[]
+     */
     protected static array $openAPINullables = [
         'plain_text' => false,
-		'language' => false,
-		'filename' => false,
-		'file_ext' => false
+        'language' => false,
+        'filename' => false,
+        'file_ext' => false,
+        'cache_id' => false
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var boolean[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -179,7 +182,8 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
         'plain_text' => 'PlainText',
         'language' => 'Language',
         'filename' => 'Filename',
-        'file_ext' => 'FileExt'
+        'file_ext' => 'FileExt',
+        'cache_id' => 'CacheID'
     ];
 
     /**
@@ -191,7 +195,8 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
         'plain_text' => 'setPlainText',
         'language' => 'setLanguage',
         'filename' => 'setFilename',
-        'file_ext' => 'setFileExt'
+        'file_ext' => 'setFileExt',
+        'cache_id' => 'setCacheID',
     ];
 
     /**
@@ -203,7 +208,8 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
         'plain_text' => 'getPlainText',
         'language' => 'getLanguage',
         'filename' => 'getFilename',
-        'file_ext' => 'getFileExt'
+        'file_ext' => 'getFileExt',
+        'cache_id' => 'getCacheID',
     ];
 
     /**
@@ -292,17 +298,18 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('language', $data ?? [], null);
         $this->setIfExists('filename', $data ?? [], null);
         $this->setIfExists('file_ext', $data ?? [], null);
+        $this->setIfExists('cache_id', $data ?? [], null);
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param string $variableName
+     * @param array  $fields
+     * @param mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
@@ -471,6 +478,31 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
 
         return $this;
     }
+
+    /**
+     * Gets cache_id
+     *
+     * @return string|null
+     */
+    public function getCacheID()
+    {
+        return $this->container['cache_id'];
+    }
+
+    /**
+     * Sets cache_id
+     *
+     * @param string|null $cache_id CV Content cache ID
+     *
+     * @return self
+     */
+    public function setCacheID($cache_id)
+    {
+        $this->container['cache_id'] = $cache_id;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -535,7 +567,7 @@ class ParseResumeDocumentV1 implements ModelInterface, ArrayAccess, \JsonSeriali
     #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
